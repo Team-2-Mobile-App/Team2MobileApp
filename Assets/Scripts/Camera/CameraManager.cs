@@ -4,77 +4,85 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    float deltaX;
-    float deltaY;
+
+    float _lookAngle;
+    float _pivotAngle;
+    float _deltaX;
+    float _deltaY;
     public CameraData cameraData;
-    private Touch initTouch = new Touch();
-    private Vector3 cameraFollowVelocity = Vector3.zero;
+    private Touch _initTouch = new Touch();
+    private Vector3 _cameraFollowVelocity = Vector3.zero;
+    float _followSpeed = 0;
+
 
     void Update()
     {
-        foreach (Touch touch in Input.touches)
+        if (IsNotTouching()) return;
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began)
         {
-            if (touch.phase == TouchPhase.Began)
-            {
-                initTouch = touch;
-            }
-            else if (touch.phase == TouchPhase.Stationary)
-            {
-                deltaX = cameraData.cameraTransform.position.x;
-                deltaY = cameraData.cameraTransform.position.y;
-            }
-            else if (touch.phase == TouchPhase.Moved)
-            {
-                deltaX = initTouch.position.x - touch.position.x;
-                deltaY = initTouch.position.y - touch.position.y;
-            }
-            else if (touch.phase == TouchPhase.Ended)
-            {
-                deltaX = 0;
-                deltaY = 0;
-            }
+            _initTouch = touch;
         }
+        else if (touch.phase == TouchPhase.Stationary)
+        {
+            _deltaX = cameraData.cameraTransform.position.x;
+            _deltaY = cameraData.cameraTransform.position.y;
+        }
+        else if (touch.phase == TouchPhase.Moved)
+        {
+            _deltaX = _initTouch.position.x - touch.position.x;
+            _deltaY = _initTouch.position.y - touch.position.y;
+
+        }
+        else if (touch.phase == TouchPhase.Ended)
+        {
+            _deltaX = 0;
+            _deltaY = 0;
+        }
+
     }
 
     private void FixedUpdate()
     {
-        //FollowTarget();
+        FollowTarget();
         RotateCamera();
 
     }
 
-    //private void FollowTarget()
-    //{
-    //    Vector3 targetPosition = Vector3.SmoothDamp(transform.position, cameraData.target.position, ref cameraFollowVelocity, cameraData.followSpeed);
+    private void FollowTarget()
+    {
+        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, cameraData.target.position + cameraData.playerCameraOffsetY, ref _cameraFollowVelocity,_followSpeed * Time.deltaTime);
 
-    //    transform.position = targetPosition;
-    //}
-
+        transform.position = targetPosition;
+    }
 
     private void RotateCamera()
     {
         Vector3 rotation;
         Quaternion targetRotation;
 
-        cameraData.lookAngle = cameraData.lookAngle + (deltaX * cameraData.cameraPitchSpeed * Time.fixedDeltaTime);
-        cameraData.pivotAngle = cameraData.pivotAngle - (deltaY * cameraData.cameraYawSpeed * Time.fixedDeltaTime);
+        _lookAngle = _lookAngle + (_deltaX * cameraData.cameraPitchSpeed * Time.fixedDeltaTime);
+        _pivotAngle = _pivotAngle + (_deltaY * cameraData.cameraYawSpeed * Time.fixedDeltaTime);
 
-        cameraData.pivotAngle = Mathf.Clamp(cameraData.pivotAngle, cameraData.minPitchAngle, cameraData.maxPitchAngle);
+        _pivotAngle = Mathf.Clamp(_pivotAngle, cameraData.minPitchAngle, cameraData.maxPitchAngle);
 
         rotation = Vector3.zero;
-        rotation.y = cameraData.lookAngle;
+        rotation.y = _lookAngle;
         targetRotation = Quaternion.Euler(rotation);
         transform.rotation = targetRotation;
 
         rotation = Vector3.zero;
-        rotation.x = cameraData.pivotAngle;
-
+        rotation.x = _pivotAngle;
         targetRotation = Quaternion.Euler(rotation);
-        cameraData.cameraPivot.localRotation = targetRotation;
+        cameraData.cameraTransform.localRotation = targetRotation;
 
     }
 
+    public bool IsNotTouching()
+    {
+        return (Input.touchCount <= 0);
 
+    }
 
 }
 
@@ -82,20 +90,18 @@ public class CameraManager : MonoBehaviour
 [System.Serializable]
 public struct CameraData
 {
+
     public Transform target;
-    public Transform cameraPivot;
     public Transform cameraTransform;
-    public float followSpeed;
-
-    [HideInInspector]
-    public float lookAngle;
-    [HideInInspector]
-    public float pivotAngle;
-
+    
+    [Range(0,10)]
     public float cameraPitchSpeed;
+    [Range(0, 10)]
     public float cameraYawSpeed;
-
+    [Range(-360,360)]
     public float minPitchAngle;
+    [Range(-360, 360)]
     public float maxPitchAngle;
- 
+
+    public Vector3 playerCameraOffsetY;
 }
