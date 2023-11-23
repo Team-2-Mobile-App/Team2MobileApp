@@ -138,11 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraData:
-    target: {fileID: 0}
-    cameraTransform: {fileID: 0}
-    followSpeed: 0
-    cameraPitchSpeed: 1
-    cameraYawSpeed: 1
-    minPitchAngle: -35
-    maxPitchAngle: 20
-    playerCameraOffset: {x: 0, y: 0, z: 0}
+    Target: {fileID: 0}
+    CameraPitchSpeed: 0
+    CameraYawSpeed: 0
+    MinPitchAngle: 0
+    MaxPitchAngle: 0
+    PlayerCameraOffsetY: {x: 0, y: 2, z: 0}
