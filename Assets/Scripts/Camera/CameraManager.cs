@@ -4,85 +4,70 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-
+    public static Camera CameraTransform;
     float _lookAngle;
-    float _pivotAngle;
-    float _deltaX;
-    float _deltaY;
+    float _pivotAngle;   
     public CameraData cameraData;
-    private Touch _initTouch = new Touch();
     private Vector3 _cameraFollowVelocity = Vector3.zero;
     float _followSpeed = 0;
 
 
-    void Update()
+    private void Awake()
     {
-        if (IsNotTouching()) return;
-        Touch touch = Input.GetTouch(0);
-        if (touch.phase == TouchPhase.Began)
-        {
-            _initTouch = touch;
-        }
-        else if (touch.phase == TouchPhase.Stationary)
-        {
-            _deltaX = cameraData.cameraTransform.position.x;
-            _deltaY = cameraData.cameraTransform.position.y;
-        }
-        else if (touch.phase == TouchPhase.Moved)
-        {
-            _deltaX = _initTouch.position.x - touch.position.x;
-            _deltaY = _initTouch.position.y - touch.position.y;
+        CameraTransform = Camera.main;
+    }
 
-        }
-        else if (touch.phase == TouchPhase.Ended)
-        {
-            _deltaX = 0;
-            _deltaY = 0;
-        }
+
+
+    private void OnEnable()
+    {
+        CameraInputHandler.OnTouchStay += OnRotateCamera;
+        CameraInputHandler.OnTouchMove += OnRotateCamera;
 
     }
 
     private void FixedUpdate()
     {
         FollowTarget();
-        RotateCamera();
 
     }
 
     private void FollowTarget()
     {
-        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, cameraData.target.position + cameraData.playerCameraOffsetY, ref _cameraFollowVelocity,_followSpeed * Time.deltaTime);
-
+        Vector3 targetPosition = 
+            Vector3.SmoothDamp
+                (transform.position, cameraData.Target.position + cameraData.PlayerCameraOffsetY, ref _cameraFollowVelocity,_followSpeed * Time.deltaTime);
         transform.position = targetPosition;
     }
 
-    private void RotateCamera()
+
+
+    private void OnRotateCamera(float deltaX,float deltaY)
     {
-        Vector3 rotation;
-        Quaternion targetRotation;
+        _lookAngle = _lookAngle + (deltaX * cameraData.CameraPitchSpeed * Time.fixedDeltaTime);
+        _pivotAngle = _pivotAngle - (deltaY * cameraData.CameraYawSpeed * Time.fixedDeltaTime);
 
-        _lookAngle = _lookAngle + (_deltaX * cameraData.cameraPitchSpeed * Time.fixedDeltaTime);
-        _pivotAngle = _pivotAngle + (_deltaY * cameraData.cameraYawSpeed * Time.fixedDeltaTime);
+        _pivotAngle = Mathf.Clamp(_pivotAngle, cameraData.MinPitchAngle, cameraData.MaxPitchAngle);
 
-        _pivotAngle = Mathf.Clamp(_pivotAngle, cameraData.minPitchAngle, cameraData.maxPitchAngle);
 
-        rotation = Vector3.zero;
-        rotation.y = _lookAngle;
-        targetRotation = Quaternion.Euler(rotation);
-        transform.rotation = targetRotation;
+        CameraTransform.transform.localRotation = Quaternion.Euler(_pivotAngle, _lookAngle,0);
 
-        rotation = Vector3.zero;
-        rotation.x = _pivotAngle;
-        targetRotation = Quaternion.Euler(rotation);
-        cameraData.cameraTransform.localRotation = targetRotation;
 
     }
 
-    public bool IsNotTouching()
+
+   
+
+   
+
+    private void OnDisable()
     {
-        return (Input.touchCount <= 0);
+
+        CameraInputHandler.OnTouchStay -= OnRotateCamera;
+        CameraInputHandler.OnTouchMove -= OnRotateCamera;
 
     }
+
 
 }
 
@@ -90,18 +75,14 @@ public class CameraManager : MonoBehaviour
 [System.Serializable]
 public struct CameraData
 {
-
-    public Transform target;
-    public Transform cameraTransform;
-    
+    public Transform Target;
     [Range(0,10)]
-    public float cameraPitchSpeed;
+    public float CameraPitchSpeed;
     [Range(0, 10)]
-    public float cameraYawSpeed;
+    public float CameraYawSpeed;
     [Range(-360,360)]
-    public float minPitchAngle;
+    public float MinPitchAngle;
     [Range(-360, 360)]
-    public float maxPitchAngle;
-
-    public Vector3 playerCameraOffsetY;
+    public float MaxPitchAngle;
+    public Vector3 PlayerCameraOffsetY;
 }
