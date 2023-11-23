@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1700889656593382114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7000002, z: -2.868}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700889657047530662}
   - component: {fileID: 4523894818838589028}
+  - component: {fileID: 6126208484991799026}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -139,8 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraData:
     Target: {fileID: 0}
-    CameraPitchSpeed: 0
-    CameraYawSpeed: 0
-    MinPitchAngle: 0
-    MaxPitchAngle: 0
+    CameraPitchSpeed: 10
+    CameraYawSpeed: 10
+    MinPitchAngle: -35
+    MaxPitchAngle: 25
     PlayerCameraOffsetY: {x: 0, y: 2, z: 0}
+--- !u!114 &6126208484991799026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700889657047530656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffd436151400e544bba1f2324419918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
