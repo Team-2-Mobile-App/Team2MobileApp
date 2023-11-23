@@ -55,7 +55,7 @@ public class CameraMove : MonoBehaviour
 
             if (CheckPortal != null && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility)
             {
-                CheckPortal.MoveToNewPosition(_cameraManager.cameraData.target);
+                CheckPortal.MoveToNewPosition(_cameraManager.cameraData.Target);
                 CheckPortal = null;
             } 
             else CheckPortal = null;
