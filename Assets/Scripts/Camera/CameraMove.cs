@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMoveTest : MonoBehaviour
+public class CameraMove : MonoBehaviour
 {
     private Vector3 _touchStartPosition;
     private Vector3 _touchEndPosition;
@@ -13,9 +13,12 @@ public class CameraMoveTest : MonoBehaviour
     private Portal CheckPortal;
     public LayerMask portalLayer;
 
+    private CameraManager _cameraManager;
+
     private void Start()
     {
         _camera = GetComponent<Camera>();
+        _cameraManager = GetComponentInParent<CameraManager>();
     }
 
     private void Update()
@@ -52,7 +55,7 @@ public class CameraMoveTest : MonoBehaviour
 
             if (CheckPortal != null && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility)
             {
-                CheckPortal.MoveToNewPosition(this.transform);
+                CheckPortal.MoveToNewPosition(_cameraManager.cameraData.target);
                 CheckPortal = null;
             } 
             else CheckPortal = null;
