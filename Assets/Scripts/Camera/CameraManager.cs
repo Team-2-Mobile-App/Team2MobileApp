@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public static Camera CameraTransform;
+    Camera _cameraTransform;
     float _lookAngle;
     float _pivotAngle;   
     public CameraData cameraData;
@@ -14,7 +14,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
-        CameraTransform = Camera.main;
+        _cameraTransform = Camera.main;
     }
 
 
@@ -36,7 +36,7 @@ public class CameraManager : MonoBehaviour
     {
         Vector3 targetPosition = 
             Vector3.SmoothDamp
-                (transform.position, cameraData.Target.position + cameraData.PlayerCameraOffsetY, ref _cameraFollowVelocity,_followSpeed * Time.deltaTime);
+                (transform.position, cameraData.Target.position + cameraData.PlayerCameraOffsetY, ref _cameraFollowVelocity,_followSpeed * Time.fixedDeltaTime);
         transform.position = targetPosition;
     }
 
@@ -44,14 +44,13 @@ public class CameraManager : MonoBehaviour
 
     private void OnRotateCamera(float deltaX,float deltaY)
     {
-        _lookAngle = _lookAngle + (deltaX * cameraData.CameraPitchSpeed * Time.fixedDeltaTime);
-        _pivotAngle = _pivotAngle - (deltaY * cameraData.CameraYawSpeed * Time.fixedDeltaTime);
+
+        _lookAngle = _lookAngle + (deltaX * cameraData.CameraPitchSpeed * Time.deltaTime);
+        _pivotAngle = _pivotAngle - (deltaY * cameraData.CameraYawSpeed * Time.deltaTime);
 
         _pivotAngle = Mathf.Clamp(_pivotAngle, cameraData.MinPitchAngle, cameraData.MaxPitchAngle);
 
-
-        CameraTransform.transform.localRotation = Quaternion.Euler(_pivotAngle, _lookAngle,0);
-
+        _cameraTransform.transform.localRotation = Quaternion.Euler(_pivotAngle, _lookAngle,0);
 
     }
 
@@ -76,9 +75,9 @@ public class CameraManager : MonoBehaviour
 public struct CameraData
 {
     public Transform Target;
-    [Range(0,10)]
+    [Range(0,100)]
     public float CameraPitchSpeed;
-    [Range(0, 10)]
+    [Range(0, 100)]
     public float CameraYawSpeed;
     [Range(-360,360)]
     public float MinPitchAngle;

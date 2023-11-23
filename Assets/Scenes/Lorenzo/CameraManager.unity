@@ -475,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523894818838589028, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
       propertyPath: cameraData.CameraYawSpeed
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4523894818838589028, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
       propertyPath: cameraData.cameraTransform
@@ -483,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 1826202518}
     - target: {fileID: 4523894818838589028, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
       propertyPath: cameraData.CameraPitchSpeed
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4523894818838589028, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
       propertyPath: cameraData.playerCameraOffsetY
