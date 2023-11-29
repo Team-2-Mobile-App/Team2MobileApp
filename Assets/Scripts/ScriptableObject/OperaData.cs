@@ -5,6 +5,10 @@ using UnityEngine;
 public class OperaData : MonoBehaviour
 {
     public Sprite MissingObject;
+    public OperaDataSO operaData;
+
+
+
 
 
 

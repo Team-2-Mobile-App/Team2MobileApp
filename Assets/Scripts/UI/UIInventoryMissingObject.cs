@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInventory : MonoBehaviour
+public class UIInventoryMissingObject : MonoBehaviour
 {
-    private List<OperaData> operaData = new List<OperaData>();
-    [SerializeField] private UIOperaCard operaCard;
+    private List<OperaData> missingObject = new List<OperaData>();
+    [SerializeField] private UIMissingObject missingObjectUI;
     [SerializeField] private Transform itemsSection;
 
 
@@ -20,8 +20,8 @@ public class UIInventory : MonoBehaviour
     public void PopulateItemsSection(List<OperaData> data)
     {
         ClearAll();
-        operaData.AddRange(data);
-        foreach (OperaData item in operaData)
+        missingObject.AddRange(data);
+        foreach (OperaData item in missingObject)
         {
             AddCard(item);
         }
@@ -29,7 +29,7 @@ public class UIInventory : MonoBehaviour
 
     private void AddCard(OperaData item)
     {
-        var card = Instantiate(operaCard, itemsSection);
+        var card = Instantiate(missingObjectUI, itemsSection);
         card.Setup(item);
     }
 
@@ -44,7 +44,7 @@ public class UIInventory : MonoBehaviour
 
     private void ClearListPokemon()
     {
-        operaData.Clear();
+        missingObject.Clear();
     }
 
     private void ClearAll()

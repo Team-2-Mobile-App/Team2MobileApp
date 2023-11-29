@@ -4,8 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIOperaCard : MonoBehaviour
+public class UIMissingObject : MonoBehaviour
 {
+
     [SerializeField] private Image _operaSprite;
 
     private OperaData _data;
