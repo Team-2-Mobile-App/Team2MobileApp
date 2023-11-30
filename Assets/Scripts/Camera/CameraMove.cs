@@ -14,6 +14,7 @@ public class CameraMove : MonoBehaviour
     private OperaData CheckOpera;
     public LayerMask portalLayer;
     public LayerMask OperaLayer;
+    public LayerMask WallLayer;
 
     private CameraManager _cameraManager;
 
@@ -35,10 +36,12 @@ public class CameraMove : MonoBehaviour
         if (touch.phase == TouchPhase.Began && GameManager.Instance.isMovable)
         {
             _touchStartPosition = touch.position;
+            CheckOpera = null;
+            CheckPortal = null;
             Ray ray = _camera.ScreenPointToRay(_touchStartPosition);
             Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.red, 1.0f);
 
-            if (Physics.Raycast(ray, out _hit, raycastDistance, portalLayer))
+            if (Physics.Raycast(ray, out _hit, raycastDistance, portalLayer) || Physics.Raycast(ray, out _hit, raycastDistance, WallLayer))
             {
                 if (_hit.collider.TryGetComponent(out Portal portal))
                 {
@@ -69,10 +72,9 @@ public class CameraMove : MonoBehaviour
             {
                 CheckPortal.MoveToNewPosition(_cameraManager.cameraData.Target);
                 CheckPortal = null;
-            } 
-            else CheckPortal = null;
+            }
 
-            if (Physics.Raycast(ray, out _hit, raycastDistance, OperaLayer))
+            if (Physics.Raycast(ray, out _hit, raycastDistance, OperaLayer) || Physics.Raycast(ray, out _hit, raycastDistance, WallLayer))
             {
                 if (_hit.collider.TryGetComponent(out OperaData Opera) && Opera == CheckOpera && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility)
                 {
@@ -80,7 +82,6 @@ public class CameraMove : MonoBehaviour
                     Opera.OpenOpera();
                     GameManager.Instance.operaSelected = Opera;
                 }
-                else CheckOpera = null;
             }
         }
     }
