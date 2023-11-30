@@ -4073,6 +4073,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1030363762}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &609180152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 609180153}
+  m_Layer: 0
+  m_Name: Opere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &609180153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609180152}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2014637191}
+  - {fileID: 1678072686}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658296666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5982,7 +6015,6 @@ Transform:
   - {fileID: 286196240}
   - {fileID: 394758280}
   - {fileID: 883849148}
-  - {fileID: 2014637191}
   - {fileID: 1228531442}
   - {fileID: 110404574}
   - {fileID: 1764014687}
@@ -5998,7 +6030,6 @@ Transform:
   - {fileID: 1135796163}
   - {fileID: 598950212}
   - {fileID: 883398735}
-  - {fileID: 1678072686}
   - {fileID: 322862054}
   - {fileID: 497112151}
   - {fileID: 43670816}
@@ -6323,6 +6354,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
+--- !u!1 &1209226767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2434633573572322906, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
+  m_PrefabInstance: {fileID: 1209226766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209226768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1134176599482644705, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
+  m_PrefabInstance: {fileID: 1209226766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011d5da8985f1d74286b3c7fa72345f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228531438
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6685,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1030363762}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1001 &1258437228
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1389244282106464635, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1209226768}
+    - target: {fileID: 1389244282106464635, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: OperaContainer
+      value: 
+      objectReference: {fileID: 609180152}
+    - target: {fileID: 1389244282106464635, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: ShowOperaUIContainer
+      value: 
+      objectReference: {fileID: 1209226767}
+    - target: {fileID: 2931299774742636173, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_Name
+      value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12468404
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1954548
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2554121
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557614615476917331, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f142a5f4daf58f47b301e66d74aa025, type: 3}
 --- !u!1 &1262386789
 GameObject:
   m_ObjectHideFlags: 0
@@ -9084,8 +9200,9 @@ GameObject:
   - component: {fileID: 1678072685}
   - component: {fileID: 1678072684}
   - component: {fileID: 1678072683}
-  m_Layer: 0
-  m_Name: Cube (68)
+  - component: {fileID: 1678072687}
+  m_Layer: 6
+  m_Name: Opera 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9132,7 +9249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ba4f5e7fb18b3e4895005eccb6c2d5d, type: 2}
+  - {fileID: 2100000, guid: e8fbda086a4c18e44a16726f1a87b65c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9175,8 +9292,28 @@ Transform:
   m_LocalScale: {x: 0.5, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1030363762}
+  m_Father: {fileID: 609180153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678072687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678072682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1474327827bb54d8b859daba41b2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OperaNumber: 2
+  PrefabUIOpera: {fileID: 5661134112284803088, guid: a136b9c12aa2f83419588fc76d55291f, type: 3}
+  isAdditionalTaken: 0
+  operaData: {fileID: 11400000, guid: 64bce572ce4e00e4fb24a216f1f9dce4, type: 2}
+  operaInteractable: {fileID: 0}
+  isSpotted: 0
+  isComplete: 0
+  isScanned: 0
 --- !u!1 &1683994269
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,8 +10928,9 @@ GameObject:
   - component: {fileID: 2014637190}
   - component: {fileID: 2014637189}
   - component: {fileID: 2014637188}
-  m_Layer: 0
-  m_Name: Cube (64)
+  - component: {fileID: 2014637192}
+  m_Layer: 6
+  m_Name: Opera 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10839,7 +10977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ba4f5e7fb18b3e4895005eccb6c2d5d, type: 2}
+  - {fileID: 2100000, guid: e8fbda086a4c18e44a16726f1a87b65c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10879,11 +11017,31 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
   m_LocalPosition: {x: -4, y: 2.25, z: 8.5}
-  m_LocalScale: {x: 0.5, y: 2, z: 3}
+  m_LocalScale: {x: 0.50000024, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1030363762}
+  m_Father: {fileID: 609180153}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &2014637192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014637187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1474327827bb54d8b859daba41b2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OperaNumber: 1
+  PrefabUIOpera: {fileID: 5661134112284803088, guid: 644c2d224c57a3b4b8c726d378e463ac, type: 3}
+  isAdditionalTaken: 0
+  operaData: {fileID: 11400000, guid: 61deb4bad49e95649874faa29123f75c, type: 2}
+  operaInteractable: {fileID: 0}
+  isSpotted: 0
+  isComplete: 0
+  isScanned: 0
 --- !u!1 &2041398226
 GameObject:
   m_ObjectHideFlags: 0
@@ -11434,6 +11592,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2145789148}
+  - {fileID: 1209226766}
+  - {fileID: 1258437228}
+  - {fileID: 609180153}
   - {fileID: 1030363762}
   - {fileID: 433348906}
   - {fileID: 530097607}
@@ -11450,4 +11611,3 @@ SceneRoots:
   - {fileID: 1211097}
   - {fileID: 2007361687}
   - {fileID: 26343601}
-  - {fileID: 1209226766}
