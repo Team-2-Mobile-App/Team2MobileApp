@@ -11,7 +11,9 @@ public class CameraMove : MonoBehaviour
     public float raycastDistance = 10f;
     public float touchSensibility = 1f;
     private Portal CheckPortal;
+    private OperaData CheckOpera;
     public LayerMask portalLayer;
+    public LayerMask OperaLayer;
 
     private CameraManager _cameraManager;
 
@@ -30,7 +32,7 @@ public class CameraMove : MonoBehaviour
 
         Touch touch = Input.GetTouch(0);
 
-        if (touch.phase == TouchPhase.Began)
+        if (touch.phase == TouchPhase.Began && GameManager.Instance.isMovable)
         {
             _touchStartPosition = touch.position;
             Ray ray = _camera.ScreenPointToRay(_touchStartPosition);
@@ -45,9 +47,19 @@ public class CameraMove : MonoBehaviour
                 }
                 else CheckPortal = null;
             }
+
+            if (Physics.Raycast(ray, out _hit, raycastDistance, OperaLayer))
+            {
+                if (_hit.collider.TryGetComponent(out OperaData Opera))
+                {
+                    Debug.Log("Preso");
+                    CheckOpera = Opera;
+                }
+                else CheckOpera = null;
+            }
         }
 
-        if (touch.phase == TouchPhase.Ended)
+        if (touch.phase == TouchPhase.Ended && GameManager.Instance.isMovable)
         {
             _touchEndPosition = touch.position;
             Ray ray = _camera.ScreenPointToRay(_touchEndPosition);
@@ -59,6 +71,17 @@ public class CameraMove : MonoBehaviour
                 CheckPortal = null;
             } 
             else CheckPortal = null;
+
+            if (Physics.Raycast(ray, out _hit, raycastDistance, OperaLayer))
+            {
+                if (_hit.collider.TryGetComponent(out OperaData Opera) && Opera == CheckOpera && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility)
+                {
+                    Debug.Log("CheckSuperato");
+                    Opera.OpenOpera();
+                    GameManager.Instance.operaSelected = Opera;
+                }
+                else CheckOpera = null;
+            }
         }
     }
 }
