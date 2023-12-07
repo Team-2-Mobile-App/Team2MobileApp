@@ -2,8 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : MonoBehaviour
+public class GameManager : PersistentSingleton<GameManager>
 {
+    [HideInInspector]
+    public FlowGameManger flowGame;
+
+
     public PlayerInventory inventory;
     public GameObject ShowOperaUIContainer;
     public bool isMovable;
@@ -11,22 +15,11 @@ public class GameManager : MonoBehaviour
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-    public static GameManager Instance;
-
-    protected virtual void Awake()
+    private void Awake()
     {
-        if (Instance == null)
-        {
-            if (!TryGetComponent<GameManager>(out Instance))
-            {
-                Instance = gameObject.AddComponent<GameManager>();
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        flowGame = GetComponentInChildren<FlowGameManger>();
     }
+
 
     private void Start()
     {
