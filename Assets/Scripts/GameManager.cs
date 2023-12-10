@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : PersistentSingleton<GameManager>
+public class GameManager : MonoBehaviour
 {
     [HideInInspector]
     public FlowGameManger flowGame;
@@ -15,10 +15,25 @@ public class GameManager : PersistentSingleton<GameManager>
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-    private void Awake()
+    public static GameManager Instance;
+
+    protected virtual void Awake()
     {
+        if (Instance == null)
+        {
+            if (!TryGetComponent<GameManager>(out Instance))
+            {
+                Instance = gameObject.AddComponent<GameManager>();
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         flowGame = GetComponentInChildren<FlowGameManger>();
     }
+
 
 
     private void Start()

@@ -18,6 +18,8 @@ public class StateManager : StatesMachine<Enum.GameState>
 
         AllStates.Add(Enum.GameState.Navigation, new NavigationState(Enum.GameState.Navigation, this));
 
+        AllStates.Add(Enum.GameState.Dialogue, new OnDialogue(Enum.GameState.Dialogue, this));
+
 
 
 

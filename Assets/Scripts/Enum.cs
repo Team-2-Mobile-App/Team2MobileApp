@@ -10,6 +10,7 @@ public static class Enum
         Pause,
         Dialogue,
         Gallery,
+
         
 
     }
