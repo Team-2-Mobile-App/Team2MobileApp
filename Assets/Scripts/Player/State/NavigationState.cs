@@ -43,10 +43,13 @@ public class NavigationState : State<Enum.GameState>
     public override void OnExit()
     {
         base.OnExit();
-
+        
         CameraInputHandler.OnTouchStay -= OnRotateCamera;
         CameraInputHandler.OnTouchMove -= OnRotateCamera;
+
+        
     }
+
 
 
     private void FollowTarget()

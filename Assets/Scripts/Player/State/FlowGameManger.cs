@@ -8,6 +8,7 @@ public class FlowGameManger : MonoBehaviour
 
     CameraInputHandler CameraInput;
 
+    public bool Debugger;
 
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class FlowGameManger : MonoBehaviour
     private void Update()
     {
         StateManager.CurrentState.OnUpdate();
+        if (Debugger)
+        {
+            StateManager.ChangeState(Enum.GameState.Dialogue);
+        }
+        
     }
 
 

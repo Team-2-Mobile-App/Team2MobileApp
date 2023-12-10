@@ -19,7 +19,8 @@ public class CameraInputHandler : MonoBehaviour
     void Update()
     {
         if (IsNotTouching()) return;
-        //if (!GameManager.Instance.isMovable) return;
+        if (!GameManager.Instance.isMovable) return;
+        if (GameManager.Instance.flowGame.StateManager.CurrentState.StateID != Enum.GameState.Navigation) return;
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)
         {

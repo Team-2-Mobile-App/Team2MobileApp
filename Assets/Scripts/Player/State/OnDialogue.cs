@@ -13,4 +13,39 @@ public class OnDialogue : State<Enum.GameState>
     }
 
 
+    public override void OnEnter()
+    {
+        base.OnEnter();
+
+    }
+
+    public override void OnUpdate()
+    {
+        base.OnUpdate();
+        DialogueSkip();
+    }
+
+
+
+
+    public bool IsNotTouching()
+    {
+        return (Input.touchCount <= 0);
+
+    }
+
+
+
+
+    void DialogueSkip()
+    {
+        if (IsNotTouching()) return;
+        
+        Input.GetTouch(0);
+        
+        
+    }
+
+
+
 }
