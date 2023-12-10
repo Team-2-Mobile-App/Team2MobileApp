@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class StateManager : StatesMachine<Enum.GameState>
 {
+    public CameraInputHandler CameraInput;
 
-    public StateManager(Dictionary<Enum.GameState, State<Enum.GameState>> listOfSTtes = null, State<Enum.GameState> currentState = null, State<Enum.GameState> nextState = null)
+    public StateManager(CameraInputHandler cameraInput, Dictionary<Enum.GameState, State<Enum.GameState>> listOfSTtes = null, State<Enum.GameState> currentState = null, State<Enum.GameState> nextState = null)
     {
-
+        CameraInput = cameraInput;
         InitStatesManager();
     }
 

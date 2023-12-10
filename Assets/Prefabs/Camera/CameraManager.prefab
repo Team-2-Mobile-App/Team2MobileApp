@@ -107,12 +107,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastDistance: 10
   touchSensibility: 1
+  touchTimeDelay: 0
   portalLayer:
     serializedVersion: 2
     m_Bits: 32
-  OperaLayer:
+  operaLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1700889657047530656
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +126,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1700889657047530662}
-  - component: {fileID: 4523894818838589028}
   - component: {fileID: 6126208484991799026}
   - component: {fileID: 1134176599482644705}
   m_Layer: 0
@@ -149,25 +152,6 @@ Transform:
   - {fileID: 1910886467656531558}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4523894818838589028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700889657047530656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa3e4e9657c6fa4e8b16a6b5b2f7f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraData:
-    Target: {fileID: 0}
-    CameraPitchSpeed: 30
-    CameraYawSpeed: 30
-    MinPitchAngle: -35
-    MaxPitchAngle: 25
-    PlayerCameraOffsetY: {x: 0, y: 1, z: 0}
 --- !u!114 &6126208484991799026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +164,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffd436151400e544bba1f2324419918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraData:
+    Target: {fileID: 0}
+    CameraTransform: {fileID: 0}
+    CameraPitchSpeed: 0
+    CameraYawSpeed: 0
+    MinPitchAngle: 0
+    MaxPitchAngle: 0
+    PlayerCameraOffsetY: {x: 0, y: 0, z: 0}
 --- !u!114 &1134176599482644705
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CameraInteraction : MonoBehaviour
     private Vector3 _touchStartPosition;
     private Vector3 _touchEndPosition;
     private Camera _camera;
-    private CameraManager _cameraManager;
+    private CameraInputHandler _cameraManager;
     private RaycastHit _hit;
     public float raycastDistance = 10f;
     public float touchSensibility = 1f;
@@ -23,7 +23,7 @@ public class CameraInteraction : MonoBehaviour
     private void Start()
     {
         _camera = GetComponentInChildren<Camera>();
-        _cameraManager = GetComponent<CameraManager>();
+        _cameraManager = GetComponent<CameraInputHandler>();
     }
 
     private void Update()
@@ -82,7 +82,7 @@ public class CameraInteraction : MonoBehaviour
 
                     if (hitLayer == GetIntLayer(portalLayer) && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility && Timer <= touchTimeDelay)
                     {
-                        CheckPortal.MoveToNewPosition(_cameraManager.cameraData.Target);
+                        CheckPortal.MoveToNewPosition(_cameraManager.CameraData.Target);
                     }
                     if (hitLayer == GetIntLayer(operaLayer) && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility && Timer <= touchTimeDelay)
                     {

@@ -6,14 +6,19 @@ public class FlowGameManger : MonoBehaviour
 {
     public StateManager StateManager;
 
-
+    CameraInputHandler CameraInput;
 
 
     private void Awake()
     {
-        StateManager = new();
+        CameraInput = FindObjectOfType<CameraInputHandler>();
+        StateManager = new StateManager(CameraInput);
     }
 
+    private void Start()
+    {
+        StateManager.CurrentState.OnEnter();
+    }
 
 
     private void Update()
@@ -22,5 +27,11 @@ public class FlowGameManger : MonoBehaviour
     }
 
 
+
+
+    private void FixedUpdate()
+    {
+        StateManager.CurrentState.OnFixedUpdate();
+    }
 
 }

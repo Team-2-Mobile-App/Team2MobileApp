@@ -14,11 +14,12 @@ public class CameraInputHandler : MonoBehaviour
     public static Action<float,float> OnTouchMove;
 
 
+    public CameraData CameraData;
 
     void Update()
     {
         if (IsNotTouching()) return;
-        if (!GameManager.Instance.isMovable) return;
+        //if (!GameManager.Instance.isMovable) return;
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)
         {
@@ -53,3 +54,23 @@ public class CameraInputHandler : MonoBehaviour
 
     }
 }
+
+
+[System.Serializable]
+public struct CameraData
+{
+    public Transform Target;
+    public Transform CameraTransform;
+    [Range(0, 100)]
+    public float CameraPitchSpeed;
+    [Range(0, 100)]
+    public float CameraYawSpeed;
+    [Range(-360, 360)]
+    public float MinPitchAngle;
+    [Range(-360, 360)]
+    public float MaxPitchAngle;
+    public Vector3 PlayerCameraOffsetY;
+}
+
+
+
