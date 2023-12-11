@@ -5,16 +5,15 @@ using UnityEngine;
 public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
 
-    public static T instance; 
+    public static T Instance;
 
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            if(!TryGetComponent<T>(out instance))
+            if(!TryGetComponent<T>(out Instance))
             {
-                instance = gameObject.AddComponent<T>();
+                Instance = gameObject.AddComponent<T>();
             }
         }else
         {

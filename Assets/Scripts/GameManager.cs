@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : PersistentSingleton<GameManager>
+public class GameManager : Singleton<GameManager>
 {
     [HideInInspector]
     public FlowGameManger flowGame;
@@ -15,8 +15,9 @@ public class GameManager : PersistentSingleton<GameManager>
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         flowGame = GetComponentInChildren<FlowGameManger>();
     }
 
