@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : MonoBehaviour
+public class GameManager : PersistentSingleton<GameManager>
 {
     [HideInInspector]
     public FlowGameManger flowGame;
@@ -15,22 +15,10 @@ public class GameManager : MonoBehaviour
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-    public static GameManager Instance;
 
-    protected virtual void Awake()
+
+    private void OnEnable()
     {
-        if (Instance == null)
-        {
-            if (!TryGetComponent<GameManager>(out Instance))
-            {
-                Instance = gameObject.AddComponent<GameManager>();
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         flowGame = GetComponentInChildren<FlowGameManger>();
     }
 
@@ -38,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
         isMovable = true; // Da cambiare in futuro con caricare la scena o sostituire con gli stati
         if (OperaContainer != null)
         {
