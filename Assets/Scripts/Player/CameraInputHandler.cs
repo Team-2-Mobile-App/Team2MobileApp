@@ -9,9 +9,7 @@ public class CameraInputHandler : MonoBehaviour
     float _deltaX;
     float _deltaY;
 
-    public static Action<float, float> OnTouchStay; 
 
-    public static Action<float,float> OnTouchMove;
 
 
     public CameraData CameraData;
@@ -31,14 +29,14 @@ public class CameraInputHandler : MonoBehaviour
             _deltaX = 0;
             _deltaY = 0;
 
-            OnTouchStay?.Invoke(_deltaX,_deltaY);
+           ActionManager.OnTouchStay?.Invoke(_deltaX,_deltaY);
         }
         else if (touch.phase == TouchPhase.Moved)
         {
             _deltaX = touch.deltaPosition.x;
             _deltaY = touch.deltaPosition.y;
 
-            OnTouchMove?.Invoke(_deltaX, _deltaY);
+           ActionManager.OnTouchMove?.Invoke(_deltaX, _deltaY);
 
         }
         else if (touch.phase == TouchPhase.Ended)

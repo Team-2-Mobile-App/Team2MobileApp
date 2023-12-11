@@ -19,18 +19,92 @@ public class MuseumGuide : MonoBehaviour
     protected List<string> m_currentDialogue;
 
 
-
     private void Awake()
     {
-        
-
         m_dialoguesManager = new(Dialogues);
         m_currentDialogue = new();
     }
 
+    private void Update()
+    {
+        HandlePrintProcess();
 
-  
+        if (GameManager.Instance.flowGame.Debugger) TurnOnRadio();
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        TurnOnRadio();
+        GameManager.Instance.flowGame.StateManager.ChangeState(Enum.GameState.Dialogue);
+    }
+
+    public void TurnOnRadio()
+    {
+        
+        m_currentDialogue = m_dialoguesManager.GetDialogue(out m_currentDialogueName);
+        m_scriptLineToPrint = m_currentDialogue[0]; 
+        UI.DialogueText.text = "";
+        m_scriptLineIndex = -1;
+        m_time = 0;
+        m_runDialogue = true;
+    }
+
+
+
+    private void CheckScriptLinePrintStatus()
+    {
+        if (m_scriptLineToPrint != null && m_scriptLineIndex == m_scriptLineToPrint.Length - 1)
+        {
+            m_scriptLineIndex = -1;
+            m_time = 0f;
+            m_scriptLineToPrint = null;
+        }
+    }
+
+
+    private void PrintScriptLine()
+    {
+        if (m_scriptLineToPrint == null || UI.DialogueText.text == m_scriptLineToPrint) return;
+        int time = (int)m_time;
+        m_time += Time.deltaTime * TextSpeed;
+
+        if (time < (int)m_time)
+        {
+            m_scriptLineIndex++;
+            UI.DialogueText.text += m_currentDialogue[0][m_scriptLineIndex];
+        }
+    }
+
+
+    private void LoadNextScriptLine()
+    {
+        if (m_scriptLineToPrint == null)
+        {
+            if (m_currentDialogue.Count > 1)
+            {
+                m_currentDialogue.Remove(m_currentDialogue[0]);
+                m_scriptLineToPrint = m_currentDialogue[0];
+                UI.DialogueText.text = "";
+            }
+            else if (m_currentDialogue.Count == 1) 
+            { 
+                m_runDialogue = false;
+                GameManager.Instance.flowGame.StateManager.ChangeState(Enum.GameState.Navigation);
+            }
+        }
+    }
+
+
+    private void HandlePrintProcess()
+    {
+        if (m_runDialogue)
+        {
+            CheckScriptLinePrintStatus();
+            PrintScriptLine();
+            LoadNextScriptLine();
+
+        }
+    }
 
 
 

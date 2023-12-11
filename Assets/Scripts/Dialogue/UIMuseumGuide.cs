@@ -8,14 +8,24 @@ public class UIMuseumGuide : MonoBehaviour
 
     [SerializeField] private GameObject TextSelection;
     public TextMeshProUGUI DialogueText;
-    
 
 
-    public void ActiveGameObject(bool isActive)
+    private void OnEnable()
+    {
+        ActionManager.OnDialogueStarts += ActivePanel;
+    }
+
+
+    public void ActivePanel(bool isActive)
     {
         TextSelection.SetActive(isActive);
     }
 
 
+
+    private void OnDisable()
+    {
+        ActionManager.OnDialogueStarts -= ActivePanel;
+    }
 
 }

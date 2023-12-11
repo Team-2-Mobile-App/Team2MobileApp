@@ -27,8 +27,8 @@ public class NavigationState : State<Enum.GameState>
         _cameraTransform = Camera.main;
         cameraData = _stateManager.CameraInput.CameraData;
 
-        CameraInputHandler.OnTouchStay += OnRotateCamera;
-        CameraInputHandler.OnTouchMove += OnRotateCamera;
+        ActionManager.OnTouchStay += OnRotateCamera;
+        ActionManager.OnTouchMove += OnRotateCamera;
     }
 
 
@@ -43,9 +43,9 @@ public class NavigationState : State<Enum.GameState>
     public override void OnExit()
     {
         base.OnExit();
-        
-        CameraInputHandler.OnTouchStay -= OnRotateCamera;
-        CameraInputHandler.OnTouchMove -= OnRotateCamera;
+
+        ActionManager.OnTouchStay -= OnRotateCamera;
+        ActionManager.OnTouchMove -= OnRotateCamera;
 
         
     }

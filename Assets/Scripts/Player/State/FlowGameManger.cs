@@ -29,6 +29,10 @@ public class FlowGameManger : MonoBehaviour
         {
             StateManager.ChangeState(Enum.GameState.Dialogue);
         }
+        else
+        {
+            StateManager.ChangeState(Enum.GameState.Navigation);
+        }
         
     }
 
@@ -40,4 +44,9 @@ public class FlowGameManger : MonoBehaviour
         StateManager.CurrentState.OnFixedUpdate();
     }
 
+
+    private void OnDisable()
+    {
+        StateManager.CurrentState.OnExit();
+    }
 }
