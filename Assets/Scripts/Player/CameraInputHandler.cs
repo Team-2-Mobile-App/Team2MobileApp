@@ -12,13 +12,20 @@ public class CameraInputHandler : MonoBehaviour
 
     public CameraData CameraData;
 
+    public static event Action<float, float> OnTouchStay;
+    public static  event Action<float, float> OnTouchMove;
+
+
     void Update()
+    {
+        CameraMove();
+    }
+
+
+    private void CameraMove()
     {
         if (IsNotTouching()) return;
         if (!GameManager.Instance.isMovable) return;
-
-        if (GameManager.Instance.flowGame.StateMachine.CurrentState.StateID != GameManager.Instance.flowGame.NavigationState.StateID) return;
-
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)
         {
@@ -29,14 +36,14 @@ public class CameraInputHandler : MonoBehaviour
             _deltaX = 0;
             _deltaY = 0;
 
-           ActionManager.OnTouchStay?.Invoke(_deltaX,_deltaY);
+            OnTouchStay?.Invoke(_deltaX, _deltaY);
         }
         else if (touch.phase == TouchPhase.Moved)
         {
             _deltaX = touch.deltaPosition.x;
             _deltaY = touch.deltaPosition.y;
 
-           ActionManager.OnTouchMove?.Invoke(_deltaX, _deltaY);
+            OnTouchMove?.Invoke(_deltaX, _deltaY);
 
         }
         else if (touch.phase == TouchPhase.Ended)
@@ -44,12 +51,14 @@ public class CameraInputHandler : MonoBehaviour
             _initTouch = new Touch();
 
         }
-
     }
 
+
+    
     public bool IsNotTouching()
     {
         return (Input.touchCount <= 0);
+
 
     }
 }

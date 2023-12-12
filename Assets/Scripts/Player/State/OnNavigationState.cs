@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class NavigationState : StateBase<FlowGameManger>
+public class OnNavigationState : StateBase<FlowGameManger>
 {
 
     Camera _cameraTransform;
@@ -15,7 +15,7 @@ public class NavigationState : StateBase<FlowGameManger>
 
 
 
-    public NavigationState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base (stateID , statesMachine)
+    public OnNavigationState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base (stateID , statesMachine)
     {
 
     }
@@ -26,8 +26,8 @@ public class NavigationState : StateBase<FlowGameManger>
         base.OnEnter(contex);
         _cameraTransform = Camera.main;
         cameraData = _cameraTransform.GetComponentInParent<CameraInputHandler>().CameraData;
-        ActionManager.OnTouchStay += OnRotateCamera;
-        ActionManager.OnTouchMove += OnRotateCamera;
+        CameraInputHandler.OnTouchStay += OnRotateCamera;
+        CameraInputHandler.OnTouchMove += OnRotateCamera;
     }
 
 
@@ -43,8 +43,8 @@ public class NavigationState : StateBase<FlowGameManger>
     {
         base.OnExit(contex);
 
-        ActionManager.OnTouchStay -= OnRotateCamera;
-        ActionManager.OnTouchMove -= OnRotateCamera;
+        CameraInputHandler.OnTouchStay -= OnRotateCamera;
+        CameraInputHandler.OnTouchMove -= OnRotateCamera;
 
         
     }

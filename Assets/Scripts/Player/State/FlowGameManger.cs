@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class FlowGameManger : MonoBehaviour
 {
-    public StatesMachine<FlowGameManger> StateMachine;
+    private StatesMachine<FlowGameManger> StateMachine;
 
-    public NavigationState NavigationState;
-    public OnDialogue OnDialogue;
+    private MuseumGuide _museumGuide;
+    public MuseumGuide MuseumGuide { get => _museumGuide; }
 
-    public bool debugger;
+
+    public OnNavigationState OnNavigationState;
+    public OnDialogueState OnDialogueState;
 
     private void Awake()
     {
         InitStateMachine();
+        _museumGuide = FindObjectOfType<MuseumGuide>();
+        
     }
 
 
+    private void Update()
+    {
+        StateMachine.CurrentState.OnUpdate(this);
+    }
 
     private void InitStateMachine()
     {
         StateMachine = new StatesMachine<FlowGameManger>(this);
-        NavigationState = new NavigationState("NavigationState",StateMachine);
-        OnDialogue = new OnDialogue("OnDialogue", StateMachine);
-        StateMachine.RunStateMachine(NavigationState);
+        OnNavigationState = new OnNavigationState("OnNavigationState", StateMachine);
+        OnDialogueState = new OnDialogueState("OnDialogueState", StateMachine);
+        StateMachine.RunStateMachine(OnNavigationState);
     }
 }

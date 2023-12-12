@@ -12,25 +12,35 @@ public class UIMuseumGuide : MonoBehaviour
 
     private void OnEnable()
     {
-        ActionManager.OnDialogueStarts += ActivePanel;
-        ActionManager.OnDialogueEnds += DisactivePanel;
+        OnDialogueState.OnDialogueStarts += ActivePanel;
+        OnDialogueState.OnDialogueEnds += DisactivePanel;
+        OnDialogueState.OnWriteDialogue += SetDialogueTest;
     }
 
 
-    public void ActivePanel()
+    private void ActivePanel()
     {
         TextSelection.SetActive(true);
     }
 
-    public void DisactivePanel()
+    private void DisactivePanel()
     {
         TextSelection.SetActive(false);
     }
 
+
+    private void SetDialogueTest(string dialogueTest)
+    {
+        //Debug.Log(dialogueTest);
+        if (dialogueTest == "") DialogueText.text = dialogueTest;
+        else DialogueText.text += dialogueTest;
+    }
+
     private void OnDisable()
     {
-        ActionManager.OnDialogueStarts -= ActivePanel;
-        ActionManager.OnDialogueEnds -= DisactivePanel;
+        OnDialogueState.OnDialogueStarts -= ActivePanel;
+        OnDialogueState.OnDialogueEnds -= DisactivePanel;
+        OnDialogueState.OnWriteDialogue -= SetDialogueTest;
     }
 
 }

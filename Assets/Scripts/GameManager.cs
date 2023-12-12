@@ -4,9 +4,6 @@ using UnityEngine.UIElements;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    [HideInInspector]
-    public FlowGameManger flowGame;
-
 
     public PlayerInventory inventory;
     public GameObject ShowOperaUIContainer;
@@ -15,12 +12,6 @@ public class GameManager : PersistentSingleton<GameManager>
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-
-
-    private void OnEnable()
-    {
-        flowGame = GetComponentInChildren<FlowGameManger>();
-    }
 
 
 
