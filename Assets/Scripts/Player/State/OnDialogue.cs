@@ -2,29 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnDialogue : State<Enum.GameState>
+public class OnDialogue : StateBase<FlowGameManger>
 {
 
 
-    public OnDialogue(Enum.GameState playerState, StatesMachine<Enum.GameState> stateManager = null) : base(playerState, stateManager)
+    public OnDialogue(string stateID, StatesMachine<FlowGameManger> statesMachine) : base(stateID, statesMachine)
     {
-
 
     }
 
 
 
-    public override void OnEnter()
+    public override void OnEnter(FlowGameManger contex)
     {
-        base.OnEnter();
-        ActionManager.OnDialogueStarts?.Invoke(true);
+        base.OnEnter(contex);
+        ActionManager.OnDialogueStarts?.Invoke();
 
     }
 
-    public override void OnExit()
+    public override void OnExit(FlowGameManger contex)
     {
-        base.OnExit();
-        ActionManager.OnDialogueStarts?.Invoke(false);
+        base.OnExit(contex);
+        ActionManager.OnDialogueEnds?.Invoke();
     }
 
 

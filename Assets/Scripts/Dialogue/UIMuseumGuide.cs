@@ -13,19 +13,24 @@ public class UIMuseumGuide : MonoBehaviour
     private void OnEnable()
     {
         ActionManager.OnDialogueStarts += ActivePanel;
+        ActionManager.OnDialogueEnds += DisactivePanel;
     }
 
 
-    public void ActivePanel(bool isActive)
+    public void ActivePanel()
     {
-        TextSelection.SetActive(isActive);
+        TextSelection.SetActive(true);
     }
 
-
+    public void DisactivePanel()
+    {
+        TextSelection.SetActive(false);
+    }
 
     private void OnDisable()
     {
         ActionManager.OnDialogueStarts -= ActivePanel;
+        ActionManager.OnDialogueEnds -= DisactivePanel;
     }
 
 }

@@ -20,24 +20,14 @@ public class DialoguesHandler
 
 
 
-    public void PlayDialogue() //for debug
-    {
-        string dialogueName = DialoguesNames[0];
-        List<string> dialogue = DialoguesScriptLines[0];
-
-        DialoguesScriptLines.Remove(dialogue);
-        DialoguesNames.Remove(dialogueName);
-
-        Debug.Log("Playing: " + dialogueName);   
-
-        foreach(string scriptLine in dialogue)
-        {
-            Debug.Log(scriptLine);
-        }
-    }
-
     public List<string> GetDialogue(out string dialogueName)
     {
+        if (DialoguesScriptLines.Count == 0 || DialoguesNames.Count == 0)
+        {
+            dialogueName = null;
+            return null;
+        }
+
         dialogueName = DialoguesNames[0];
         List<string> dialogue = DialoguesScriptLines[0];
 

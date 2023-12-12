@@ -348,8 +348,17 @@ MonoBehaviour:
     m_speakersOrder:
     - MuseumGuide
     - MuseumGuide
+  - DialogueName: FirstDialogue
+    m_speakers:
+    - SpeakerName: MuseumGuide
+      Script:
+      - 2222
+      - 32343424
+    m_speakersOrder:
+    - MuseumGuide
+    - MuseumGuide
   UI: {fileID: 208139711}
-  TextSpeed: 25
+  TextSpeed: 30
 --- !u!65 &208139713
 BoxCollider:
   m_ObjectHideFlags: 0

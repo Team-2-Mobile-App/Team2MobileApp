@@ -4,38 +4,44 @@ using System.Collections.Generic;
 /// State manager to handle basic states
 /// </summary>
 /// <typeparam name="TStateIDType">The type of the state base ID</typeparam>
-public abstract class StatesMachine<TStateIDType> 
+public class StatesMachine<TContex> 
 {
-    public Dictionary<TStateIDType, State<TStateIDType>> AllStates;
-    public State<TStateIDType> CurrentState;
-    public State<TStateIDType> PreviousState;
+    public TContex Contex;
 
+    public StateBase<TContex> CurrentState;
+    public StateBase<TContex> PreviousState;
+    public List<StateBase<TContex>> StateList;
 
-    protected virtual void InitStatesManager()
+    public StatesMachine(TContex contex)
     {
-        if (AllStates == null) AllStates = new Dictionary<TStateIDType, State<TStateIDType>>();
-        InitStates();
+        Contex = contex;
     }
 
-    /// <summary>
-    /// Loads all the states in the dictionary 
-    /// </summary>
-    protected abstract void InitStates();
 
-    /// <summary>
-    /// Changes the current state to the passed state type (only if the current state is not already the passed state type)
-    /// </summary>
-    /// <param name="stateIDType"></param>
-    public void ChangeState(TStateIDType stateIDType)
+    public void RunStateMachine(StateBase<TContex> entryPoint)
     {
-        if (CurrentState == AllStates[stateIDType]) return;
+        CurrentState = entryPoint;
+        CurrentState.OnEnter(Contex);
+    }
+
+
+    public void AddState(StateBase<TContex> state)
+    {
+        StateList = (StateList == null) ? new List<StateBase<TContex>>() : StateList;
+        StateList.Add(state);
+    }
+
+
+    public void ChangeState(StateBase<TContex> state)
+    {
+        if (CurrentState == state) return;
 
         PreviousState = CurrentState;
-        CurrentState.OnExit();
-        CurrentState = AllStates[stateIDType];
-        CurrentState.OnEnter();
-    }
+        CurrentState.OnExit(Contex);
+        CurrentState = state;
+        CurrentState.OnEnter(Contex);
 
+    }
 }
 
 

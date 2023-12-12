@@ -10,15 +10,15 @@ public class CameraInputHandler : MonoBehaviour
     float _deltaY;
 
 
-
-
     public CameraData CameraData;
 
     void Update()
     {
         if (IsNotTouching()) return;
         if (!GameManager.Instance.isMovable) return;
-        if (GameManager.Instance.flowGame.StateManager.CurrentState.StateID != Enum.GameState.Navigation) return;
+
+        if (GameManager.Instance.flowGame.StateMachine.CurrentState.StateID != GameManager.Instance.flowGame.NavigationState.StateID) return;
+
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)
         {

@@ -9,7 +9,6 @@ public class MuseumGuide : MonoBehaviour
     public UIMuseumGuide UI;
     public float TextSpeed;
 
-
     protected DialoguesHandler m_dialoguesManager;
     protected bool m_runDialogue;
     protected int m_scriptLineIndex;
@@ -25,28 +24,27 @@ public class MuseumGuide : MonoBehaviour
         m_currentDialogue = new();
     }
 
+    private void OnEnable()
+    {
+        ActionManager.OnDialogueStarts += TurnOnMuseumGuide;
+    }
+
     private void Update()
     {
         HandlePrintProcess();
 
-        if (GameManager.Instance.flowGame.Debugger) TurnOnRadio();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        TurnOnRadio();
-        GameManager.Instance.flowGame.StateManager.ChangeState(Enum.GameState.Dialogue);
-    }
 
-    public void TurnOnRadio()
+    public void TurnOnMuseumGuide()
     {
-        
         m_currentDialogue = m_dialoguesManager.GetDialogue(out m_currentDialogueName);
-        m_scriptLineToPrint = m_currentDialogue[0]; 
+        m_scriptLineToPrint = m_currentDialogue[0];
         UI.DialogueText.text = "";
         m_scriptLineIndex = -1;
         m_time = 0;
         m_runDialogue = true;
+
     }
 
 
@@ -78,7 +76,9 @@ public class MuseumGuide : MonoBehaviour
 
     private void LoadNextScriptLine()
     {
-        if (m_scriptLineToPrint == null)
+        if (IsNotTouching()) return;
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began && m_scriptLineToPrint == null)
         {
             if (m_currentDialogue.Count > 1)
             {
@@ -89,7 +89,7 @@ public class MuseumGuide : MonoBehaviour
             else if (m_currentDialogue.Count == 1) 
             { 
                 m_runDialogue = false;
-                GameManager.Instance.flowGame.StateManager.ChangeState(Enum.GameState.Navigation);
+                GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.NavigationState);
             }
         }
     }
@@ -99,13 +99,23 @@ public class MuseumGuide : MonoBehaviour
     {
         if (m_runDialogue)
         {
-            CheckScriptLinePrintStatus();
-            PrintScriptLine();
             LoadNextScriptLine();
-
+            PrintScriptLine();
+            CheckScriptLinePrintStatus();
         }
     }
 
 
+    public bool IsNotTouching()
+    {
+        return (Input.touchCount <= 0);
 
+    }
+
+
+
+    private void OnDisable()
+    {
+        ActionManager.OnDialogueStarts -= TurnOnMuseumGuide;
+    }
 }

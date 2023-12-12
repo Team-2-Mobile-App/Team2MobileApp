@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class NavigationState : State<Enum.GameState>
+public class NavigationState : StateBase<FlowGameManger>
 {
 
     Camera _cameraTransform;
@@ -12,37 +12,36 @@ public class NavigationState : State<Enum.GameState>
     public CameraData cameraData;
     private Vector3 _cameraFollowVelocity = Vector3.zero;
     float _followSpeed = 0;
-    StateManager _stateManager;
 
 
-    public NavigationState(Enum.GameState playerState, StatesMachine<Enum.GameState> stateManager = null) : base(playerState, stateManager)
+
+    public NavigationState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base (stateID , statesMachine)
     {
-        _stateManager = (StateManager)stateManager;
+
     }
 
 
-    public override void OnEnter()
+    public override void OnEnter(FlowGameManger contex)
     {
-        base.OnEnter();
+        base.OnEnter(contex);
         _cameraTransform = Camera.main;
-        cameraData = _stateManager.CameraInput.CameraData;
-
+        cameraData = _cameraTransform.GetComponentInParent<CameraInputHandler>().CameraData;
         ActionManager.OnTouchStay += OnRotateCamera;
         ActionManager.OnTouchMove += OnRotateCamera;
     }
 
 
-    public override void OnFixedUpdate()
+    public override void OnFixedUpdate(FlowGameManger contex)
     {
-        base.OnFixedUpdate();
+        base.OnFixedUpdate(contex);
         FollowTarget();
         //Debug.Log(cameraData.CameraPitchSpeed);
     }
 
 
-    public override void OnExit()
+    public override void OnExit(FlowGameManger contex)
     {
-        base.OnExit();
+        base.OnExit(contex);
 
         ActionManager.OnTouchStay -= OnRotateCamera;
         ActionManager.OnTouchMove -= OnRotateCamera;

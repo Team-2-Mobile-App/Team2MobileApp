@@ -9,6 +9,7 @@ public static class ActionManager
 
     public static Action<float, float> OnTouchMove;
 
-    public static Action<bool> OnDialogueStarts;
+    public static Action OnDialogueStarts;
+    public static Action OnDialogueEnds;
 
 }

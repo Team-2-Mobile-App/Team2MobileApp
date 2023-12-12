@@ -4,49 +4,25 @@ using UnityEngine;
 
 public class FlowGameManger : MonoBehaviour
 {
-    public StateManager StateManager;
+    public StatesMachine<FlowGameManger> StateMachine;
 
-    CameraInputHandler CameraInput;
+    public NavigationState NavigationState;
+    public OnDialogue OnDialogue;
 
-    public bool Debugger;
+    public bool debugger;
 
     private void Awake()
     {
-        CameraInput = FindObjectOfType<CameraInputHandler>();
-        StateManager = new StateManager(CameraInput);
-    }
-
-    private void Start()
-    {
-        StateManager.CurrentState.OnEnter();
-    }
-
-
-    private void Update()
-    {
-        StateManager.CurrentState.OnUpdate();
-        if (Debugger)
-        {
-            StateManager.ChangeState(Enum.GameState.Dialogue);
-        }
-        else
-        {
-            StateManager.ChangeState(Enum.GameState.Navigation);
-        }
-        
+        InitStateMachine();
     }
 
 
 
-
-    private void FixedUpdate()
+    private void InitStateMachine()
     {
-        StateManager.CurrentState.OnFixedUpdate();
-    }
-
-
-    private void OnDisable()
-    {
-        StateManager.CurrentState.OnExit();
+        StateMachine = new StatesMachine<FlowGameManger>(this);
+        NavigationState = new NavigationState("NavigationState",StateMachine);
+        OnDialogue = new OnDialogue("OnDialogue", StateMachine);
+        StateMachine.RunStateMachine(NavigationState);
     }
 }
