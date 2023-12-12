@@ -100,7 +100,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700889656593382114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2ab6bef99b81e04cb7180b6e472a797, type: 3}
   m_Name: 
@@ -167,11 +167,11 @@ MonoBehaviour:
   CameraData:
     Target: {fileID: 0}
     CameraTransform: {fileID: 0}
-    CameraPitchSpeed: 0
-    CameraYawSpeed: 0
-    MinPitchAngle: 0
-    MaxPitchAngle: 0
-    PlayerCameraOffsetY: {x: 0, y: 0, z: 0}
+    CameraPitchSpeed: 30
+    CameraYawSpeed: 30
+    MinPitchAngle: -35
+    MaxPitchAngle: 25
+    PlayerCameraOffsetY: {x: 0, y: 1, z: 0}
 --- !u!114 &1134176599482644705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700889657047530656}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 011d5da8985f1d74286b3c7fa72345f1, type: 3}
   m_Name: 

@@ -8,7 +8,7 @@ public class UIMuseumGuide : MonoBehaviour
 
     [SerializeField] private GameObject TextSelection;
     public TextMeshProUGUI DialogueText;
-
+    
 
     private void OnEnable()
     {

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class FlowGameManger : MonoBehaviour
 {
-    private StatesMachine<FlowGameManger> StateMachine;
+    /// <summary>
+    /// Non mi piace serve a michele meglio privato
+    /// </summary>
+    public StatesMachine<FlowGameManger> StateMachine;
 
     private MuseumGuide _museumGuide;
     public MuseumGuide MuseumGuide { get => _museumGuide; }
 
 
+
+    #region States
     public OnNavigationState OnNavigationState;
     public OnDialogueState OnDialogueState;
+    public OnPauseState OnPauseState;
+    #endregion
 
+    public bool debugger;
     private void Awake()
     {
         InitStateMachine();
@@ -23,6 +31,11 @@ public class FlowGameManger : MonoBehaviour
 
     private void Update()
     {
+        if (debugger)
+        {
+            StateMachine.ChangeState(OnDialogueState);
+            debugger = false;
+        }
         StateMachine.CurrentState.OnUpdate(this);
     }
 
@@ -31,6 +44,7 @@ public class FlowGameManger : MonoBehaviour
         StateMachine = new StatesMachine<FlowGameManger>(this);
         OnNavigationState = new OnNavigationState("OnNavigationState", StateMachine);
         OnDialogueState = new OnDialogueState("OnDialogueState", StateMachine);
+        OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         StateMachine.RunStateMachine(OnNavigationState);
     }
 }

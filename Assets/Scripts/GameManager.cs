@@ -4,6 +4,12 @@ using UnityEngine.UIElements;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
+    /// <summary>
+    /// Non mi piace serve a michele
+    /// </summary>
+    [HideInInspector]
+    public FlowGameManger flowGame;
+
 
     public PlayerInventory inventory;
     public GameObject ShowOperaUIContainer;
@@ -12,12 +18,16 @@ public class GameManager : PersistentSingleton<GameManager>
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-
+    protected override void Awake()
+    {
+        base.Awake();
+        flowGame = GetComponentInChildren<FlowGameManger>();
+    }
 
 
     private void Start()
     {
-        
+
         isMovable = true; // Da cambiare in futuro con caricare la scena o sostituire con gli stati
         if (OperaContainer != null)
         {
@@ -28,5 +38,6 @@ public class GameManager : PersistentSingleton<GameManager>
             }
         }
     }
+
 
 }

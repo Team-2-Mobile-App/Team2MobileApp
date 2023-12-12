@@ -15,6 +15,10 @@ public class CameraInputHandler : MonoBehaviour
     public static event Action<float, float> OnTouchStay;
     public static  event Action<float, float> OnTouchMove;
 
+    private void Start()
+    {
+        CameraData.CameraTransform = Camera.main.transform;
+    }
 
     void Update()
     {
@@ -24,7 +28,9 @@ public class CameraInputHandler : MonoBehaviour
 
     private void CameraMove()
     {
+        
         if (IsNotTouching()) return;
+
         if (!GameManager.Instance.isMovable) return;
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)

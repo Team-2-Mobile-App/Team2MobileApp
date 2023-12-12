@@ -6,7 +6,7 @@ public class PersistentSingleton<T> : MonoBehaviour where T : Component
 {
     public static T Instance;
 
-    void Awake()
+    protected virtual void Awake()
     {
         if (Instance == null)
         {

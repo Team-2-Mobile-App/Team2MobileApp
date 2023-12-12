@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class OnNavigationState : StateBase<FlowGameManger>
 {
-
     Camera _cameraTransform;
     float _lookAngle;
     float _pivotAngle;
@@ -26,6 +25,7 @@ public class OnNavigationState : StateBase<FlowGameManger>
         base.OnEnter(contex);
         _cameraTransform = Camera.main;
         cameraData = _cameraTransform.GetComponentInParent<CameraInputHandler>().CameraData;
+
         CameraInputHandler.OnTouchStay += OnRotateCamera;
         CameraInputHandler.OnTouchMove += OnRotateCamera;
     }
@@ -45,8 +45,7 @@ public class OnNavigationState : StateBase<FlowGameManger>
 
         CameraInputHandler.OnTouchStay -= OnRotateCamera;
         CameraInputHandler.OnTouchMove -= OnRotateCamera;
-
-        
+ 
     }
 
 

@@ -20,7 +20,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
 
     public OnDialogueState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base(stateID, statesMachine)
     {
-
+        
     }
 
 
@@ -29,7 +29,13 @@ public class OnDialogueState : StateBase<FlowGameManger>
     {
         base.OnEnter(contex);
         OnDialogueStarts?.Invoke();
-        TurnOnMuseumGuide(contex);
+
+        ////se tutorial attivo 
+        //TurnOnMuseumGuide(contex);
+
+        //if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
+        //GameManager.Instance.operaSelected.operaData.SetUpDialogue();
+        //    TurnOnOperaDialogue(GameManager.Instance.operaSelected);
 
     }
 
@@ -58,7 +64,16 @@ public class OnDialogueState : StateBase<FlowGameManger>
 
     }
 
-
+    public void TurnOnOperaDialogue(OperaData data)
+    {
+        m_currentDialogue = data.operaData.m_dialoguesManager.GetDialogue(out m_currentDialogueName);
+        Debug.Log(m_currentDialogue);
+        m_scriptLineToPrint = m_currentDialogue[0];
+        OnWriteDialogue?.Invoke("");
+        m_scriptLineIndex = -1;
+        m_time = 0;
+        m_runDialogue = true;
+    }
 
     private void CheckScriptLinePrintStatus()
     {
@@ -122,4 +137,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
         return (Input.touchCount <= 0);
 
     }
+
+
+
 }

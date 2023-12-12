@@ -8,14 +8,20 @@ using UnityEngine.UI;
 public class UIMissingObject : MonoBehaviour, IPointerClickHandler
 {
 
-    [SerializeField] private Image _operaSprite;
+    private Image _operaSprite;
 
     private OperaData _data;
+
+    private void Awake()
+    {
+        _operaSprite = GetComponentInChildren<Image>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.Instance.inventory.ObjectSelected = _data;
     }
+
 
     public void Setup(OperaData data)
     {
