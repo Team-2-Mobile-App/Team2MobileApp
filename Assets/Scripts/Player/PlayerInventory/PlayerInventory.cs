@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<OperaData> MissingObjectList;
-    public OperaData ObjectSelected;
-    [SerializeField] private UIInventoryMissingObject uiInventory;
+    [HideInInspector] public List<OperaData> MissingObjectList;
+    [HideInInspector] public OperaData ObjectSelected;
+    private UIInventoryMissingObject uiInventory;
 
+    private void Awake()
+    {
+        uiInventory = GetComponentInChildren<UIInventoryMissingObject>();
+    }
 
     private void Start()
     {

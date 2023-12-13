@@ -12,7 +12,8 @@ public class FlowGameManger : MonoBehaviour
     private MuseumGuide _museumGuide;
     public MuseumGuide MuseumGuide { get => _museumGuide; }
 
-
+    private UIManager _uIManager;
+    public UIManager UIManager { get => _uIManager; }
 
     #region States
     public OnNavigationState OnNavigationState;

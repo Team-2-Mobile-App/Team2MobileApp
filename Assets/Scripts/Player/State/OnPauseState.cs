@@ -6,7 +6,7 @@ using UnityEngine;
 public class OnPauseState : StateBase<FlowGameManger>
 {
 
-    
+    UIInventoryMissingObject uIInventory;
 
     public OnPauseState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base(stateID, statesMachine)
     {
@@ -16,9 +16,20 @@ public class OnPauseState : StateBase<FlowGameManger>
     public override void OnEnter(FlowGameManger contex)
     {
         base.OnEnter(contex);
+        SetUp(contex);
+        uIInventory.Close();
 
     }
 
+
+
+
+
+    private void SetUp(FlowGameManger contex)
+    {
+        uIInventory = Camera.main.GetComponentInParent<UIInventoryMissingObject>();
+
+    }
 
 
 }

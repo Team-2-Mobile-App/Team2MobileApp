@@ -6,9 +6,8 @@ using TMPro;
 public class UIMuseumGuide : MonoBehaviour
 {
 
-    [SerializeField] private GameObject TextSelection;
-    public TextMeshProUGUI DialogueText;
-    
+    [SerializeField] private GameObject _textSelection;
+    [SerializeField] private TextMeshProUGUI _dialogueText;
 
     private void OnEnable()
     {
@@ -20,20 +19,20 @@ public class UIMuseumGuide : MonoBehaviour
 
     private void ActivePanel()
     {
-        TextSelection.SetActive(true);
+        _textSelection.SetActive(true);
     }
 
     private void DisactivePanel()
     {
-        TextSelection.SetActive(false);
+        _textSelection.SetActive(false);
     }
 
 
     private void SetDialogueTest(string dialogueTest)
     {
         //Debug.Log(dialogueTest);
-        if (dialogueTest == "") DialogueText.text = dialogueTest;
-        else DialogueText.text += dialogueTest;
+        if (dialogueTest == "") _dialogueText.text = dialogueTest;
+        else _dialogueText.text += dialogueTest;
     }
 
     private void OnDisable()
