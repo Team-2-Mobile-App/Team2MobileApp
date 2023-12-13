@@ -55,7 +55,7 @@ public class OperaInteractable : MonoBehaviour
     {
         operaData.CloseOpera();
         //if (GameManager.Instance.operaSelected.isComplete) // SE L'OPERA è COMPLEATATA 
-        //GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
+        GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
         //GameManager.Instance.isMovable = true;
         //GameManager.Instance.ShowOperaUIContainer.SetActive(false);
         //Destroy(this.gameObject);

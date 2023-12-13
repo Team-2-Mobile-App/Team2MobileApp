@@ -16,10 +16,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject PanelPause;
 
-    private void Awake()
-    {
-        operaDataList = GameManager.Instance.operaList;
-    }
+   
 
     public void EnablePoseMenu(bool isActivate)
     {
@@ -50,7 +47,8 @@ public class UIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-    private List<OperaData> operaDataList;
+
+    private List<OperaData> operaDataList => GameManager.Instance.operaList;
 
     public void FillContainer()
     {

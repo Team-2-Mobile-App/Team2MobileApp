@@ -668,7 +668,7 @@ Transform:
   m_GameObject: {fileID: 1409562860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.409, y: 1.4829693, z: 0.20664024}
+  m_LocalPosition: {x: -5.328, y: 1.4829693, z: 0.20664024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 1726432669}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1978873, y: 1.4829693, z: 5.487}
+  m_LocalPosition: {x: -1.1978873, y: 1.4829693, z: 5.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,7 +1365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1106175679692983600, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65.44745
+      value: -65.447266
       objectReference: {fileID: 0}
     - target: {fileID: 1368241360427941374, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_Pivot.x
@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2812425984427638788, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65.44745
+      value: -65.447266
       objectReference: {fileID: 0}
     - target: {fileID: 3497817676644453331, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_IsActive
@@ -1509,7 +1509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5507118980583050025, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65.44745
+      value: -65.447266
       objectReference: {fileID: 0}
     - target: {fileID: 5640544207353887109, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1541,7 +1541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6091857961632738390, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65.44745
+      value: -65.447266
       objectReference: {fileID: 0}
     - target: {fileID: 7338174641334278808, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_IsActive

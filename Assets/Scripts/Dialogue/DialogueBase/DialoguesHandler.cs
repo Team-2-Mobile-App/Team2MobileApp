@@ -22,12 +22,6 @@ public class DialoguesHandler
 
     public List<string> GetDialogue(out string dialogueName)
     {
-        if (DialoguesScriptLines.Count == 0 || DialoguesNames.Count == 0)
-        {
-            dialogueName = null;
-            return null;
-        }
-
         dialogueName = DialoguesNames[0];
         List<string> dialogue = DialoguesScriptLines[0];
 

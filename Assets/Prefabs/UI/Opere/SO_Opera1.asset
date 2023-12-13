@@ -17,4 +17,15 @@ MonoBehaviour:
   Description2: fdg dfg sdfg dsg sg f
   OperaSpriteGrey: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   OperaSpriteScanned: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  dialogues: []
+  dialogues:
+  - DialogueName: ciao
+    m_speakers:
+    - SpeakerName: lollo
+      Script:
+      - cfdsfdsfd
+      - fdsfdsdsf
+      - aerwreerw
+    m_speakersOrder:
+    - lollo
+    - lollo
+    - lollo
