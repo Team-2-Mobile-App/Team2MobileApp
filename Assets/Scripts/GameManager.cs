@@ -2,8 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
+    /// <summary>
+    /// Non mi piace serve a michele
+    /// </summary>
+    [HideInInspector]
+    public FlowGameManger flowGame;
+
+
     public PlayerInventory inventory;
     public GameObject ShowOperaUIContainer;
     public bool isMovable;
@@ -11,25 +18,16 @@ public class GameManager : MonoBehaviour
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
 
-    public static GameManager Instance;
-
-    protected virtual void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            if (!TryGetComponent<GameManager>(out Instance))
-            {
-                Instance = gameObject.AddComponent<GameManager>();
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake();
+        flowGame = GetComponentInChildren<FlowGameManger>();
     }
+
 
     private void Start()
     {
+
         isMovable = true; // Da cambiare in futuro con caricare la scena o sostituire con gli stati
         if (OperaContainer != null)
         {
@@ -40,5 +38,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 
 }

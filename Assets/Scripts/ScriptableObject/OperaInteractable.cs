@@ -13,6 +13,8 @@ public class OperaInteractable : MonoBehaviour
 
     public OperaData operaData => GameManager.Instance.operaSelected;
 
+    
+
     private void Start()
     {
         Refresh();
@@ -48,9 +50,12 @@ public class OperaInteractable : MonoBehaviour
         else return;
     }
 
+
     public void ExitButton()
     {
         operaData.CloseOpera();
+        //if (GameManager.Instance.operaSelected.isComplete) // SE L'OPERA è COMPLEATATA 
+        //GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
         //GameManager.Instance.isMovable = true;
         //GameManager.Instance.ShowOperaUIContainer.SetActive(false);
         //Destroy(this.gameObject);
