@@ -7,13 +7,18 @@ public class UIManager : MonoBehaviour
 {
     public Button PauseButton;
 
+    public Button Gallery;
+    public Button Game;
+    public Button Map;
+    public Button Account;
+
     public GameObject PanelPause;
 
+  
 
-
-    public void EnablePoseMenu()
+    public void EnablePoseMenu(bool isActivate)
     {
-        PanelPause.SetActive(true);
+        PanelPause.SetActive(isActivate);
     }
 
 }

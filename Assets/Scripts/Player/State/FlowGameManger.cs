@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlowGameManger : MonoBehaviour
@@ -12,8 +10,8 @@ public class FlowGameManger : MonoBehaviour
     private MuseumGuide _museumGuide;
     public MuseumGuide MuseumGuide { get => _museumGuide; }
 
-    private UIManager _uIManager;
-    public UIManager UIManager { get => _uIManager; }
+   [HideInInspector] public UIManager UIManager;
+   
 
     #region States
     public OnNavigationState OnNavigationState;
@@ -26,7 +24,13 @@ public class FlowGameManger : MonoBehaviour
     {
         InitStateMachine();
         _museumGuide = FindObjectOfType<MuseumGuide>();
-        
+        UIManager = FindObjectOfType<UIManager>();
+    }
+
+    private void OnEnable()
+    {
+        UIManager.PauseButton.onClick.AddListener(PauseState);
+        UIManager.Game.onClick.AddListener(BackToGame);
     }
 
 
@@ -48,4 +52,10 @@ public class FlowGameManger : MonoBehaviour
         OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         StateMachine.RunStateMachine(OnNavigationState);
     }
+
+
+    public void PauseState() => StateMachine.ChangeState(OnPauseState);
+    public void BackToGame() => StateMachine.ChangeState(OnNavigationState);
+
+
 }

@@ -1,45 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ImageController : MonoBehaviour
 {
-    private Vector2 touchStartPos;
-    private Vector2 touchDelta;
-    [SerializeField] private float _zoomSpeed;
+    float _deltaX;
+    float _deltaY;
+    [SerializeField] private float _mapMuveVelocity;
+    private RectTransform _imageInitialTransform;
+    private Vector3 _initialPosition;
+
+
+
+    private void Start()
+    {
+        _imageInitialTransform = GetComponent<RectTransform>();
+        _initialPosition = _imageInitialTransform.anchoredPosition3D;
+        _imageInitialTransform.localPosition = transform.localPosition;
+
+    }
+
 
     void Update()
     {
-        if (Input.touchCount == 1)
+        MapControll();
+
+    }
+
+    private void MapControll()
+    {
+        if (IsNotTouching()) return;
+
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Moved)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                touchStartPos = touch.position;
-            }
-            else if (touch.phase == TouchPhase.Moved)
-            {
-                touchDelta = touch.position - touchStartPos;
-                transform.Translate(-touchDelta * Time.deltaTime);
-            }
-        }
-
-        else if (Input.touchCount == 2)
-        {
-            Touch touch1 = Input.GetTouch(0);
-            Touch touch2 = Input.GetTouch(1);
-
-            Vector2 prevPos1 = touch1.position - touch1.deltaPosition;
-            Vector2 prevPos2 = touch2.position - touch2.deltaPosition;
-
-            float prevTouchDeltaMag = (prevPos1 - prevPos2).magnitude;
-            float touchDeltaMag = (touch1.position - touch2.position).magnitude;
-
-            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
-            
-            transform.localScale += new Vector3(1, 1, 0) * deltaMagnitudeDiff * _zoomSpeed;
+            _deltaX = touch.deltaPosition.x;
+            _deltaY = touch.deltaPosition.y;
+            Vector2 delta = new Vector2(_deltaX, _deltaY);
+            transform.Translate(delta * Time.deltaTime * _mapMuveVelocity);
         }
     }
+
+    public bool IsNotTouching()
+    {
+        return (Input.touchCount <= 0);
+
+
+    }
+
+    private void OnDisable()
+    {
+        _imageInitialTransform.anchoredPosition3D = _initialPosition;
+
+    }
+
+
+
+    
 }

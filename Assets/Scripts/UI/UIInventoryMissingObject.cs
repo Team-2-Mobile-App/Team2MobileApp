@@ -9,7 +9,6 @@ public class UIInventoryMissingObject : MonoBehaviour
     [SerializeField] private Transform itemsSection;
 
 
-   
     public void Open(List<OperaData> data)
     {
         gameObject.SetActive(true);
@@ -37,8 +36,6 @@ public class UIInventoryMissingObject : MonoBehaviour
     {
         ClearListPokemon();
         DeleteAllChildren();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         gameObject.SetActive(false);
     }
 
