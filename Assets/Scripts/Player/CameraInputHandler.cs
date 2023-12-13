@@ -9,15 +9,28 @@ public class CameraInputHandler : MonoBehaviour
     float _deltaX;
     float _deltaY;
 
-    public static Action<float, float> OnTouchStay; 
 
-    public static Action<float,float> OnTouchMove;
+    public CameraData CameraData;
 
+    public static event Action<float, float> OnTouchStay;
+    public static  event Action<float, float> OnTouchMove;
 
+    private void Start()
+    {
+        CameraData.CameraTransform = Camera.main.transform;
+    }
 
     void Update()
     {
+        CameraMove();
+    }
+
+
+    private void CameraMove()
+    {
+        
         if (IsNotTouching()) return;
+
         if (!GameManager.Instance.isMovable) return;
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Began)
@@ -29,7 +42,7 @@ public class CameraInputHandler : MonoBehaviour
             _deltaX = 0;
             _deltaY = 0;
 
-            OnTouchStay?.Invoke(_deltaX,_deltaY);
+            OnTouchStay?.Invoke(_deltaX, _deltaY);
         }
         else if (touch.phase == TouchPhase.Moved)
         {
@@ -44,12 +57,34 @@ public class CameraInputHandler : MonoBehaviour
             _initTouch = new Touch();
 
         }
-
     }
 
+
+    
     public bool IsNotTouching()
     {
         return (Input.touchCount <= 0);
 
+
     }
 }
+
+
+[System.Serializable]
+public struct CameraData
+{
+    public Transform Target;
+    public Transform CameraTransform;
+    [Range(0, 100)]
+    public float CameraPitchSpeed;
+    [Range(0, 100)]
+    public float CameraYawSpeed;
+    [Range(-360, 360)]
+    public float MinPitchAngle;
+    [Range(-360, 360)]
+    public float MaxPitchAngle;
+    public Vector3 PlayerCameraOffsetY;
+}
+
+
+

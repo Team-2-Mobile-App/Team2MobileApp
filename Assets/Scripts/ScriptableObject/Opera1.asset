@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ed2f5e90ad764685474f89b7abcaf, type: 3}
   m_Name: Opera1
   m_EditorClassIdentifier: 
-  MissingObject: {fileID: 614339504931121878, guid: 6b3926f9e0e57404b979f50c3f2235f0, type: 3}
   OperaName: Lollo
-  Description: fdfsdds
+  Description1: 
   Description2: fdsfds
   Description3: gfdgfd
   OperaSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  isSpotted: 0
+  dialogues:
+  - DialogueName: 
+    m_speakers: []
+    m_speakersOrder: []

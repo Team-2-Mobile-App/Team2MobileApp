@@ -6,8 +6,7 @@ public class PersistentSingleton<T> : MonoBehaviour where T : Component
 {
     public static T Instance;
 
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void Awake()
     {
         if (Instance == null)
         {
@@ -22,4 +21,6 @@ public class PersistentSingleton<T> : MonoBehaviour where T : Component
         }
         DontDestroyOnLoad(Instance);
     }
+   
+   
 }

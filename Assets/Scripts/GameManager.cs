@@ -4,6 +4,9 @@ using UnityEngine.UIElements;
 
 public class GameManager : Singleton<GameManager>
 {
+    /// <summary>
+    /// Non mi piace serve a michele
+    /// </summary>
     [HideInInspector]
     public FlowGameManger flowGame;
 
@@ -24,6 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+
         isMovable = true; // Da cambiare in futuro con caricare la scena o sostituire con gli stati
         if (OperaContainer != null)
         {
@@ -34,5 +38,6 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
+
 
 }
