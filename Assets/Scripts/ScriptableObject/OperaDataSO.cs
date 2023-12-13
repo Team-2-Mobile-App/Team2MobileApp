@@ -8,7 +8,6 @@ public class OperaDataSO : ScriptableObject
     //public OperaData MissingObject = null;
     public string OperaName;
     public string Description1;
-    public string Description2;
-    public string Description3;
-    public Sprite OperaSprite;
+    public string Description2; //eliminare Description3
+    public Sprite OperaSpriteGrey, OperaSpriteScanned;
 }
