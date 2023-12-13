@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d102036029d5346be9a1a4bf64b27a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextSelection: {fileID: 6458478234326244929}
-  DialogueText: {fileID: 8072935715972767552}
+  _textSelection: {fileID: 6458478234326244929}
+  _dialogueText: {fileID: 8072935715972767552}
 --- !u!1 &6458478234326244929
 GameObject:
   m_ObjectHideFlags: 0
