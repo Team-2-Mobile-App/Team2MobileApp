@@ -30,12 +30,14 @@ public class OnDialogueState : StateBase<FlowGameManger>
         base.OnEnter(contex);
         OnDialogueStarts?.Invoke();
 
-        ////se tutorial attivo 
-        //TurnOnMuseumGuide(contex);
 
-        //if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
-        //GameManager.Instance.operaSelected.operaData.SetUpDialogue();
-        //    TurnOnOperaDialogue(GameManager.Instance.operaSelected);
+        if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
+        {
+            GameManager.Instance.operaSelected.operaData.SetUpDialogue();
+            TurnOnOperaDialogue(GameManager.Instance.operaSelected);
+        }
+        
+
 
     }
 

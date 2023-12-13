@@ -4,33 +4,27 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public List<OperaData> MissingObjectList;
-    public OperaData ObjectSelected;
-    [SerializeField] private UIInventoryMissingObject uiInventory;
+    [HideInInspector] public List<OperaData> MissingObjectList;
+    [HideInInspector] public OperaData ObjectSelected;
+    [HideInInspector] public UIInventoryMissingObject UIInventory;
 
 
-    private void Start()
+    private void Awake()
     {
-        uiInventory.Open(MissingObjectList);
+        UIInventory = FindObjectOfType<UIInventoryMissingObject>();
     }
+
 
     public void Pickup(OperaData data)
     {
         MissingObjectList.Add(data);
-        uiInventory.PopulateItemsSection(MissingObjectList);
+        UIInventory.PopulateItemsSection(MissingObjectList);
     }
-
-    //public void Drop(OperaData data)
-    //{
-    //    var go = Instantiate(MissingObject[0].MissingObject, transform.position + transform.forward * 2 + transform.up, Quaternion.identity);
-    //    RemoveFromInventory(data);
-    //    //items.TrimExcess();
-    //}
 
     public void RemoveFromInventory(OperaData data)
     {
         MissingObjectList.Remove(data);
-        uiInventory.PopulateItemsSection(MissingObjectList);
+        UIInventory.PopulateItemsSection(MissingObjectList);
     }
 
 

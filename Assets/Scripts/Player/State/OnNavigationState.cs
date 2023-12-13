@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,8 @@ public class OnNavigationState : StateBase<FlowGameManger>
     public CameraData cameraData;
     private Vector3 _cameraFollowVelocity = Vector3.zero;
     float _followSpeed = 0;
-
-
+    PlayerInventory inventory;
+    
 
     public OnNavigationState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base (stateID , statesMachine)
     {
@@ -23,8 +24,9 @@ public class OnNavigationState : StateBase<FlowGameManger>
     public override void OnEnter(FlowGameManger contex)
     {
         base.OnEnter(contex);
-        _cameraTransform = Camera.main;
-        cameraData = _cameraTransform.GetComponentInParent<CameraInputHandler>().CameraData;
+        SetUp();
+
+        inventory.UIInventory.Open(inventory.MissingObjectList);
 
         CameraInputHandler.OnTouchStay += OnRotateCamera;
         CameraInputHandler.OnTouchMove += OnRotateCamera;
@@ -49,6 +51,12 @@ public class OnNavigationState : StateBase<FlowGameManger>
     }
 
 
+    private void SetUp()
+    {
+        _cameraTransform = Camera.main;
+        cameraData = _cameraTransform.GetComponentInParent<CameraInputHandler>().CameraData;
+        inventory = _cameraTransform.GetComponentInParent<PlayerInventory>();
+    }
 
     private void FollowTarget()
     {
