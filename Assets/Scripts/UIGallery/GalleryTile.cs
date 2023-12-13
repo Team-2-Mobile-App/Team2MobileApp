@@ -32,7 +32,7 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
 
     private void SetOperaView()
     {
-        _uiManager.title.text = operaData.name;
+        _uiManager.title.text = operaData.operaData.OperaName;
         _uiManager.image.sprite = SetOperaImage();
         _uiManager.description.text = OperaDescription();
     }

@@ -11,7 +11,7 @@ public class OperaData : MonoBehaviour
     public bool isAdditionalTaken;
     public OperaDataSO operaData;
     public OperaInteractable operaInteractable;
-    public bool isSpotted, isComplete,IsCompletedAtStart, isScanned;
+    public bool isComplete,IsCompletedAtStart, isScanned;
 
 
 
