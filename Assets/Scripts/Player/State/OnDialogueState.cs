@@ -28,8 +28,8 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public override void OnEnter(FlowGameManger contex)
     {
         base.OnEnter(contex);
+        GameManager.Instance.isMovable = false;
         OnDialogueStarts?.Invoke();
-
 
         if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
         {
@@ -51,6 +51,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public override void OnExit(FlowGameManger contex)
     {
         base.OnExit(contex);
+        GameManager.Instance.isMovable = true;
         OnDialogueEnds?.Invoke();
     }
 
