@@ -8,10 +8,12 @@ public class PlayerInventory : MonoBehaviour
     [HideInInspector] public OperaData ObjectSelected;
     [HideInInspector] public UIInventoryMissingObject UIInventory;
 
+
     private void Awake()
     {
         UIInventory = FindObjectOfType<UIInventoryMissingObject>();
     }
+
 
     public void Pickup(OperaData data)
     {

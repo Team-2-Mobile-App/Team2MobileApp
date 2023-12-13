@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ed2f5e90ad764685474f89b7abcaf, type: 3}
   m_Name: SO_Opera1
   m_EditorClassIdentifier: 
-  OperaName: 1
-  Description1: a
-  Description2: b
+  OperaName: trg fds
+  Description1: fgdgretyg hg
+  Description2: fdg dfg sdfg dsg sg f
   OperaSpriteGrey: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   OperaSpriteScanned: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  dialogues: []

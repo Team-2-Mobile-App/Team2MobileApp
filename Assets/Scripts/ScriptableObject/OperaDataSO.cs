@@ -9,8 +9,8 @@ public class OperaDataSO : ScriptableObject
     public string OperaName;
     public string Description1;
     public string Description2;
-    public string Description3;
-    public Sprite OperaSprite;
+    public Sprite OperaSpriteGrey;
+    public Sprite OperaSpriteScanned;
 
     public List<Dialogue> dialogues;
 

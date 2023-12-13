@@ -17,6 +17,7 @@ public class OnPauseState : StateBase<FlowGameManger>
     public override void OnEnter(FlowGameManger contex)
     {
         base.OnEnter(contex);
+        GameManager.Instance.isMovable = false;
         SetUp();
         contex.UIManager.EnablePoseMenu(true);
         contex.UIManager.PauseButton.gameObject.SetActive(false);
@@ -28,12 +29,9 @@ public class OnPauseState : StateBase<FlowGameManger>
     public override void OnExit(FlowGameManger contex)
     {
         base.OnExit(contex);
+        contex.UIManager.MapImage.gameObject.SetActive(false);
+        GameManager.Instance.isMovable = true;
 
-
-        // da sistemare con il codice di michele
-        contex.UIManager.EnablePoseMenu(false);
-        contex.UIManager.PauseButton.gameObject.SetActive(true);
-        
     }
 
 

@@ -7,21 +7,22 @@ using UnityEngine.UI;
 
 public class GalleryTile : MonoBehaviour, IPointerClickHandler
 {
+
     public Image operaImage;
     public Image operaLock;
 
-    private GalleryContainer galleryContainer;
+    private UIManager _uiManager;
 
     OperaData operaData;
 
-    //private void OnEnable()
-    //{
-    //    operaImage.sprite = SetOperaImage();
-    //}
+    private void OnEnable()
+    {
+        _uiManager = FindFirstObjectByType<UIManager>();
+    }
 
     private void Start()
     {
-        galleryContainer = GetComponentInParent<GalleryContainer>();
+        
         operaImage.sprite = SetOperaImage();
     }
     public void FillData(OperaData opera)
@@ -31,9 +32,9 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
 
     private void SetOperaView()
     {
-        galleryContainer.title.text = operaData.name;
-        galleryContainer.image.sprite = SetOperaImage();
-        galleryContainer.description.text = OperaDescription();
+        _uiManager.title.text = operaData.name;
+        _uiManager.image.sprite = SetOperaImage();
+        _uiManager.description.text = OperaDescription();
     }
 
     private string OperaDescription()
@@ -41,7 +42,7 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
         if (operaData.isScanned)
             return (operaData.operaData.Description1 + " " + operaData.operaData.Description2);
         else 
-            return (operaData.operaData.Description1 + " " + galleryContainer.missDescription);
+            return (operaData.operaData.Description1 + " " + _uiManager.missDescription);
     }
 
     private Sprite SetOperaImage()
@@ -65,13 +66,13 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
 
     private void ScanButtonRefresh()
     {
-        if (operaData.isScanned) galleryContainer.ScanButton.gameObject.SetActive(false);
-        else galleryContainer.ScanButton.gameObject.SetActive(true);
+        if (operaData.isScanned) _uiManager.ScanButton.gameObject.SetActive(false);
+        else _uiManager.ScanButton.gameObject.SetActive(true);
     }
 
     private void OpenOperaView()
     {
-        galleryContainer.OpenOperaView();
+        _uiManager.OpenOperaView();
         SetOperaView();
         ScanButtonRefresh();
     }
