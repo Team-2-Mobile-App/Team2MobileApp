@@ -25,8 +25,8 @@ public class DialoguesHandler
         dialogueName = DialoguesNames[0];
         List<string> dialogue = DialoguesScriptLines[0];
 
-        DialoguesScriptLines.Remove(dialogue);
-        DialoguesNames.Remove(dialogueName);
+//        DialoguesScriptLines.Remove(dialogue);
+//        DialoguesNames.Remove(dialogueName);
 
         return dialogue;
     }
