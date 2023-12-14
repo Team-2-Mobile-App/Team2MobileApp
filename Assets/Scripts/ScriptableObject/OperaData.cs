@@ -8,9 +8,9 @@ public class OperaData : MonoBehaviour
 {
     public int OperaNumber;
     public GameObject PrefabUIOpera;
-    public bool isAdditionalTaken;
     public OperaDataSO operaData;
     public OperaInteractable operaInteractable;
+    public bool isAdditionalTaken;
     public bool isComplete,IsCompletedAtStart, isScanned;
 
 
@@ -33,5 +33,19 @@ public class OperaData : MonoBehaviour
         GameManager.Instance.ShowOperaUIContainer.SetActive(false);
         GameManager.Instance.isMovable = true;
         Destroy(InstantiateObject);
+    }
+
+    public void SaveOperaData()
+    {
+        PlayerPrefs.SetInt("isComplete", isComplete ? 1 : 0);
+        PlayerPrefs.SetInt("IsCompletedAtStart", IsCompletedAtStart ? 1 : 0);
+        PlayerPrefs.SetInt("isScanned", isScanned ? 1 : 0);
+    }
+
+    public void LoadOperaData()
+    {
+        isComplete = PlayerPrefs.GetInt("isComplete", 0) == 1;
+        IsCompletedAtStart = PlayerPrefs.GetInt("IsCompletedAtStart", 0) == 1;
+        isScanned = PlayerPrefs.GetInt("isScanned", 0) == 1;
     }
 }

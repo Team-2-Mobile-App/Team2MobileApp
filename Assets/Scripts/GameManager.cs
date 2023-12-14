@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
             OperaData[] OperaChildren = OperaContainer.GetComponentsInChildren<OperaData>();
             foreach (var item in OperaChildren)
             {
+                item.LoadOperaData();
                 operaList.Add(item);
             }
         }

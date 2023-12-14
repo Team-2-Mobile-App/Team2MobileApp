@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
 
 
 
-    public GameObject GalleryConteiner;
 
     [Header("Opera View")]
     public TextMeshProUGUI title;
@@ -35,9 +34,13 @@ public class UIManager : MonoBehaviour
     public string missDescription;
     public Button closeButton;
     public Button ScanButton;
+
+    [Header("ShowGallery")]
+    public GameObject GalleryConteiner;
     public GameObject GalleryTile;
     public GameObject GalleryPanel;
 
+    private List<OperaData> operaDataList => GameManager.Instance.operaList;
    
 
     public void CloseGalleryPanel()
@@ -47,8 +50,6 @@ public class UIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
-    private List<OperaData> operaDataList => GameManager.Instance.operaList;
 
     public void FillContainer()
     {
@@ -69,7 +70,6 @@ public class UIManager : MonoBehaviour
 
     public void CloseOperaView()
     {
-        GalleryOperaView.SetActive(false);
-        
+        GalleryOperaView.SetActive(false);        
     }
 }

@@ -26,6 +26,7 @@ public class OperaInteractable : MonoBehaviour
         else Additional.gameObject.SetActive(false);
         if (!operaData.isComplete) Missing.gameObject.SetActive(true);
         else Missing.gameObject.SetActive(false);
+        operaData.SaveOperaData();
     }
 
     public void AdditionalButton()
@@ -54,8 +55,14 @@ public class OperaInteractable : MonoBehaviour
     public void ExitButton()
     {
         operaData.CloseOpera();
-        //if (GameManager.Instance.operaSelected.isComplete) // SE L'OPERA è COMPLEATATA 
-        GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
+        if (GameManager.Instance.operaSelected.isComplete && !GameManager.Instance.operaSelected.IsCompletedAtStart)
+        {
+            GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
+            GameManager.Instance.operaSelected.IsCompletedAtStart = true;
+            operaData.SaveOperaData();
+        }
+
+
         //GameManager.Instance.isMovable = true;
         //GameManager.Instance.ShowOperaUIContainer.SetActive(false);
         //Destroy(this.gameObject);
