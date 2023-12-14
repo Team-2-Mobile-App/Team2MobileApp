@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
     [HideInInspector] public List<OperaData> MissingObjectList;
     [HideInInspector] public OperaData ObjectSelected;
     [HideInInspector] public UIInventoryMissingObject UIInventory;
+    
 
 
     private void Awake()
@@ -16,14 +17,22 @@ public class PlayerInventory : MonoBehaviour
 
     public void DeleteDublicateObject()
     {
-        foreach (var item in MissingObjectList)
+        List<OperaData> DuplicateObjects = new List<OperaData>();
+
+        foreach (var MissingObject in MissingObjectList)
         {
-            if(item.isComplete) 
-                foreach (var item1 in MissingObjectList)
+            if (MissingObject.isComplete)
+            {
+                foreach (var item in MissingObjectList)
                 {
-                    OperaInteractable operaInteractable = item1.PrefabUIOpera.GetComponent<OperaInteractable>();
-                    if (operaInteractable.AdditionalRealOperaNumber == item.OperaNumber) RemoveFromInventory(item1);
+                    OperaInteractable operaInteractable = item.PrefabUIOpera.GetComponent<OperaInteractable>();
+                    if (operaInteractable != null && operaInteractable.AdditionalRealOperaNumber == MissingObject.OperaNumber) DuplicateObjects.Add(item);
                 }
+            }
+        }
+        foreach (var duplicate in DuplicateObjects)
+        {
+            RemoveFromInventory(duplicate);
         }
     }
 

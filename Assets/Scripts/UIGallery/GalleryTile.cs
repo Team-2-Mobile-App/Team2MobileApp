@@ -79,6 +79,7 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OpenOperaView();
+        if (operaData.isComplete)
+            OpenOperaView();
     }
 }

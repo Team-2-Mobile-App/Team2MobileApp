@@ -39,9 +39,8 @@ public class GameManager : Singleton<GameManager>
                 if (item.isAdditionalTaken) inventory.Pickup(item);
                 operaList.Add(item);
             }
-            inventory.DeleteDublicateObject();
         }
+        if (inventory.MissingObjectList.Count > 0)
+            inventory.DeleteDublicateObject();
     }
-
-
 }
