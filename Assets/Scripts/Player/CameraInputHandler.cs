@@ -73,6 +73,7 @@ public class CameraInputHandler : MonoBehaviour
 [System.Serializable]
 public struct CameraData
 {
+    public Transform Target;
     public Transform CameraTransform;
     [Range(0, 100)]
     public float CameraPitchSpeed;
