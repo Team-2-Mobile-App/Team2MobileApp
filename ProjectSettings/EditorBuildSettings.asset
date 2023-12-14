@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Greybox.unity
-    guid: b3928c0d714fba140a2495a61ddfe0c0
+    path: Assets/Scenes/Lorenzo/Interactable 1.unity
+    guid: 52e43784f6eefb844be26861537140b2
   m_configObjects: {}
