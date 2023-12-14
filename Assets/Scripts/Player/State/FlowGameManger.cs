@@ -23,9 +23,9 @@ public class FlowGameManger : MonoBehaviour
 
     private void Awake()
     {
-        InitStateMachine();
         _museumGuide = FindObjectOfType<MuseumGuide>();
         UIManager = FindObjectOfType<UIManager>();
+        InitStateMachine();
     }
 
     private void OnEnable()
