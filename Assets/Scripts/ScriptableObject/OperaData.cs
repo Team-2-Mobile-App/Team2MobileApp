@@ -37,15 +37,17 @@ public class OperaData : MonoBehaviour
 
     public void SaveOperaData()
     {
-        PlayerPrefs.SetInt("isComplete", isComplete ? 1 : 0);
-        PlayerPrefs.SetInt("IsCompletedAtStart", IsCompletedAtStart ? 1 : 0);
-        PlayerPrefs.SetInt("isScanned", isScanned ? 1 : 0);
+        PlayerPrefs.SetInt("isComplete" + OperaNumber, isComplete ? 1 : 0);
+        PlayerPrefs.SetInt("IsCompletedAtStart" + OperaNumber, IsCompletedAtStart ? 1 : 0);
+        PlayerPrefs.SetInt("isScanned" + OperaNumber, isScanned ? 1 : 0);
+        PlayerPrefs.SetInt("isAdditionalTaken" + OperaNumber, isAdditionalTaken ? 1 : 0);
     }
 
     public void LoadOperaData()
     {
-        isComplete = PlayerPrefs.GetInt("isComplete", 0) == 1;
-        IsCompletedAtStart = PlayerPrefs.GetInt("IsCompletedAtStart", 0) == 1;
-        isScanned = PlayerPrefs.GetInt("isScanned", 0) == 1;
+        isComplete = PlayerPrefs.GetInt("isComplete" + OperaNumber, 0) == 1;
+        IsCompletedAtStart = PlayerPrefs.GetInt("IsCompletedAtStart" + OperaNumber, 0) == 1;
+        isScanned = PlayerPrefs.GetInt("isScanned" + OperaNumber, 0) == 1;
+        isAdditionalTaken = PlayerPrefs.GetInt("isAdditionalTaken" + OperaNumber, 0) == 1;
     }
 }

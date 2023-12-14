@@ -14,6 +14,19 @@ public class PlayerInventory : MonoBehaviour
         UIInventory = FindObjectOfType<UIInventoryMissingObject>();
     }
 
+    public void DeleteDublicateObject()
+    {
+        foreach (var item in MissingObjectList)
+        {
+            if(item.isComplete) 
+                foreach (var item1 in MissingObjectList)
+                {
+                    OperaInteractable operaInteractable = item1.PrefabUIOpera.GetComponent<OperaInteractable>();
+                    if (operaInteractable.AdditionalRealOperaNumber == item.OperaNumber) RemoveFromInventory(item1);
+                }
+        }
+    }
+
 
     public void Pickup(OperaData data)
     {

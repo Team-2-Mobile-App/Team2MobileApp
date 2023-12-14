@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         flowGame = GetComponentInChildren<FlowGameManger>();
+        //PlayerPrefs.DeleteAll();
     }
 
 
@@ -35,8 +36,10 @@ public class GameManager : Singleton<GameManager>
             foreach (var item in OperaChildren)
             {
                 item.LoadOperaData();
+                if (item.isAdditionalTaken) inventory.Pickup(item);
                 operaList.Add(item);
             }
+            inventory.DeleteDublicateObject();
         }
     }
 
