@@ -70,6 +70,6 @@ public class UIManager : MonoBehaviour
 
     public void CloseOperaView()
     {
-        GalleryOperaView.SetActive(false);        
+        GalleryOperaView.SetActive(false);
     }
 }

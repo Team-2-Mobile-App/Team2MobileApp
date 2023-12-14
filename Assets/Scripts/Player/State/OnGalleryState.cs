@@ -31,6 +31,7 @@ public class OnGalleryState : StateBase<FlowGameManger>
         GameManager.Instance.isMovable = true;
         contex.UIManager.CloseGalleryPanel();
         contex.UIManager.GalleryPanel.gameObject.SetActive(false);
+        contex.UIManager.CloseOperaView();
     }
  
    

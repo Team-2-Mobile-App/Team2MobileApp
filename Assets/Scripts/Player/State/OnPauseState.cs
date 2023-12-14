@@ -31,6 +31,7 @@ public class OnPauseState : StateBase<FlowGameManger>
         base.OnExit(contex);
         contex.UIManager.MapImage.gameObject.SetActive(false);
         GameManager.Instance.isMovable = true;
+        contex.UIManager.CloseOperaView();
 
     }
 
