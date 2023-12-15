@@ -6,15 +6,14 @@ using UnityEngine;
 public class OnDialogueState : StateBase<FlowGameManger>
 {
 
-    protected List<string> m_currentDialogue;
-    protected bool m_runDialogue;
-    protected int m_scriptLineIndex;
-    protected float m_time;
-    protected string m_scriptLineToPrint;
-    protected string m_currentDialogueName;
+    private List<string> m_currentDialogue;
+    private bool m_runDialogue;
+    private int m_scriptLineIndex;
+    private float m_time;
+    private string m_scriptLineToPrint;
+    private int index;
     
 
-    public static event Action<string> OnWriteDialogue;
     public static event Action OnDialogueStarts;
     public static event Action OnDialogueEnds;
 
@@ -33,8 +32,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
 
         if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
         {
-            GameManager.Instance.operaSelected.operaData.SetUpDialogue();
-            TurnOnOperaDialogue(GameManager.Instance.operaSelected);
+            TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
         }
         
 
@@ -45,7 +43,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public override void OnUpdate(FlowGameManger contex)
     {
         base.OnUpdate(contex);
-        HandlePrintProcess(contex);
+        HandlePrintProcess(contex, GameManager.Instance.operaSelected);
     }
 
     public override void OnExit(FlowGameManger contex)
@@ -56,88 +54,82 @@ public class OnDialogueState : StateBase<FlowGameManger>
     }
 
 
-    public void TurnOnMuseumGuide(FlowGameManger contex)
+    public void TurnOnMuseumGuideDialogue(FlowGameManger contex)
     {
-        m_currentDialogue = contex.MuseumGuide.m_dialoguesManager.GetDialogue(out m_currentDialogueName);
-        m_scriptLineToPrint = m_currentDialogue[0];
-        OnWriteDialogue?.Invoke("");
-        m_scriptLineIndex = -1;
-        m_time = 0;
+        m_currentDialogue = contex.MuseumGuide.dialogues;
+        Debug.Log(m_currentDialogue.Count);
+        contex.MuseumGuide.UIMuseum._dialogueText.text = "";
         m_runDialogue = true;
-
+        index = 0;
+        m_time = 0;
+        m_scriptLineIndex = 0;
     }
 
-    public void TurnOnOperaDialogue(OperaData data)
+
+    public void TurnOnOperaDialogue(OperaData data,FlowGameManger contex)
     {
-        m_currentDialogue = data.operaData.m_dialoguesManager.GetDialogue(out m_currentDialogueName);
-        Debug.Log(m_currentDialogue);
-        m_scriptLineToPrint = m_currentDialogue[0];
-        OnWriteDialogue?.Invoke("");
-        m_scriptLineIndex = -1;
-        m_time = 0;
+        m_currentDialogue = data.operaData.dialogues;
+        Debug.Log(m_currentDialogue.Count);
+        contex.MuseumGuide.UIMuseum._dialogueText.text = "";
         m_runDialogue = true;
+        index = 0;
+        m_time = 0;
+        m_scriptLineIndex = 0;
     }
 
-    private void CheckScriptLinePrintStatus()
+
+    private void CheckScriptLinePrintStatus(FlowGameManger contex, OperaData data)
     {
-        if (m_scriptLineToPrint != null && m_scriptLineIndex == m_scriptLineToPrint.Length - 1)
+        string message = data.operaData.DialogueName + " : " + m_currentDialogue[index];
+
+        if (m_scriptLineIndex == message.Length)
         {
-            m_scriptLineIndex = -1;
-            m_time = 0f;
-            m_scriptLineToPrint = null;
+            if (IsNotTouching()) return;
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (index == m_currentDialogue.Count - 1) contex.StateMachine.ChangeState(contex.OnNavigationState);
+                else
+                {
+                    contex.MuseumGuide.UIMuseum._dialogueText.text = "";
+                    m_scriptLineIndex = 0;
+                    index++;
+                }
+            }
         }
+        
     }
 
-
-    private void PrintScriptLine(FlowGameManger contex)
+    
+    
+    private void PrintScriptLine(FlowGameManger contex, OperaData data)
     {
-        if (m_scriptLineToPrint == null) return;
-        int time = (int)m_time;
+        string message = data.operaData.DialogueName + " : " + m_currentDialogue[index];
+        int time =  (int) m_time;
         m_time += Time.deltaTime * contex.MuseumGuide.TextSpeed;
-
+        if (m_scriptLineIndex == message.Length) return;
         if (time < (int)m_time)
         {
-            m_scriptLineIndex++;
-            OnWriteDialogue?.Invoke(m_currentDialogue[0][m_scriptLineIndex].ToString());
+            contex.MuseumGuide.UIMuseum._dialogueText.text += message[m_scriptLineIndex];
+            m_scriptLineIndex ++;
         }
+
     }
 
 
-    private void LoadNextScriptLine(FlowGameManger contex)
-    {
-        if (IsNotTouching()) return;
-        Touch touch = Input.GetTouch(0);
-        if (touch.phase == TouchPhase.Began && m_scriptLineToPrint == null)
-        {
-            if (m_currentDialogue.Count > 1)
-            {
-                m_currentDialogue.Remove(m_currentDialogue[0]);
-                m_scriptLineToPrint = m_currentDialogue[0];
-                OnWriteDialogue?.Invoke("");
-            }
-            else if (m_currentDialogue.Count == 1)
-            {
-                m_runDialogue = false;
-                _stateMachine.ChangeState(contex.OnNavigationState);
-            }
-        }
-    }
-
-
-    private void HandlePrintProcess(FlowGameManger contex)
+    private void HandlePrintProcess(FlowGameManger contex,OperaData opera)
     {
         if (m_runDialogue)
         {
-            LoadNextScriptLine(contex);
-            PrintScriptLine(contex);
-            CheckScriptLinePrintStatus();
+            CheckScriptLinePrintStatus(contex, opera);
+            PrintScriptLine(contex, opera);
         }
     }
-
 
     public bool IsNotTouching()
     {
         return (Input.touchCount <= 0);
+
 
     }
 

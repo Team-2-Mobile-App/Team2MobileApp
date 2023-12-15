@@ -12,10 +12,7 @@ public class OperaDataSO : ScriptableObject
     public Sprite OperaSpriteGrey;
     public Sprite OperaSpriteScanned;
 
-    public List<Dialogue> dialogues;
 
-    [HideInInspector]
-    public DialoguesHandler m_dialoguesManager;
-
-    public void SetUpDialogue() => m_dialoguesManager = new DialoguesHandler(dialogues);
+    public string DialogueName;
+    public List<string> dialogues;
 }
