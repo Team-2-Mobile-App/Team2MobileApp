@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="Sacra_conversazione" size="0.250000 0.187259" />
+    <ImageTarget name="Sposalizio_della_vergine" size="0.250000 0.372439" />
+    <ImageTarget name="Lamento_sul_cristo_morto" size="0.250000 0.220403" />
+    <ImageTarget name="Il_bacio" size="0.250000 0.311436" />
+    <ImageTarget name="Cristo_alla_colonna" size="0.250000 0.379297" />
+    <ImageTarget name="Cena_di_Emmaus" size="0.250000 0.200312" />
+  </Tracking>
+</QCARConfig>
