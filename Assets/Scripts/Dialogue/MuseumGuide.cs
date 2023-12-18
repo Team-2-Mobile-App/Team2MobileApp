@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class MuseumGuide : MonoBehaviour
 {
-    public List<Dialogue> Dialogues;
     public float TextSpeed;
 
-    [HideInInspector]
-    public DialoguesHandler m_dialoguesManager;
+    public string DialogueName;
+    public List<string> dialogues;
 
-
+    [HideInInspector] public UIMuseumGuide UIMuseum;
 
     private void Awake()
     {
-        m_dialoguesManager = new DialoguesHandler(Dialogues);
+        UIMuseum = GetComponent<UIMuseumGuide>();
     }
 
 

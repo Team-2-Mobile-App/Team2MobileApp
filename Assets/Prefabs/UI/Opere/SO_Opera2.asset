@@ -17,15 +17,8 @@ MonoBehaviour:
   Description2: fdsfdsaf asetf ggfds agfa
   OperaSpriteGrey: {fileID: 0}
   OperaSpriteScanned: {fileID: 0}
+  DialogueName: Lollo
   dialogues:
-  - DialogueName: PORCO
-    m_speakers:
-    - SpeakerName: lollo
-      Script:
-      - ciao
-      - ciaoooooooo
-      - fnosdfgnosfdna
-    m_speakersOrder:
-    - lollo
-    - lollo
-    - lollo
+  - ciao questa
+  - "\xE8 st\xF2 cazzo"
+  - dio

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class ImageController : MonoBehaviour
 {
-    float _deltaX;
-    float _deltaY;
+    Vector3 _delta;
     [SerializeField] private float _mapMuveVelocity;
     private RectTransform _imageInitialTransform;
     private Vector3 _initialPosition;
@@ -28,6 +27,7 @@ public class ImageController : MonoBehaviour
 
     }
 
+
     private void MapControll()
     {
         if (IsNotTouching()) return;
@@ -35,10 +35,9 @@ public class ImageController : MonoBehaviour
         Touch touch = Input.GetTouch(0);
         if (touch.phase == TouchPhase.Moved)
         {
-            _deltaX = touch.deltaPosition.x;
-            _deltaY = touch.deltaPosition.y;
-            Vector2 delta = new Vector2(_deltaX, _deltaY);
-            transform.Translate(delta * Time.deltaTime * _mapMuveVelocity);
+            _delta = touch.deltaPosition;
+
+            transform.Translate(_delta * Time.deltaTime * _mapMuveVelocity);
         }
     }
 

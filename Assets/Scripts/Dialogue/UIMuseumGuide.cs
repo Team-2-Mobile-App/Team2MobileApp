@@ -7,13 +7,13 @@ public class UIMuseumGuide : MonoBehaviour
 {
 
     [SerializeField] private GameObject _textSelection;
-    [SerializeField] private TextMeshProUGUI _dialogueText;
+    public TextMeshProUGUI _dialogueText;
 
     private void OnEnable()
     {
         OnDialogueState.OnDialogueStarts += ActivePanel;
         OnDialogueState.OnDialogueEnds += DisactivePanel;
-        OnDialogueState.OnWriteDialogue += SetDialogueTest;
+
     }
 
 
@@ -28,18 +28,12 @@ public class UIMuseumGuide : MonoBehaviour
     }
 
 
-    private void SetDialogueTest(string dialogueTest)
-    {
-        //Debug.Log(dialogueTest);
-        if (dialogueTest == "") _dialogueText.text = dialogueTest;
-        else _dialogueText.text += dialogueTest;
-    }
 
     private void OnDisable()
     {
         OnDialogueState.OnDialogueStarts -= ActivePanel;
         OnDialogueState.OnDialogueEnds -= DisactivePanel;
-        OnDialogueState.OnWriteDialogue -= SetDialogueTest;
+
     }
 
 }
