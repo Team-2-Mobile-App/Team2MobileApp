@@ -10,7 +10,6 @@ public class OnDialogueState : StateBase<FlowGameManger>
     private bool m_runDialogue;
     private int m_scriptLineIndex;
     private float m_time;
-    private string m_scriptLineToPrint;
     private int index;
     
 
@@ -34,8 +33,8 @@ public class OnDialogueState : StateBase<FlowGameManger>
         {
             TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
         }
-        
 
+        //if is museum guide TurnOnMuseumGuideDialogue();
 
     }
 

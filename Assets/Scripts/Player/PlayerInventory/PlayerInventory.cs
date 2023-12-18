@@ -6,14 +6,10 @@ public class PlayerInventory : MonoBehaviour
 {
     [HideInInspector] public List<OperaData> MissingObjectList;
     [HideInInspector] public OperaData ObjectSelected;
-    [HideInInspector] public UIInventoryMissingObject UIInventory;
+    public UIInventoryMissingObject UIInventory;
     
 
 
-    private void Awake()
-    {
-        UIInventory = FindObjectOfType<UIInventoryMissingObject>();
-    }
 
     public void DeleteDublicateObject()
     {
