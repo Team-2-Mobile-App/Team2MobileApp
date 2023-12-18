@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public Canvas UICanavas;
+
+
     public Button PauseButton;
 
     public Image MapImage;
@@ -15,15 +19,6 @@ public class UIManager : MonoBehaviour
     public Button Account;
 
     public GameObject PanelPause;
-
-   
-
-    public void EnablePoseMenu(bool isActivate)
-    {
-        PanelPause.SetActive(isActivate);
-        MapImage.gameObject.SetActive(true);
-    }
-
 
 
 
@@ -41,7 +36,18 @@ public class UIManager : MonoBehaviour
     public GameObject GalleryPanel;
 
     private List<OperaData> operaDataList => GameManager.Instance.operaList;
-   
+
+    private void OnEnable()
+    {
+        OnScanState.OnScan += OnScanEnabled;
+    }
+
+    public void EnablePoseMenu(bool isActivate)
+    {
+        PanelPause.SetActive(isActivate);
+        MapImage.gameObject.SetActive(true);
+    }
+
 
     public void CloseGalleryPanel()
     {
@@ -71,5 +77,13 @@ public class UIManager : MonoBehaviour
     public void CloseOperaView()
     {
         GalleryOperaView.SetActive(false);
+    }
+
+    private void OnScanEnabled(bool isActive) => UICanavas.gameObject.SetActive(isActive);
+
+
+    private void OnDisable()
+    {
+        OnScanState.OnScan -= OnScanEnabled;
     }
 }

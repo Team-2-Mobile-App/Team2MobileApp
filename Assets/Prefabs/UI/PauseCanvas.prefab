@@ -779,7 +779,6 @@ GameObject:
   - component: {fileID: 9190745179852721650}
   - component: {fileID: 1660340788209912372}
   - component: {fileID: 8681660913888889018}
-  - component: {fileID: 5013624511618250887}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -871,35 +870,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5013624511618250887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283309365021664268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b4417764f6f1f409c909e1ef95cc99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseButton: {fileID: 3556385562291193440}
-  MapImage: {fileID: 5498775280559669919}
-  Gallery: {fileID: 912766549861546208}
-  Game: {fileID: 6584250337810768044}
-  Map: {fileID: 8464647111647980559}
-  Account: {fileID: 8770971448895036828}
-  PanelPause: {fileID: 7338174641334278808}
-  GalleryConteiner: {fileID: 7040608339068261010}
-  title: {fileID: 4330235002975271305}
-  image: {fileID: 3365585390765528189}
-  description: {fileID: 2156620133961611964}
-  missDescription: 
-  closeButton: {fileID: 7837453333330100211}
-  ScanButton: {fileID: 8705192617189070617}
-  GalleryTile: {fileID: 835335956310818043, guid: 91ccd59ede59a714fa45d7134a3e6e94, type: 3}
-  GalleryPanel: {fileID: 4064687371005535877}
-  GalleryOperaView: {fileID: 8840725104453778066}
 --- !u!1 &2595775851692395190
 GameObject:
   m_ObjectHideFlags: 0

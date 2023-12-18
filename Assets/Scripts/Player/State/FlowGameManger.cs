@@ -18,6 +18,7 @@ public class FlowGameManger : MonoBehaviour
     public OnDialogueState OnDialogueState;
     public OnPauseState OnPauseState;
     public OnGalleryState OnGalleryState;
+    public OnScanState OnScanState;
     #endregion
 
 
@@ -31,9 +32,10 @@ public class FlowGameManger : MonoBehaviour
     private void OnEnable()
     {
         UIManager.PauseButton.onClick.AddListener(PauseState);
-        UIManager.Game.onClick.AddListener(BackToGame);
+        UIManager.Game.onClick.AddListener(OnNavigation);
         UIManager.Gallery.onClick.AddListener(GoToGallery);
         UIManager.Map.onClick.AddListener(GoToMap);
+        UIManager.ScanButton.onClick.AddListener(OnScan);
         UIManager.closeButton.onClick.AddListener(UIManager.CloseOperaView);
     }
 
@@ -50,19 +52,22 @@ public class FlowGameManger : MonoBehaviour
         OnDialogueState = new OnDialogueState("OnDialogueState", StateMachine);
         OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         OnGalleryState = new OnGalleryState("OnGalleryState", StateMachine);
+        OnScanState = new OnScanState("OnScanState", StateMachine);
         StateMachine.RunStateMachine(OnNavigationState);
     }
 
 
     public void PauseState() => StateMachine.ChangeState(OnPauseState);
-    public void BackToGame()
+    public void GoToGallery() => StateMachine.ChangeState(OnGalleryState);
+    public void GoToMap() => StateMachine.ChangeState(OnPauseState);
+    public void OnScan() => StateMachine.ChangeState(OnScanState);
+
+    public void OnNavigation()
     {
         UIManager.PauseButton.gameObject.SetActive(true);
         UIManager.PanelPause.gameObject.SetActive(false);
         StateMachine.ChangeState(OnNavigationState);
     }
-    public void GoToGallery() => StateMachine.ChangeState(OnGalleryState);
-    public void GoToMap() => StateMachine.ChangeState(OnPauseState);
 
 
 }
