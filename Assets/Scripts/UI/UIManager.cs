@@ -40,6 +40,10 @@ public class UIManager : MonoBehaviour
     public GameObject GalleryTile;
     public GameObject GalleryPanel;
 
+    [Header("Account")]
+    public UIAccountPage accountPage;
+    public UILoginPage loginPage;
+
     private List<OperaData> operaDataList => GameManager.Instance.operaList;
    
 
@@ -71,5 +75,15 @@ public class UIManager : MonoBehaviour
     public void CloseOperaView()
     {
         GalleryOperaView.SetActive(false);
+    }
+
+    public void openAndroidKeyboard()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        Invoke("hideInputField", 0.1f);
+    }
+    private void hideInputField()
+    {
+        TouchScreenKeyboard.hideInput = true;
     }
 }

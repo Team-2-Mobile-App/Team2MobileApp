@@ -18,6 +18,8 @@ public class FlowGameManger : MonoBehaviour
     public OnDialogueState OnDialogueState;
     public OnPauseState OnPauseState;
     public OnGalleryState OnGalleryState;
+    public OnAccountState OnAccountState;
+    public OnLoginState OnLoginState;
     #endregion
 
 
@@ -50,6 +52,8 @@ public class FlowGameManger : MonoBehaviour
         OnDialogueState = new OnDialogueState("OnDialogueState", StateMachine);
         OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         OnGalleryState = new OnGalleryState("OnGalleryState", StateMachine);
+        OnAccountState = new OnAccountState("OnAccountState", StateMachine);
+        OnLoginState = new OnLoginState("OnLoginState", StateMachine);
         StateMachine.RunStateMachine(OnNavigationState);
     }
 

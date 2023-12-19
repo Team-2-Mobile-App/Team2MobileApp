@@ -1,3 +1,4 @@
+using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,12 +18,34 @@ public class GameManager : Singleton<GameManager>
     public GameObject OperaContainer;
     public List<OperaData> operaList = new List<OperaData>();
     public OperaData operaSelected;
+    public bool isLoginActive;
+    public bool isTutorialComplete;
+    //[HideInInspector]
+    string username = "loampo";
+    string lastAccount => PlayerPrefs.GetString("lastAccount");
+
+    public void SavelastAccountUsername(string username)
+    {
+        PlayerPrefs.SetString("lastAccount", username);
+    }
+
+    public void DeletelastAccountUsername()
+    {
+        PlayerPrefs.DeleteKey("lastAccount");
+    }
 
     protected override void Awake()
     {
         base.Awake();
         flowGame = GetComponentInChildren<FlowGameManger>();
         //PlayerPrefs.DeleteAll();
+        SavelastAccountUsername("Test");
+        //DeletelastAccountUsername();
+        //Da spostare nello state di account, al tasto logout togliere lastaccount e gestire apertura gioco da lastaccount
+        if (PlayerPrefs.HasKey("lastAccount")) Debug.Log("account");
+        else Debug.Log("no account");
+        if (PlayerPrefs.HasKey(username + "tutorial") && PlayerPrefs.GetInt(username + "tutorial") == 1) isTutorialComplete = true;
+        else isTutorialComplete=false;
     }
 
 
