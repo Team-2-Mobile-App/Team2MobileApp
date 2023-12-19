@@ -74,6 +74,7 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
         _uiManager.OpenOperaView();
         SetOperaView();
         ScanButtonRefresh();
+        GameManager.Instance.operaViewOpened = operaData;
     }
 
     public void OnPointerClick(PointerEventData eventData)

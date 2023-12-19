@@ -15,14 +15,14 @@ public class PlayerInventory : MonoBehaviour
     {
         List<OperaData> DuplicateObjects = new List<OperaData>();
 
-        foreach (var MissingObject in MissingObjectList)
+        foreach (var operaList in GameManager.Instance.operaList)
         {
-            if (MissingObject.isComplete)
+            if (operaList.isComplete)
             {
                 foreach (var item in MissingObjectList)
                 {
                     OperaInteractable operaInteractable = item.PrefabUIOpera.GetComponent<OperaInteractable>();
-                    if (operaInteractable != null && operaInteractable.AdditionalRealOperaNumber == MissingObject.OperaNumber) DuplicateObjects.Add(item);
+                    if (operaInteractable != null && operaList.OperaNumber == operaInteractable.AdditionalRealOperaNumber) DuplicateObjects.Add(item);
                 }
             }
         }

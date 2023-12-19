@@ -20,7 +20,7 @@ public class UILoginPage : MonoBehaviour
 
     public void CreateAccountButton()
     {
-        ChangePlaceHolderText("Create Username...", "Create Password...");
+        ChangePlaceHolderText("Create Username", "Create Password");
         loginCanvas.SetActive(false);
         accountCreationgCanvas.SetActive(true);
         DebugTextPrompt("");
