@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 6217023958296187137}
   - component: {fileID: 6661988284510139230}
   - component: {fileID: 3302516896473869740}
+  - component: {fileID: 3819564579308165047}
   m_Layer: 5
   m_Name: UI_Opera1
   m_TagString: Untagged
@@ -435,6 +436,27 @@ MonoBehaviour:
   Missing: {fileID: 6651236513865042122}
   Exit: {fileID: 6011321523330175770}
   AdditionalRealOperaNumber: 2
+--- !u!95 &3819564579308165047
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661134112284803088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59be873c0198596469537550b10e76c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8685295835970026636
 GameObject:
   m_ObjectHideFlags: 0
