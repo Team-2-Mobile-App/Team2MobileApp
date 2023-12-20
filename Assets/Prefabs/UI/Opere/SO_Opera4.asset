@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d6ed2f5e90ad764685474f89b7abcaf, type: 3}
-  m_Name: SO_Opera2
+  m_Name: SO_Opera4
   m_EditorClassIdentifier: 
   OperaName: A
   Description1: ciaogdios odskfnkldsnf gfdsilbfdskjg
   Description2: fdsfdsaf asetf ggfds agfa
   OperaSpriteGrey: {fileID: 0}
-  OperaSpriteScanned: {fileID: 21300000, guid: fc26bd60944387b46948b085d2ce9e01, type: 3}
+  OperaSpriteScanned: {fileID: 21300000, guid: bfcedaa4469403948a21b706bccf924b, type: 3}
   DialogueName: Lollo
   dialogues:
   - ciao questa

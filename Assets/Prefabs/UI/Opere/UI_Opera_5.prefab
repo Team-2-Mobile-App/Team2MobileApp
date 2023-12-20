@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 1800}
+  m_SizeDelta: {x: 900, y: 1350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1830333841646208727
 CanvasRenderer:
@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.25097898, b: 0.25097898, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 604d073e7c2f80a44b8fee5d0b96a8a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 7532752316416981704}
   - component: {fileID: 6651236513865042122}
   m_Layer: 5
-  m_Name: Additional
+  m_Name: Missing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -329,7 +329,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3302516896473869740}
         m_TargetAssemblyTypeName: OperaInteractable, Assembly-CSharp
-        m_MethodName: AdditionalButton
+        m_MethodName: MissButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,9 +351,9 @@ GameObject:
   - component: {fileID: 6217023958296187137}
   - component: {fileID: 6661988284510139230}
   - component: {fileID: 3302516896473869740}
-  - component: {fileID: 819224512000239926}
+  - component: {fileID: 3819564579308165047}
   m_Layer: 5
-  m_Name: UI_Opera1 1
+  m_Name: UI_Opera_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,11 +432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d5e1ea4ddc4e247a2be56a16daa574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Additional: {fileID: 6651236513865042122}
-  Missing: {fileID: 158728939354988739}
+  Additional: {fileID: 158728939354988739}
+  Missing: {fileID: 6651236513865042122}
   Exit: {fileID: 6011321523330175770}
-  AdditionalRealOperaNumber: 1
---- !u!95 &819224512000239926
+  AdditionalRealOperaNumber: 6
+--- !u!95 &3819564579308165047
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 922282494127927475}
   - component: {fileID: 158728939354988739}
   m_Layer: 5
-  m_Name: Missing
+  m_Name: Additional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.42745098, g: 0.2509804, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -579,7 +579,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3302516896473869740}
         m_TargetAssemblyTypeName: OperaInteractable, Assembly-CSharp
-        m_MethodName: MissButton
+        m_MethodName: AdditionalButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

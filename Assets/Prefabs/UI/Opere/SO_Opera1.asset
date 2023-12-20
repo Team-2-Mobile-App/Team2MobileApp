@@ -16,12 +16,7 @@ MonoBehaviour:
   Description1: This is the Description after completing
   Description2: This is the Description after scanning
   OperaSpriteGrey: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  OperaSpriteScanned: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  OperaSpriteScanned: {fileID: 21300000, guid: 0388fc6d32e155a429cf825ce141475d, type: 3}
+  DialogueName: 
   dialogues:
-  - DialogueName: Opera One Dialogue
-    m_speakers:
-    - SpeakerName: Guide
-      Script:
-      - Dialogue Opera One
-    m_speakersOrder:
-    - Guide
+  - 
