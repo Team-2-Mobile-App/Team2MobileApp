@@ -24,7 +24,7 @@ public class OnDialogueMuseumGuide : StateBase<FlowGameManger>
         base.OnEnter(contex);
         OnDialogueOperaState.OnDialogueStarts?.Invoke();
         TurnOnMuseumGuideDialogue(contex);
-
+        
     }
 
 
@@ -38,6 +38,7 @@ public class OnDialogueMuseumGuide : StateBase<FlowGameManger>
     {
         base.OnExit(contex);
         OnDialogueOperaState.OnDialogueEnds?.Invoke();
+        GameManager.Instance.TutorialComplete();
     }
 
     public void TurnOnMuseumGuideDialogue(FlowGameManger contex)

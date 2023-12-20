@@ -82,7 +82,7 @@ public class CameraInteraction : MonoBehaviour
 
                     if (hitLayer == GetIntLayer(portalLayer) && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility && Timer <= touchTimeDelay)
                     {
-                        CheckPortal.MoveToNewPosition(_cameraManager.CameraData.CameraTransform);
+                        CheckPortal.MoveToNewPosition(/*_cameraManager.CameraData.CameraTransform*/transform);
                     }
                     if (hitLayer == GetIntLayer(operaLayer) && Vector3.Distance(_touchStartPosition, _touchEndPosition) <= touchSensibility && Timer <= touchTimeDelay)
                     {

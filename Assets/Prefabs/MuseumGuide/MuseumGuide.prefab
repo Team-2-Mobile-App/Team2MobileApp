@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4186316201316670869}
   - component: {fileID: 3670246636103243923}
   - component: {fileID: 6363789518241633598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuseumGuide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 33216192726956126}
   - component: {fileID: 6434036473177943787}
   - component: {fileID: 7450154949932406222}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: TextSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 7500009221838904592}
   - component: {fileID: 8023607644749704050}
   - component: {fileID: 1813106543252363491}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 2640710144987231773}
   - component: {fileID: 2353042599454682660}
   - component: {fileID: 8072935715972767552}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 7082132547495787985}
   - component: {fileID: 6731853438951952457}
   - component: {fileID: 614177487812481695}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MuseumGuideSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

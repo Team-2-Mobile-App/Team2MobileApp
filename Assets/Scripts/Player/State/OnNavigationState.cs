@@ -25,7 +25,7 @@ public class OnNavigationState : StateBase<FlowGameManger>
         SetUp();
         inventory.UIInventory.Open(inventory.MissingObjectList);
         contex.UIManager.PauseButton.enabled = true;
-
+        DoorAnimation.OnOpenDoor?.Invoke(true);
         CameraInputHandler.OnTouchStay += OnRotateCamera;
         CameraInputHandler.OnTouchMove += OnRotateCamera;
     }

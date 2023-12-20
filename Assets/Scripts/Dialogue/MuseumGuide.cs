@@ -19,12 +19,10 @@ public class MuseumGuide : MonoBehaviour
     }
 
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out PlayerInventory PlayerInventory))
+        if (other.gameObject.TryGetComponent(out PlayerInventory PlayerInventory) && !GameManager.Instance.isTutorialComplete)
         {
-            Debug.Log("collido");
             GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueMuseumGuide);
         }
     }

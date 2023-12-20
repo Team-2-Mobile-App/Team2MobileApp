@@ -13,7 +13,7 @@ public class OnAccountState : StateBase<FlowGameManger>
     {
         base.OnEnter(contex);
         GameManager.Instance.isMovable = false;
-        contex.UIManager.accountPage.gameObject.SetActive(true);
+        contex.UIManager.accountPage.gameObject.SetActive(true); 
     }
 
     public override void OnExit(FlowGameManger contex)
