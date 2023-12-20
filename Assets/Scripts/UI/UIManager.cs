@@ -76,14 +76,4 @@ public class UIManager : MonoBehaviour
     {
         GalleryOperaView.SetActive(false);
     }
-
-    public void openAndroidKeyboard()
-    {
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-        Invoke("hideInputField", 0.1f);
-    }
-    private void hideInputField()
-    {
-        TouchScreenKeyboard.hideInput = true;
-    }
 }

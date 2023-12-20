@@ -37,17 +37,17 @@ public class OperaData : MonoBehaviour
 
     public void SaveOperaData()
     {
-        PlayerPrefs.SetInt("isComplete" + OperaNumber, isComplete ? 1 : 0);
-        PlayerPrefs.SetInt("IsCompletedAtStart" + OperaNumber, IsCompletedAtStart ? 1 : 0);
-        PlayerPrefs.SetInt("isScanned" + OperaNumber, isScanned ? 1 : 0);
-        PlayerPrefs.SetInt("isAdditionalTaken" + OperaNumber, isAdditionalTaken ? 1 : 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isComplete" + OperaNumber, isComplete ? 1 : 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "IsCompletedAtStart" + OperaNumber, IsCompletedAtStart ? 1 : 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isScanned" + OperaNumber, isScanned ? 1 : 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isAdditionalTaken" + OperaNumber, isAdditionalTaken ? 1 : 0);
     }
 
     public void LoadOperaData()
     {
-        isComplete = PlayerPrefs.GetInt("isComplete" + OperaNumber, 0) == 1;
-        IsCompletedAtStart = PlayerPrefs.GetInt("IsCompletedAtStart" + OperaNumber, 0) == 1;
-        isScanned = PlayerPrefs.GetInt("isScanned" + OperaNumber, 0) == 1;
-        isAdditionalTaken = PlayerPrefs.GetInt("isAdditionalTaken" + OperaNumber, 0) == 1;
+        isComplete = PlayerPrefs.GetInt(GameManager.Instance.LoginUsername + "isComplete" + OperaNumber, 0) == 1;
+        IsCompletedAtStart = PlayerPrefs.GetInt(GameManager.Instance.LoginUsername + "IsCompletedAtStart" + OperaNumber, 0) == 1;
+        isScanned = PlayerPrefs.GetInt(GameManager.Instance.LoginUsername + "isScanned" + OperaNumber, 0) == 1;
+        isAdditionalTaken = PlayerPrefs.GetInt(GameManager.Instance.LoginUsername + "isAdditionalTaken" + OperaNumber, 0) == 1;
     }
 }

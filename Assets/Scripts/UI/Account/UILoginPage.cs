@@ -8,8 +8,8 @@ public class UILoginPage : MonoBehaviour
     [SerializeField] TMP_InputField userNameInputField, passwordInputField;
     [SerializeField] GameObject loginCanvas;
     [SerializeField] GameObject accountCreationgCanvas;
-    [SerializeField] TMP_Text debugText;
-    private string userName = null;
+    [SerializeField] TMP_Text resultText;
+    private string username = null;
     private string password = null;
 
     private void Start()
@@ -18,14 +18,14 @@ public class UILoginPage : MonoBehaviour
         accountCreationgCanvas.SetActive(false);
     }
 
-    public void CreateAccountButton()
+    public void CreateCanvasButton()
     {
         ChangePlaceHolderText("Create Username", "Create Password");
         loginCanvas.SetActive(false);
         accountCreationgCanvas.SetActive(true);
         DebugTextPrompt("");
         ResetTextInput();
-        userName = null;
+        username = null;
         password = null;
     }
 
@@ -39,12 +39,12 @@ public class UILoginPage : MonoBehaviour
 
     private void DebugTextPrompt(string text)
     {
-        debugText.text = text;
+        resultText.text = text;
     }
 
     public void GetUserName()
     {
-        userName = userNameInputField.text;
+        username = userNameInputField.text;
     }
 
     public void GetPassword()
@@ -57,9 +57,10 @@ public class UILoginPage : MonoBehaviour
         string tempUsername = userNameInputField.text;
         string tempPassword = passwordInputField.text;
 
-        if (tempPassword.Equals(password) && tempUsername.Equals(userName))
+        if (tempUsername == PlayerPrefs.GetString(tempUsername + "Username") && tempPassword == PlayerPrefs.GetString(tempUsername + "Password"))
         {
             DebugTextPrompt("Successful Login");
+            GameManager.Instance.SaveLoginState(tempUsername);
         }
         else
         {
@@ -71,25 +72,25 @@ public class UILoginPage : MonoBehaviour
     public void ConfirmAccountCreation()
     {
 
-        if (userName.Length < 4)
+        if (username == null || password == null || username.Length < 4)
         {
             DebugTextPrompt("Error Username is too short (Greater Than 4 Characters).");
             ResetTextInput();
-            userName = null;
+            username = null;
         }
 
-        else if (userName != null && password != null)
+        else if (username != null && password != null)
         {
             DebugTextPrompt("Account Succesfully Created");
+            GameManager.Instance.SaveAccountLogin(username, password);
             ChangePlaceHolderText("Enter Username...", "Enter Password...");
             ResetTextInput();
-            Debug.Log($"{userName},{password}");
             loginCanvas.SetActive(true);
             accountCreationgCanvas.SetActive(false);
         }
     }
 
-    public void CancelButton()
+    public void LoginCanvasButton()
     {
         ChangePlaceHolderText("Enter Username...", "Enter Password...");
         ResetTextInput();
