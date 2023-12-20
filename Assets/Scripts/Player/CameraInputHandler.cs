@@ -20,11 +20,13 @@ public class CameraInputHandler : MonoBehaviour
         CameraData.CameraTransform = Camera.main.transform;
     }
 
+
+  
+
     void Update()
     {
         CameraMove();
     }
-
 
     private void CameraMove()
     {
@@ -67,13 +69,14 @@ public class CameraInputHandler : MonoBehaviour
 
 
     }
+
+
 }
 
 
 [System.Serializable]
 public struct CameraData
 {
-    public Transform Target;
     public Transform CameraTransform;
     [Range(0, 100)]
     public float CameraPitchSpeed;

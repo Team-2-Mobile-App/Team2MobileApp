@@ -9,6 +9,12 @@ public class UIInventoryMissingObject : MonoBehaviour
     [SerializeField] private Transform itemsSection;
 
 
+
+    private void OnEnable()
+    {
+        OnScanState.OnScan += OnScanEnabled;
+    }
+
     public void Open(List<OperaData> data)
     {
         gameObject.SetActive(true);
@@ -58,5 +64,11 @@ public class UIInventoryMissingObject : MonoBehaviour
         }
     }
 
+    private void OnScanEnabled(bool isActive) => gameObject.SetActive(isActive);
 
+
+    private void OnDisable()
+    {
+        OnScanState.OnScan -= OnScanEnabled;
+    }
 }

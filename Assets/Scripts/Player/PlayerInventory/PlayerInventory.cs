@@ -9,8 +9,6 @@ public class PlayerInventory : MonoBehaviour
     public UIInventoryMissingObject UIInventory;
     
 
-
-
     public void DeleteDublicateObject()
     {
         List<OperaData> DuplicateObjects = new List<OperaData>();
