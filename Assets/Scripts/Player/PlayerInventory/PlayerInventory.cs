@@ -13,14 +13,14 @@ public class PlayerInventory : MonoBehaviour
     {
         List<OperaData> DuplicateObjects = new List<OperaData>();
 
-        foreach (var MissingObject in MissingObjectList)
+        foreach (var operaList in GameManager.Instance.operaList)
         {
-            if (MissingObject.isComplete)
+            if (operaList.isComplete)
             {
                 foreach (var item in MissingObjectList)
                 {
                     OperaInteractable operaInteractable = item.PrefabUIOpera.GetComponent<OperaInteractable>();
-                    if (operaInteractable != null && operaInteractable.AdditionalRealOperaNumber == MissingObject.OperaNumber) DuplicateObjects.Add(item);
+                    if (operaInteractable != null && operaList.OperaNumber == operaInteractable.AdditionalRealOperaNumber) DuplicateObjects.Add(item);
                 }
             }
         }
@@ -43,5 +43,20 @@ public class PlayerInventory : MonoBehaviour
         UIInventory.PopulateItemsSection(MissingObjectList);
     }
 
-
+    public void RemoveAllFromInventory()
+    {
+        MissingObjectList.Clear();
+        //if (MissingObjectList.Count > 0)
+        //{
+        //    List<OperaData> DeleteObjects = new List<OperaData>();
+        //    foreach (var item in MissingObjectList)
+        //    {
+        //        DeleteObjects.Add(item);
+        //    }
+        //    foreach (var data in DeleteObjects)
+        //    {
+        //        RemoveFromInventory(data);
+        //    }
+        //}
+    }
 }

@@ -25,7 +25,7 @@ public class UIMissingObject : MonoBehaviour, IPointerClickHandler
 
     public void Setup(OperaData data)
     {
-        this._data = data;
+        _data = data;
         _operaSprite.sprite = data.operaInteractable.Additional.image.sprite;
     }
 }

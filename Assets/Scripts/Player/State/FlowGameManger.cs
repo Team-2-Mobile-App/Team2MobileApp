@@ -38,6 +38,7 @@ public class FlowGameManger : MonoBehaviour
         UIManager.Map.onClick.AddListener(GoToMap);
         UIManager.ScanButton.onClick.AddListener(OnScan);
         UIManager.closeButton.onClick.AddListener(UIManager.CloseOperaView);
+        UIManager.Account.onClick.AddListener(GoToAccount);
     }
 
 
@@ -70,6 +71,10 @@ public class FlowGameManger : MonoBehaviour
         UIManager.PanelPause.gameObject.SetActive(false);
         StateMachine.ChangeState(OnNavigationState);
     }
+
+    public void GoToAccount() => StateMachine.ChangeState(OnAccountState);
+
+    public void GoToLogin() => StateMachine.ChangeState(OnLoginState);
 
 
 }

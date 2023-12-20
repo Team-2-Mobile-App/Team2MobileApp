@@ -39,9 +39,9 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
     private string OperaDescription()
     {
         if (operaData.isScanned)
-            return (operaData.operaData.Description1 + " " + operaData.operaData.Description2);
+            return (operaData.operaData.Description1 + "\n" + operaData.operaData.Description2);
         else 
-            return (operaData.operaData.Description1 + " " + _uiManager.missDescription);
+            return (operaData.operaData.Description1 + "\n" + _uiManager.missDescription);
     }
 
     private Sprite SetOperaImage()
@@ -74,6 +74,7 @@ public class GalleryTile : MonoBehaviour, IPointerClickHandler
         _uiManager.OpenOperaView();
         SetOperaView();
         ScanButtonRefresh();
+        GameManager.Instance.operaViewOpened = operaData;
     }
 
     public void OnPointerClick(PointerEventData eventData)

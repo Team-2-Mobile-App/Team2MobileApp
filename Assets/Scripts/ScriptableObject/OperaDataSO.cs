@@ -7,7 +7,9 @@ public class OperaDataSO : ScriptableObject
 {
     //public OperaData MissingObject = null;
     public string OperaName;
+    [SerializeField, TextArea(10, 10)]
     public string Description1;
+    [SerializeField, TextArea(10, 10)]
     public string Description2;
     public Sprite OperaSpriteGrey;
     public Sprite OperaSpriteScanned;

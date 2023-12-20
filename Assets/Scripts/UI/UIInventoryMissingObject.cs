@@ -40,19 +40,19 @@ public class UIInventoryMissingObject : MonoBehaviour
 
     public void Close()
     {
-        ClearListPokemon();
+        ClearList();
         DeleteAllChildren();
         gameObject.SetActive(false);
     }
 
-    private void ClearListPokemon()
+    private void ClearList()
     {
         missingObject.Clear();
     }
 
     private void ClearAll()
     {
-        ClearListPokemon();
+        ClearList();
         DeleteAllChildren();
     }
 
