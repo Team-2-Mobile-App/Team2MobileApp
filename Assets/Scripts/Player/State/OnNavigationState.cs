@@ -27,10 +27,10 @@ public class OnNavigationState : StateBase<FlowGameManger>
         SetUp();
 
         inventory.UIInventory.Open(inventory.MissingObjectList);
+        //GameManager.Instance.LoadAllData();
 
         CameraInputHandler.OnTouchStay += OnRotateCamera;
         CameraInputHandler.OnTouchMove += OnRotateCamera;
-        GameManager.Instance.LoadAllData();
     }
 
 

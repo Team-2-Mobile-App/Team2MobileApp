@@ -47,14 +47,18 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveAllFromInventory()
     {
-        List<OperaData> DeleteObjects = new List<OperaData>();
-        foreach (var item in MissingObjectList)
-        {
-            DeleteObjects.Add(item);
-        }
-        foreach (var data in DeleteObjects)
-        {
-            RemoveFromInventory(data);
-        }
+        MissingObjectList.Clear();
+        //if (MissingObjectList.Count > 0)
+        //{
+        //    List<OperaData> DeleteObjects = new List<OperaData>();
+        //    foreach (var item in MissingObjectList)
+        //    {
+        //        DeleteObjects.Add(item);
+        //    }
+        //    foreach (var data in DeleteObjects)
+        //    {
+        //        RemoveFromInventory(data);
+        //    }
+        //}
     }
 }

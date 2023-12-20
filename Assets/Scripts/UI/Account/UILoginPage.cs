@@ -53,9 +53,9 @@ public class UILoginPage : MonoBehaviour
         if (tempUsername != "" && tempUsername == PlayerPrefs.GetString(tempUsername + "Username") && tempPassword == PlayerPrefs.GetString(tempUsername + "Password"))
         {
             ResultTextPrompt("Successful Login");
-            GameManager.Instance.SaveLoginState(tempUsername);
             ResetTextInput();
             GameManager.Instance.flowGame.BackToGame();
+            GameManager.Instance.SaveLoginState(tempUsername);
         }
         else
         {

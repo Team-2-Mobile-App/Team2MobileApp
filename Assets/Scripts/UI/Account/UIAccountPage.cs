@@ -122,8 +122,8 @@ public class UIAccountPage : MonoBehaviour
         if (!GameManager.Instance.isUsernameValid(newUsername)) resultChangeText.text = "Username Exist";
         else if (GameManager.Instance.isSamePassword(oldPassword)) 
         {
-            GameManager.Instance.ChangeUsername(newUsername);
             resultChangeText.text = "Username Updated";
+            GameManager.Instance.ChangeUsername(newUsername);
         } 
         else resultChangeText.text = "Wrong Password";
         currentUsername.text = GameManager.Instance.LoginUsername;

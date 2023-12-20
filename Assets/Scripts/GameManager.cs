@@ -58,6 +58,7 @@ public class GameManager : Singleton<GameManager>
     {
         PlayerPrefs.SetString("lastAccount", username);
         PlayerPrefs.SetInt("lastLogin", 1);
+        LoadAllData();
     }
 
     /// <summary>
@@ -87,6 +88,7 @@ public class GameManager : Singleton<GameManager>
         }
         PlayerPrefs.DeleteKey(LoginUsername + "Username");
         PlayerPrefs.DeleteKey(LoginUsername + "Password");
+        //inventory.RemoveAllFromInventory();
         SaveLoginState(username);
     }
 
@@ -130,18 +132,25 @@ public class GameManager : Singleton<GameManager>
         //Debug.Log(lastAccount);
     }
 
+    private void Start()
+    {
+        if (isLoginActive) LoadAllData();
+    }
+
     public void LoadAllData()
     {
-        LoginUsername = lastAccount;
         isMovable = true; 
+        LoginUsername = lastAccount;
+        inventory.UIInventory.gameObject.SetActive(true);
         if (OperaContainer != null)
         {
+            operaList.Clear();
             OperaData[] OperaChildren = OperaContainer.GetComponentsInChildren<OperaData>();
             foreach (var item in OperaChildren)
             {
                 item.LoadOperaData();
-                if (item.isAdditionalTaken) inventory.Pickup(item);
                 operaList.Add(item);
+                if (item.isAdditionalTaken) inventory.Pickup(item);
             }
         }
         if (inventory.MissingObjectList.Count > 0)
