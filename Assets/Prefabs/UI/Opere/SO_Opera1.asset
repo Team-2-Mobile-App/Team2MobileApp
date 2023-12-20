@@ -12,20 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ed2f5e90ad764685474f89b7abcaf, type: 3}
   m_Name: SO_Opera1
   m_EditorClassIdentifier: 
-  OperaName: trg fds
-  Description1: fgdgretyg hg
-  Description2: fdg dfg sdfg dsg sg f
+  OperaName: Opera One
+  Description1: This is the Description after completing
+  Description2: This is the Description after scanning
   OperaSpriteGrey: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  OperaSpriteScanned: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  OperaSpriteScanned: {fileID: 21300000, guid: 0388fc6d32e155a429cf825ce141475d, type: 3}
+  DialogueName: 
   dialogues:
-  - DialogueName: ciao
-    m_speakers:
-    - SpeakerName: lollo
-      Script:
-      - cfdsfdsfd
-      - fdsfdsdsf
-      - aerwreerw
-    m_speakersOrder:
-    - lollo
-    - lollo
-    - lollo
+  - 

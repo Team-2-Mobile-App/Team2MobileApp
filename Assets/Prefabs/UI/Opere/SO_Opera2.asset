@@ -16,7 +16,7 @@ MonoBehaviour:
   Description1: ciaogdios odskfnkldsnf gfdsilbfdskjg
   Description2: fdsfdsaf asetf ggfds agfa
   OperaSpriteGrey: {fileID: 0}
-  OperaSpriteScanned: {fileID: 0}
+  OperaSpriteScanned: {fileID: 21300000, guid: fc26bd60944387b46948b085d2ce9e01, type: 3}
   DialogueName: Lollo
   dialogues:
   - ciao questa
