@@ -29,12 +29,10 @@ public class OnDialogueState : StateBase<FlowGameManger>
         GameManager.Instance.isMovable = false;
         OnDialogueStarts?.Invoke();
 
-        if (!GameManager.Instance.operaSelected.IsCompletedAtStart)
-        {
-            TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
-        }
+        if (!GameManager.Instance.operaSelected.IsCompletedAtStart) TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
 
-        //if is museum guide TurnOnMuseumGuideDialogue();
+        if (contex.MuseumGuide.isMuseumGuide) TurnOnMuseumGuideDialogue(contex);
+        
 
     }
 
@@ -49,6 +47,7 @@ public class OnDialogueState : StateBase<FlowGameManger>
     {
         base.OnExit(contex);
         GameManager.Instance.isMovable = true;
+        contex.MuseumGuide.isMuseumGuide = false;
         OnDialogueEnds?.Invoke();
     }
 
@@ -56,7 +55,6 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public void TurnOnMuseumGuideDialogue(FlowGameManger contex)
     {
         m_currentDialogue = contex.MuseumGuide.dialogues;
-        Debug.Log(m_currentDialogue.Count);
         contex.MuseumGuide.UIMuseum._dialogueText.text = "";
         m_runDialogue = true;
         index = 0;
@@ -68,7 +66,6 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public void TurnOnOperaDialogue(OperaData data,FlowGameManger contex)
     {
         m_currentDialogue = data.operaData.dialogues;
-        Debug.Log(m_currentDialogue.Count);
         contex.MuseumGuide.UIMuseum._dialogueText.text = "";
         m_runDialogue = true;
         index = 0;

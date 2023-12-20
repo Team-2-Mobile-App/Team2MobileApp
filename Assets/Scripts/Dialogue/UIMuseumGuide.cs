@@ -28,7 +28,6 @@ public class UIMuseumGuide : MonoBehaviour
     }
 
 
-
     private void OnDisable()
     {
         OnDialogueState.OnDialogueStarts -= ActivePanel;
