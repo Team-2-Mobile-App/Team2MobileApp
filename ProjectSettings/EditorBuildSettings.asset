@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Michele/TestProfiles.unity
-    guid: e7440a193a0f0a842a3ff791ccd8d3c4
+    path: Assets/Scenes/Level/Snc_Level_1.unity
+    guid: 47571d7cb7f2e794ead3e4e52aacdbe9
   m_configObjects: {}

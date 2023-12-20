@@ -13356,6 +13356,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 488385185994482065, guid: 84134482d9e185f47ac08ef0de0f8ee1, type: 3}
   m_PrefabInstance: {fileID: 295716289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1044590914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_Name
+      value: Vuforia
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+--- !u!1 &1044590915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 1044590914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1062259774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32754,6 +32820,10 @@ PrefabInstance:
       propertyPath: ShowOperaUIContainer
       value: 
       objectReference: {fileID: 42389561}
+    - target: {fileID: 3710704266554954794, guid: 1f60d06ac1c7d1c46b2ee4e9b8e8aed2, type: 3}
+      propertyPath: Vuforia
+      value: 
+      objectReference: {fileID: 1044590915}
     - target: {fileID: 8402521766223038440, guid: 1f60d06ac1c7d1c46b2ee4e9b8e8aed2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -35667,3 +35737,4 @@ SceneRoots:
   - {fileID: 1262608535}
   - {fileID: 105214819}
   - {fileID: 754389511}
+  - {fileID: 1044590914}
