@@ -15,7 +15,8 @@ public class FlowGameManger : MonoBehaviour
 
     #region States
     public OnNavigationState OnNavigationState;
-    public OnDialogueState OnDialogueState;
+    public OnDialogueOperaState OnDialogueOperaState;
+    public OnDialogueMuseumGuide OnDialogueMuseumGuide;
     public OnPauseState OnPauseState;
     public OnGalleryState OnGalleryState;
     public OnScanState OnScanState;
@@ -49,7 +50,8 @@ public class FlowGameManger : MonoBehaviour
     {
         StateMachine = new StatesMachine<FlowGameManger>(this);
         OnNavigationState = new OnNavigationState("OnNavigationState", StateMachine);
-        OnDialogueState = new OnDialogueState("OnDialogueState", StateMachine);
+        OnDialogueOperaState = new OnDialogueOperaState("OnDialogueOperaState", StateMachine);
+        OnDialogueMuseumGuide = new OnDialogueMuseumGuide("OnDialogueMuseumGuide", StateMachine);
         OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         OnGalleryState = new OnGalleryState("OnGalleryState", StateMachine);
         OnScanState = new OnScanState("OnScanState", StateMachine);

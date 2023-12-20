@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6001674150144290976}
   - component: {fileID: 4186316201316670869}
   - component: {fileID: 3670246636103243923}
+  - component: {fileID: 6363789518241633598}
   m_Layer: 0
   m_Name: MuseumGuide
   m_TagString: Untagged
@@ -68,26 +69,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8b93158e11e44b692b555efa1de124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogues:
-  - DialogueName: FirstDialogue
-    m_speakers:
-    - SpeakerName: MuseumGuide
-      Script:
-      - ciao bello
-      - oggi vedremo i quadri
-    m_speakersOrder:
-    - MuseumGuide
-    - MuseumGuide
-  - DialogueName: SecondDialogue
-    m_speakers:
-    - SpeakerName: MuseumGuide
-      Script:
-      - 2222
-      - 32343424
-    m_speakersOrder:
-    - MuseumGuide
-    - MuseumGuide
   TextSpeed: 30
+  DialogueName: lo
+  dialogues:
+  - fdsfgdsf
+  - dsfggfdgfdretrtewtre
+  - gfdsgsdfgfsdgdfg
+  UIMuseum: {fileID: 0}
 --- !u!114 &3670246636103243923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +90,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textSelection: {fileID: 6458478234326244929}
   _dialogueText: {fileID: 8072935715972767552}
+--- !u!54 &6363789518241633598
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352655372933128073}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6458478234326244929
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class MuseumGuide : MonoBehaviour
 {
+
     public float TextSpeed;
+
 
     public string DialogueName;
     public List<string> dialogues;
@@ -13,8 +15,17 @@ public class MuseumGuide : MonoBehaviour
     private void Awake()
     {
         UIMuseum = GetComponent<UIMuseumGuide>();
+
     }
 
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out PlayerInventory PlayerInventory))
+        {
+            Debug.Log("collido");
+            GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueMuseumGuide);
+        }
+    }
 }
