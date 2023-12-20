@@ -20,6 +20,8 @@ public class FlowGameManger : MonoBehaviour
     public OnPauseState OnPauseState;
     public OnGalleryState OnGalleryState;
     public OnScanState OnScanState;
+    public OnLoginState OnLoginState;
+    public OnAccountState OnAccountState;
     #endregion
 
 
@@ -39,6 +41,8 @@ public class FlowGameManger : MonoBehaviour
         UIManager.ScanButton.onClick.AddListener(OnScan);
         UIManager.closeButton.onClick.AddListener(UIManager.CloseOperaView);
         UIManager.Account.onClick.AddListener(GoToAccount);
+
+
     }
 
 
@@ -56,7 +60,13 @@ public class FlowGameManger : MonoBehaviour
         OnPauseState = new OnPauseState("OnPauseState", StateMachine);
         OnGalleryState = new OnGalleryState("OnGalleryState", StateMachine);
         OnScanState = new OnScanState("OnScanState", StateMachine);
-        StateMachine.RunStateMachine(OnNavigationState);
+        OnLoginState = new OnLoginState("OnLoginState", StateMachine);
+        OnAccountState = new OnAccountState("OnAccountState", StateMachine);
+
+        if (!GameManager.Instance.isLoginActive)
+            StateMachine.RunStateMachine(OnLoginState);
+        else
+            StateMachine.RunStateMachine(OnNavigationState);
     }
 
 

@@ -55,9 +55,7 @@ public class OnNavigationState : StateBase<FlowGameManger>
 
         _lookAngle = _lookAngle + (deltaX * cameraData.CameraPitchSpeed * Time.deltaTime);
         _pivotAngle = _pivotAngle - (deltaY * cameraData.CameraYawSpeed * Time.deltaTime);
-
         _pivotAngle = Mathf.Clamp(_pivotAngle, cameraData.MinPitchAngle, cameraData.MaxPitchAngle);
-
         _cameraTransform.transform.localRotation = Quaternion.Euler(_pivotAngle, _lookAngle, 0);
 
     }

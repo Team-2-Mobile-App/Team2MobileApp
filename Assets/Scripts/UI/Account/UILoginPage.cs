@@ -54,7 +54,7 @@ public class UILoginPage : MonoBehaviour
         {
             ResultTextPrompt("Successful Login");
             ResetTextInput();
-            GameManager.Instance.flowGame.BackToGame();
+            GameManager.Instance.flowGame.OnNavigation();
             GameManager.Instance.SaveLoginState(tempUsername);
         }
         else
