@@ -8,4 +8,19 @@ public class OnLoginState : StateBase<FlowGameManger>
     {
 
     }
+    public override void OnEnter(FlowGameManger contex)
+    {
+        base.OnEnter(contex);
+        GameManager.Instance.isMovable = false;
+        contex.UIManager.loginPage.gameObject.SetActive(true);
+        contex.UIManager.EnablePoseMenu(true);
+    }
+
+    public override void OnExit(FlowGameManger contex)
+    {
+        base.OnExit(contex);
+        GameManager.Instance.isMovable = true;
+        contex.UIManager.loginPage.gameObject.SetActive(false);
+        contex.UIManager.EnablePoseMenu(false);
+    }
 }

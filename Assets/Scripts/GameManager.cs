@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,6 +21,19 @@ public class GameManager : Singleton<GameManager>
     public OperaData operaViewOpened;
     public bool isLoginActive => PlayerPrefs.GetInt("lastLogin", 0) == 1;
     public bool isTutorialComplete => PlayerPrefs.GetInt(LoginUsername + "Tutorial", 0) == 1;
+    public bool isGameComplete
+    {
+        get
+        {
+            bool complete = true;
+            foreach (OperaData opera in operaList)
+            {
+                if (!opera.isComplete) complete = false;
+            }
+            return complete;
+        }
+    }
+    //profilo in uso
     public string LoginUsername;
 
     //[HideInInspector]
@@ -31,7 +45,7 @@ public class GameManager : Singleton<GameManager>
     /// <param name="username"></param>
     /// <param name="password"></param>
     public void SaveAccountLogin(string username, string password)
-    {        
+    {
         PlayerPrefs.SetString(username + "Username", username);
         PlayerPrefs.SetString(username + "Password", password);
     }
@@ -43,18 +57,54 @@ public class GameManager : Singleton<GameManager>
     public void SaveLoginState(string username)
     {
         PlayerPrefs.SetString("lastAccount", username);
-        LoginUsername = username;
         PlayerPrefs.SetInt("lastLogin", 1);
     }
 
     /// <summary>
     /// Per uscire dall'account così da rivedere il login page
     /// </summary>
-    public void DeleteLogin()
+    public void DeleteLastLogin()
     {
         PlayerPrefs.DeleteKey("lastAccount");
-        LoginUsername="";
+        LoginUsername = "";
         PlayerPrefs.SetInt("lastLogin", 0);
+        inventory.RemoveAllFromInventory();
+    }
+
+    /// <summary>
+    /// Da usare per quando cambio username per evitare che rifacendo un account con lo stesso nome usa quei salvataggi
+    /// </summary>
+    public void ChangeUsername(string username)
+    {
+        PlayerPrefs.SetString(username + "Password", PlayerPrefs.GetString(LoginUsername + "Password"));
+        foreach (OperaData opera in operaList)
+        {
+            opera.TransferSaveOperaData(username);
+        }
+        foreach (OperaData opera in operaList)
+        {
+            opera.ResetOperaData();
+        }
+        PlayerPrefs.DeleteKey(LoginUsername + "Username");
+        PlayerPrefs.DeleteKey(LoginUsername + "Password");
+        SaveLoginState(username);
+    }
+
+    public void ChangePassword(string password)
+    {
+        PlayerPrefs.SetString(LoginUsername + "Password", password);
+    }
+
+    public bool isSamePassword(string password)
+    {
+        if (password == PlayerPrefs.GetString(LoginUsername + "Password")) return true;
+        else return false;
+    }
+
+    public bool isUsernameValid(string username)
+    {
+        if (PlayerPrefs.HasKey(username + "Username")) return false;
+        else return true;
     }
 
     /// <summary>
@@ -80,9 +130,10 @@ public class GameManager : Singleton<GameManager>
         //Debug.Log(lastAccount);
     }
 
-    private void Start()
+    public void LoadAllData()
     {
-        isMovable = true; // Da cambiare in futuro con caricare la scena o sostituire con gli stati
+        LoginUsername = lastAccount;
+        isMovable = true; 
         if (OperaContainer != null)
         {
             OperaData[] OperaChildren = OperaContainer.GetComponentsInChildren<OperaData>();
@@ -97,3 +148,4 @@ public class GameManager : Singleton<GameManager>
             inventory.DeleteDublicateObject();
     }
 }
+

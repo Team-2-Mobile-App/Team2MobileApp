@@ -35,12 +35,28 @@ public class OperaData : MonoBehaviour
         Destroy(InstantiateObject);
     }
 
+    public void TransferSaveOperaData(string newUsername)
+    {
+        PlayerPrefs.SetInt(newUsername + "isComplete" + OperaNumber, isComplete ? 1 : 0);
+        PlayerPrefs.SetInt(newUsername + "IsCompletedAtStart" + OperaNumber, IsCompletedAtStart ? 1 : 0);
+        PlayerPrefs.SetInt(newUsername + "isScanned" + OperaNumber, isScanned ? 1 : 0);
+        PlayerPrefs.SetInt(newUsername + "isAdditionalTaken" + OperaNumber, isAdditionalTaken ? 1 : 0);
+    }
+
     public void SaveOperaData()
     {
         PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isComplete" + OperaNumber, isComplete ? 1 : 0);
         PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "IsCompletedAtStart" + OperaNumber, IsCompletedAtStart ? 1 : 0);
         PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isScanned" + OperaNumber, isScanned ? 1 : 0);
         PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isAdditionalTaken" + OperaNumber, isAdditionalTaken ? 1 : 0);
+    }
+
+    public void ResetOperaData()
+    {
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isComplete" + OperaNumber, 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "IsCompletedAtStart" + OperaNumber, 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isScanned" + OperaNumber, 0);
+        PlayerPrefs.SetInt(GameManager.Instance.LoginUsername + "isAdditionalTaken" + OperaNumber, 0);
     }
 
     public void LoadOperaData()

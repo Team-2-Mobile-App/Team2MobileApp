@@ -37,6 +37,7 @@ public class FlowGameManger : MonoBehaviour
         UIManager.Gallery.onClick.AddListener(GoToGallery);
         UIManager.Map.onClick.AddListener(GoToMap);
         UIManager.closeButton.onClick.AddListener(UIManager.CloseOperaView);
+        UIManager.Account.onClick.AddListener(GoToAccount);
     }
 
 
@@ -54,7 +55,8 @@ public class FlowGameManger : MonoBehaviour
         OnGalleryState = new OnGalleryState("OnGalleryState", StateMachine);
         OnAccountState = new OnAccountState("OnAccountState", StateMachine);
         OnLoginState = new OnLoginState("OnLoginState", StateMachine);
-        StateMachine.RunStateMachine(OnNavigationState);
+        if (!GameManager.Instance.isLoginActive) StateMachine.RunStateMachine(OnLoginState); 
+        else StateMachine.RunStateMachine(OnNavigationState);
     }
 
 
@@ -67,6 +69,10 @@ public class FlowGameManger : MonoBehaviour
     }
     public void GoToGallery() => StateMachine.ChangeState(OnGalleryState);
     public void GoToMap() => StateMachine.ChangeState(OnPauseState);
+
+    public void GoToAccount() => StateMachine.ChangeState(OnAccountState);
+
+    public void GoToLogin() => StateMachine.ChangeState(OnLoginState);
 
 
 }

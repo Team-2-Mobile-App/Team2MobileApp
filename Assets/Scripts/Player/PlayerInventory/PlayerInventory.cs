@@ -45,5 +45,16 @@ public class PlayerInventory : MonoBehaviour
         UIInventory.PopulateItemsSection(MissingObjectList);
     }
 
-
+    public void RemoveAllFromInventory()
+    {
+        List<OperaData> DeleteObjects = new List<OperaData>();
+        foreach (var item in MissingObjectList)
+        {
+            DeleteObjects.Add(item);
+        }
+        foreach (var data in DeleteObjects)
+        {
+            RemoveFromInventory(data);
+        }
+    }
 }

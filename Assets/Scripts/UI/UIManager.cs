@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     public GameObject GalleryConteiner;
     public GameObject GalleryTile;
     public GameObject GalleryPanel;
+    public GameObject GalleryOperaView;
 
     [Header("Account")]
     public UIAccountPage accountPage;
@@ -66,7 +67,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public GameObject GalleryOperaView;
     public void OpenOperaView()
     {
         GalleryOperaView.SetActive(true);

@@ -30,6 +30,7 @@ public class OnNavigationState : StateBase<FlowGameManger>
 
         CameraInputHandler.OnTouchStay += OnRotateCamera;
         CameraInputHandler.OnTouchMove += OnRotateCamera;
+        GameManager.Instance.LoadAllData();
     }
 
 

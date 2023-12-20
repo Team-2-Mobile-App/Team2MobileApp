@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UILoginPage : MonoBehaviour
 {
@@ -9,12 +10,10 @@ public class UILoginPage : MonoBehaviour
     [SerializeField] GameObject loginCanvas;
     [SerializeField] GameObject accountCreationgCanvas;
     [SerializeField] TMP_Text resultText;
-    private string username = null;
-    private string password = null;
 
     private void Start()
     {
-        DebugTextPrompt("");
+        ResultTextPrompt("");
         accountCreationgCanvas.SetActive(false);
     }
 
@@ -23,10 +22,8 @@ public class UILoginPage : MonoBehaviour
         ChangePlaceHolderText("Create Username", "Create Password");
         loginCanvas.SetActive(false);
         accountCreationgCanvas.SetActive(true);
-        DebugTextPrompt("");
+        ResultTextPrompt("");
         ResetTextInput();
-        username = null;
-        password = null;
     }
 
     private void ChangePlaceHolderText(string username, string password)
@@ -37,19 +34,15 @@ public class UILoginPage : MonoBehaviour
         _passwordPlaceHolder.gameObject.GetComponent<TextMeshProUGUI>().text = password;
     }
 
-    private void DebugTextPrompt(string text)
+    private void ResultTextPrompt(string text)
     {
         resultText.text = text;
+        Invoke("DeleteText", 2f);
     }
 
-    public void GetUserName()
+    private void DeleteText()
     {
-        username = userNameInputField.text;
-    }
-
-    public void GetPassword()
-    {
-        password = passwordInputField.text;
+        resultText.text = "";
     }
 
     public void Login()
@@ -57,36 +50,45 @@ public class UILoginPage : MonoBehaviour
         string tempUsername = userNameInputField.text;
         string tempPassword = passwordInputField.text;
 
-        if (tempUsername == PlayerPrefs.GetString(tempUsername + "Username") && tempPassword == PlayerPrefs.GetString(tempUsername + "Password"))
+        if (tempUsername != "" && tempUsername == PlayerPrefs.GetString(tempUsername + "Username") && tempPassword == PlayerPrefs.GetString(tempUsername + "Password"))
         {
-            DebugTextPrompt("Successful Login");
+            ResultTextPrompt("Successful Login");
             GameManager.Instance.SaveLoginState(tempUsername);
+            ResetTextInput();
+            GameManager.Instance.flowGame.BackToGame();
         }
         else
         {
             ResetTextInput();
-            DebugTextPrompt("WRONG USERNAME OR PASSWORD");
+            ResultTextPrompt("WRONG USERNAME OR PASSWORD");
         }
     }
 
     public void ConfirmAccountCreation()
     {
-
-        if (username == null || password == null || username.Length < 4)
+        string tempUsername = userNameInputField.text;
+        string tempPassword = passwordInputField.text;
+        if (tempUsername == "" || tempPassword == "" || tempUsername.Length < 4)
         {
-            DebugTextPrompt("Error Username is too short (Greater Than 4 Characters).");
+            ResultTextPrompt("Error Username is too short (Greater Than 4 Characters).");
             ResetTextInput();
-            username = null;
+            tempUsername = "";
         }
 
-        else if (username != null && password != null)
+        else if (tempUsername != "" && tempPassword != "" && GameManager.Instance.isUsernameValid(tempUsername))
         {
-            DebugTextPrompt("Account Succesfully Created");
-            GameManager.Instance.SaveAccountLogin(username, password);
+            ResultTextPrompt("Account Succesfully Created");
+            GameManager.Instance.SaveAccountLogin(tempUsername, tempPassword);
             ChangePlaceHolderText("Enter Username...", "Enter Password...");
             ResetTextInput();
             loginCanvas.SetActive(true);
             accountCreationgCanvas.SetActive(false);
+        }
+        else if (tempUsername != "" && tempPassword != "" && !GameManager.Instance.isUsernameValid(tempUsername))
+        {
+            ResultTextPrompt("Error Username Exist.");
+            ResetTextInput();
+            tempUsername = "";
         }
     }
 

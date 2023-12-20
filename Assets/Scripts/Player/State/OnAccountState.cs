@@ -13,17 +13,13 @@ public class OnAccountState : StateBase<FlowGameManger>
     {
         base.OnEnter(contex);
         GameManager.Instance.isMovable = false;
-        contex.UIManager.GalleryPanel.gameObject.SetActive(true);
-        contex.UIManager.FillContainer();
-        contex.UIManager.GalleryOperaView.gameObject.SetActive(false);
+        contex.UIManager.accountPage.gameObject.SetActive(true);
     }
 
     public override void OnExit(FlowGameManger contex)
     {
         base.OnExit(contex);
         GameManager.Instance.isMovable = true;
-        contex.UIManager.CloseGalleryPanel();
-        contex.UIManager.GalleryPanel.gameObject.SetActive(false);
-        contex.UIManager.CloseOperaView();
+        contex.UIManager.accountPage.gameObject.SetActive(false);
     }
 }
