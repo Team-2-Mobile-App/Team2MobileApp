@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1700889656593382119}
   - component: {fileID: 1700889656593382112}
   - component: {fileID: 1700889656593382113}
+  - component: {fileID: 3751957678314672703}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -92,6 +93,50 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700889656593382114}
   m_Enabled: 1
+--- !u!114 &3751957678314672703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700889656593382114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1700889657047530656
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +149,7 @@ GameObject:
   - component: {fileID: 6126208484991799026}
   - component: {fileID: 1134176599482644705}
   - component: {fileID: 4167718129198484441}
+  - component: {fileID: 8319208988971982730}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -141,7 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraData:
-    Target: {fileID: 0}
     CameraTransform: {fileID: 0}
     CameraPitchSpeed: 3
     CameraYawSpeed: 3
@@ -187,6 +232,27 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 16
+--- !u!65 &8319208988971982730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700889657047530656}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29505295, y: 0.47534168, z: 0.6141329}
+  m_Center: {x: -0.013457328, y: -0.031621277, z: -0.11369037}
 --- !u!1 &2434633573572322906
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,4 +43,7 @@ public class GameManager : Singleton<GameManager>
         if (inventory.MissingObjectList.Count > 0)
             inventory.DeleteDublicateObject();
     }
+
+
+   
 }

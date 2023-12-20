@@ -57,7 +57,7 @@ public class OperaInteractable : MonoBehaviour
         operaData.CloseOpera();
         if (GameManager.Instance.operaSelected.isComplete && !GameManager.Instance.operaSelected.IsCompletedAtStart)
         {
-            GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueState);
+            GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueOperaState);
             GameManager.Instance.operaSelected.IsCompletedAtStart = true;
             operaData.SaveOperaData();
         }

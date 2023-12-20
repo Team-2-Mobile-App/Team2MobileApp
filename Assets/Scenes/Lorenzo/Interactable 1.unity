@@ -175,10 +175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
-      propertyPath: dialogues.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -257,6 +253,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &133417047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1570903685355712034, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &133417050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8850501339392800469, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133417047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &133417051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133417047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 133417050}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Lamento_sul_cristo_morto
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 133417050}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!114 &241931603 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5498775280559669919, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
@@ -416,6 +447,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &553302758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6416339590802619244, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &553302761 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9067125149606537541, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553302758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &553302762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553302758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 553302761}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Sposalizio_della_vergine
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 553302761}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!114 &631086954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1134176599482644705, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
@@ -537,6 +603,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
   m_PrefabInstance: {fileID: 5479538667038842150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &687648160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5997705303059745152, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &687648163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8324649595601373450, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687648160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &687648164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687648160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 687648163}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Cristo_alla_colonna
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 687648163}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!223 &716841864 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 9190745179852721650, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
@@ -800,17 +901,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2434633573572322906, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1700889656593382114, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1991062561}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
 --- !u!1 &1555428593 stripped
 GameObject:
@@ -1127,6 +1221,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1831244532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 239505882133490513, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831244535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1357454677706776766, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831244532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1831244536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831244532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1831244535}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Sacra_conversazione
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 1831244535}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1874287398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,55 +1365,41 @@ Transform:
   - {fileID: 659715426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1991062557 stripped
+--- !u!1 &1971995795 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1700889656593382114, guid: 6696b476c8a25f340b6e6e424d993285, type: 3}
-  m_PrefabInstance: {fileID: 1537119826}
+  m_CorrespondingSourceObject: {fileID: 8183533382838425507, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1991062561
+--- !u!114 &1971995798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5647705190729004050, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971995795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1971995799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991062557}
+  m_GameObject: {fileID: 1971995795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+  mObserverBehaviour: {fileID: 1971995798}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Cena_di_Emmaus
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 1971995798}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!114 &2049212558 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4330235002975271305, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
@@ -1401,6 +1516,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1874287402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2111257786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5654607083956033888, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111257789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5735944916562295624, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+  m_PrefabInstance: {fileID: 5479538667038842150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111257786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2111257790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111257786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2111257789}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Il_bacio
+  mDatasetName: Vuforia/VuforiaMIDB.xml
+  mCastedBehaviour: {fileID: 2111257789}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1001 &5479538667038842150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1415,7 +1565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6447948696913042818, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1509,10 +1659,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 670893787830019015, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+    - {fileID: 6640945769838362984, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+    - {fileID: 7257794202809833467, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+    - {fileID: 1047537943165424623, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+    - {fileID: 369481297740921960, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+    - {fileID: 3418029842558844683, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 239505882133490513, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831244536}
+    - targetCorrespondingSourceObject: {fileID: 6416339590802619244, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 553302762}
+    - targetCorrespondingSourceObject: {fileID: 1570903685355712034, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 133417051}
+    - targetCorrespondingSourceObject: {fileID: 5654607083956033888, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2111257790}
+    - targetCorrespondingSourceObject: {fileID: 5997705303059745152, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 687648164}
+    - targetCorrespondingSourceObject: {fileID: 8183533382838425507, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1971995799}
   m_SourcePrefab: {fileID: 100100000, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
 --- !u!1001 &6925627768572486808
 PrefabInstance:

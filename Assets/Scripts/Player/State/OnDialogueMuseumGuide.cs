@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnDialogueState : StateBase<FlowGameManger>
+public class OnDialogueMuseumGuide : StateBase<FlowGameManger>
 {
 
     private List<string> m_currentDialogue;
@@ -11,28 +11,19 @@ public class OnDialogueState : StateBase<FlowGameManger>
     private int m_scriptLineIndex;
     private float m_time;
     private int index;
-    
 
-    public static event Action OnDialogueStarts;
-    public static event Action OnDialogueEnds;
 
-    public OnDialogueState(string stateID, StatesMachine<FlowGameManger> statesMachine) : base(stateID, statesMachine)
+    public OnDialogueMuseumGuide(string stateID, StatesMachine<FlowGameManger> statesMachine) : base(stateID, statesMachine)
     {
-        
-    }
 
+    }
 
 
     public override void OnEnter(FlowGameManger contex)
     {
         base.OnEnter(contex);
-        GameManager.Instance.isMovable = false;
-        OnDialogueStarts?.Invoke();
-
-        if (!GameManager.Instance.operaSelected.IsCompletedAtStart) TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
-
-        if (contex.MuseumGuide.isMuseumGuide) TurnOnMuseumGuideDialogue(contex);
-        
+        OnDialogueOperaState.OnDialogueStarts?.Invoke();
+        TurnOnMuseumGuideDialogue(contex);
 
     }
 
@@ -46,14 +37,12 @@ public class OnDialogueState : StateBase<FlowGameManger>
     public override void OnExit(FlowGameManger contex)
     {
         base.OnExit(contex);
-        GameManager.Instance.isMovable = true;
-        contex.MuseumGuide.isMuseumGuide = false;
-        OnDialogueEnds?.Invoke();
+        OnDialogueOperaState.OnDialogueEnds?.Invoke();
     }
-
 
     public void TurnOnMuseumGuideDialogue(FlowGameManger contex)
     {
+        m_currentDialogue = new List<string>();
         m_currentDialogue = contex.MuseumGuide.dialogues;
         contex.MuseumGuide.UIMuseum._dialogueText.text = "";
         m_runDialogue = true;
@@ -63,20 +52,9 @@ public class OnDialogueState : StateBase<FlowGameManger>
     }
 
 
-    public void TurnOnOperaDialogue(OperaData data,FlowGameManger contex)
+    private void CheckScriptLinePrintStatusForOpera(FlowGameManger contex)
     {
-        m_currentDialogue = data.operaData.dialogues;
-        contex.MuseumGuide.UIMuseum._dialogueText.text = "";
-        m_runDialogue = true;
-        index = 0;
-        m_time = 0;
-        m_scriptLineIndex = 0;
-    }
-
-
-    private void CheckScriptLinePrintStatus(FlowGameManger contex, OperaData data)
-    {
-        string message = data.operaData.DialogueName + " : " + m_currentDialogue[index];
+        string message = contex.MuseumGuide.DialogueName + " : " + m_currentDialogue[index];
 
         if (m_scriptLineIndex == message.Length)
         {
@@ -93,32 +71,32 @@ public class OnDialogueState : StateBase<FlowGameManger>
                 }
             }
         }
-        
+
     }
 
-    
-    
-    private void PrintScriptLine(FlowGameManger contex, OperaData data)
+
+
+    private void PrintScriptLine(FlowGameManger contex)
     {
-        string message = data.operaData.DialogueName + " : " + m_currentDialogue[index];
-        int time =  (int) m_time;
+        string message = contex.MuseumGuide.DialogueName + " : " + m_currentDialogue[index];
+        int time = (int)m_time;
         m_time += Time.deltaTime * contex.MuseumGuide.TextSpeed;
         if (m_scriptLineIndex == message.Length) return;
         if (time < (int)m_time)
         {
             contex.MuseumGuide.UIMuseum._dialogueText.text += message[m_scriptLineIndex];
-            m_scriptLineIndex ++;
+            m_scriptLineIndex++;
         }
 
     }
 
 
-    private void HandlePrintProcess(FlowGameManger contex,OperaData opera)
+    private void HandlePrintProcess(FlowGameManger contex, OperaData opera)
     {
         if (m_runDialogue)
         {
-            CheckScriptLinePrintStatus(contex, opera);
-            PrintScriptLine(contex, opera);
+            CheckScriptLinePrintStatusForOpera(contex);
+            PrintScriptLine(contex);
         }
     }
 
@@ -128,7 +106,5 @@ public class OnDialogueState : StateBase<FlowGameManger>
 
 
     }
-
-
 
 }

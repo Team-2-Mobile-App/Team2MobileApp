@@ -11,8 +11,8 @@ public class UIMuseumGuide : MonoBehaviour
 
     private void OnEnable()
     {
-        OnDialogueState.OnDialogueStarts += ActivePanel;
-        OnDialogueState.OnDialogueEnds += DisactivePanel;
+        OnDialogueOperaState.OnDialogueStarts += ActivePanel;
+        OnDialogueOperaState.OnDialogueEnds += DisactivePanel;
 
     }
 
@@ -30,8 +30,8 @@ public class UIMuseumGuide : MonoBehaviour
 
     private void OnDisable()
     {
-        OnDialogueState.OnDialogueStarts -= ActivePanel;
-        OnDialogueState.OnDialogueEnds -= DisactivePanel;
+        OnDialogueOperaState.OnDialogueStarts -= ActivePanel;
+        OnDialogueOperaState.OnDialogueEnds -= DisactivePanel;
 
     }
 
