@@ -157,7 +157,15 @@ public class GameManager : Singleton<GameManager>
             inventory.DeleteDublicateObject();
     }
 
+    public void VuforiaCheckOperaNumber(int operaNumber)
+    {
+        if (operaNumber == operaViewOpened.OperaNumber)
+        {
+            operaViewOpened.isScanned = true;
+            flowGame.OnNavigation();
+        }
 
+    }
    
 }
 
