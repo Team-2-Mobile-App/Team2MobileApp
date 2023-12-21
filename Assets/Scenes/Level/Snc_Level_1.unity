@@ -558,6 +558,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: Welcome to the Pinacoteca di Brera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: I'm Francesco Hayez, once a painter and director of this famous place
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: let's start by clicking on the painting near you
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186316201316670869, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6458478234326244929, guid: 6553f1955d37ace43b7809a7d65872cd, type: 3}
       propertyPath: m_IsActive
       value: 0
