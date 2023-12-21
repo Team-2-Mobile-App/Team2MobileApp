@@ -85,11 +85,17 @@ public class UIAccountPage : MonoBehaviour
         string tempNewPassword = newPasswordInputField.text;
         string tempCheckNewPassword = checkNewPasswordInputField.text;
         if (tempNewUsername != "" || tempOldPassword != "" || tempNewPassword != "" || tempCheckNewPassword != "")
-        {
-            //solo se non esiste già lo stesso username
+        {            
             if (tempNewUsername == "" && tempOldPassword != "" && tempNewPassword != "" && tempCheckNewPassword != "")
             {
                 NewPassword(tempOldPassword, tempNewPassword, tempCheckNewPassword);
+                ResetTextInput();
+                Invoke("DeleteText", 2f);
+                return;
+            }
+            if (tempNewUsername != "" && tempOldPassword == "" && tempNewPassword == "" && tempCheckNewPassword == "")
+            {
+                resultChangeText.text = "Insert Password for Change";
                 ResetTextInput();
                 Invoke("DeleteText", 2f);
                 return;
