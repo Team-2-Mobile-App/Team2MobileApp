@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 0a9803524b2624f498599a3a884822d6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_2
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f7a3bdfe4d0a94ab205dfcc4ca0060
+      internalID: -2079596309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_3
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fee174e955c0b419e402ab4194abcc
+      internalID: 2040670161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_5
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53cfa5a530ffa524586b34f501c4e18c
+      internalID: -1398112429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_6
+      rect:
+        serializedVersion: 2
+        x: 2591
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5feee29a4483b6546837bdb471359945
+      internalID: -742766500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_9
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e83b97f21729542873ab2eda082f55
+      internalID: -2055332852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sp_PuppetHead_Color_Transparent_02a_11
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 962
+        width: 572
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c3c1e345e0c2942a7ae3d4b7f4bc25
+      internalID: 1266282190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sp_PuppetHead_Color_Transparent_02a_0: 911272036
+      Sp_PuppetHead_Color_Transparent_02a_1: -208938336
+      Sp_PuppetHead_Color_Transparent_02a_10: -812170916
+      Sp_PuppetHead_Color_Transparent_02a_11: 1266282190
+      Sp_PuppetHead_Color_Transparent_02a_12: 2050920677
+      Sp_PuppetHead_Color_Transparent_02a_13: -712801488
+      Sp_PuppetHead_Color_Transparent_02a_14: 856897940
+      Sp_PuppetHead_Color_Transparent_02a_15: -1301269985
+      Sp_PuppetHead_Color_Transparent_02a_16: -1741388111
+      Sp_PuppetHead_Color_Transparent_02a_17: 558479408
+      Sp_PuppetHead_Color_Transparent_02a_18: 1535829992
+      Sp_PuppetHead_Color_Transparent_02a_19: -1098738200
+      Sp_PuppetHead_Color_Transparent_02a_2: -2079596309
+      Sp_PuppetHead_Color_Transparent_02a_20: 1538420803
+      Sp_PuppetHead_Color_Transparent_02a_21: 72082544
+      Sp_PuppetHead_Color_Transparent_02a_22: -284915497
+      Sp_PuppetHead_Color_Transparent_02a_23: 15872660
+      Sp_PuppetHead_Color_Transparent_02a_24: -1493587333
+      Sp_PuppetHead_Color_Transparent_02a_25: 1254890953
+      Sp_PuppetHead_Color_Transparent_02a_26: 1995474729
+      Sp_PuppetHead_Color_Transparent_02a_27: -586391913
+      Sp_PuppetHead_Color_Transparent_02a_28: -1586360381
+      Sp_PuppetHead_Color_Transparent_02a_29: -1701280868
+      Sp_PuppetHead_Color_Transparent_02a_3: 2040670161
+      Sp_PuppetHead_Color_Transparent_02a_30: -1202321331
+      Sp_PuppetHead_Color_Transparent_02a_31: 1357865833
+      Sp_PuppetHead_Color_Transparent_02a_32: -1021005059
+      Sp_PuppetHead_Color_Transparent_02a_33: 1939828517
+      Sp_PuppetHead_Color_Transparent_02a_34: -842851145
+      Sp_PuppetHead_Color_Transparent_02a_35: -1686109847
+      Sp_PuppetHead_Color_Transparent_02a_36: -1748149096
+      Sp_PuppetHead_Color_Transparent_02a_37: 1436229126
+      Sp_PuppetHead_Color_Transparent_02a_38: 425890057
+      Sp_PuppetHead_Color_Transparent_02a_39: -120633882
+      Sp_PuppetHead_Color_Transparent_02a_4: 1048761464
+      Sp_PuppetHead_Color_Transparent_02a_40: 235336278
+      Sp_PuppetHead_Color_Transparent_02a_41: 1789215203
+      Sp_PuppetHead_Color_Transparent_02a_42: 417480511
+      Sp_PuppetHead_Color_Transparent_02a_43: -26474262
+      Sp_PuppetHead_Color_Transparent_02a_44: -166711258
+      Sp_PuppetHead_Color_Transparent_02a_45: 120955518
+      Sp_PuppetHead_Color_Transparent_02a_46: -190845810
+      Sp_PuppetHead_Color_Transparent_02a_47: -2088532655
+      Sp_PuppetHead_Color_Transparent_02a_48: 1116949000
+      Sp_PuppetHead_Color_Transparent_02a_49: -1544403637
+      Sp_PuppetHead_Color_Transparent_02a_5: -1398112429
+      Sp_PuppetHead_Color_Transparent_02a_6: -742766500
+      Sp_PuppetHead_Color_Transparent_02a_7: 668212929
+      Sp_PuppetHead_Color_Transparent_02a_8: -713303553
+      Sp_PuppetHead_Color_Transparent_02a_9: -2055332852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
