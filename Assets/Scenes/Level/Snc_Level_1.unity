@@ -41369,6 +41369,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d4d8863e037d5c249988a1254dfadc45, type: 3}
+    - target: {fileID: 958314014291997671, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 958314014291997671, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1106175679692983600, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -41545,6 +41553,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6e94c0cdde881f040a7b6b085068e5b4, type: 3}
+    - target: {fileID: 4942644061214566574, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942644061214566574, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473688761194281514, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d553e2c8e1f9dd4b8ef427208685eaf, type: 3}
+    - target: {fileID: 5473688761194281514, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473688761194281514, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5507118980583050025, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -41601,6 +41629,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b7ce224389228564a85105bf886be041, type: 3}
+    - target: {fileID: 7069982938401328696, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069982938401328696, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7338174641334278808, guid: 2780fa10f8068fb448c3ae4184312899, type: 3}
       propertyPath: m_IsActive
       value: 1
