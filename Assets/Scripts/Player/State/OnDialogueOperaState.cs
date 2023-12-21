@@ -29,7 +29,7 @@ public class OnDialogueOperaState : StateBase<FlowGameManger>
         GameManager.Instance.isMovable = false;
         OnDialogueStarts?.Invoke();
         if(!GameManager.Instance.isMovable) TurnOnOperaDialogue(GameManager.Instance.operaSelected, contex);
-
+        //SoundManager.OnPlayMusicPuppetDialogue?.Invoke();
     }
 
 

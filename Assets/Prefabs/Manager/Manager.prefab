@@ -145,13 +145,46 @@ MonoBehaviour:
   title: {fileID: 0}
   image: {fileID: 0}
   description: {fileID: 0}
-  missDescription: 
+  missDescription: Scan the opera for more info
   closeButton: {fileID: 0}
   ScanButton: {fileID: 0}
   GalleryConteiner: {fileID: 0}
   GalleryTile: {fileID: 835335956310818043, guid: 91ccd59ede59a714fa45d7134a3e6e94, type: 3}
   GalleryPanel: {fileID: 0}
   GalleryOperaView: {fileID: 0}
+  accountPage: {fileID: 0}
+  loginPage: {fileID: 0}
+--- !u!1 &5317334131127203612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2711081504039697594}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2711081504039697594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317334131127203612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8402521766223038440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8455990788200804428
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +218,7 @@ Transform:
   - {fileID: 7567146548967523330}
   - {fileID: 5486973863215655751}
   - {fileID: 4253914245024799416}
+  - {fileID: 2711081504039697594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2117134520410438673
@@ -206,3 +240,5 @@ MonoBehaviour:
   OperaContainer: {fileID: 0}
   operaList: []
   operaSelected: {fileID: 0}
+  operaViewOpened: {fileID: 0}
+  LoginUsername: 

@@ -24,7 +24,7 @@ public class OnDialogueMuseumGuide : StateBase<FlowGameManger>
         base.OnEnter(contex);
         OnDialogueOperaState.OnDialogueStarts?.Invoke();
         TurnOnMuseumGuideDialogue(contex);
-        
+        //SoundManager.OnPlayMusicPuppetDialogue?.Invoke();
     }
 
 

@@ -14,7 +14,8 @@ public class OnLoginState : StateBase<FlowGameManger>
         GameManager.Instance.isMovable = false;
         contex.UIManager.loginPage.gameObject.SetActive(true);
         contex.UIManager.EnablePoseMenu(true);
-        DoorAnimation.OnOpenDoor?.Invoke(false);
+        //DoorAnimation.OnOpenDoor?.Invoke(false);
+        
     }
 
     public override void OnExit(FlowGameManger contex)
@@ -23,6 +24,6 @@ public class OnLoginState : StateBase<FlowGameManger>
         GameManager.Instance.isMovable = true;
         contex.UIManager.loginPage.gameObject.SetActive(false);
         contex.UIManager.EnablePoseMenu(false);
-        
+        //SoundManager.OnPlayMusicDoorOpening?.Invoke();
     }
 }

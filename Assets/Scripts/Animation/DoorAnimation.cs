@@ -22,6 +22,7 @@ public class DoorAnimation : MonoBehaviour
     public void OpenDoor(bool isOpen)
     {
         animator.SetBool("IsOpen", isOpen);
+        
     }
 
     private void OnDisable()

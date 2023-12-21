@@ -42,7 +42,6 @@ public class FlowGameManger : MonoBehaviour
         UIManager.closeButton.onClick.AddListener(UIManager.CloseOperaView);
         UIManager.Account.onClick.AddListener(GoToAccount);
 
-
     }
 
 
@@ -70,21 +69,47 @@ public class FlowGameManger : MonoBehaviour
     }
 
 
-    public void PauseState() => StateMachine.ChangeState(OnPauseState);
-    public void GoToGallery() => StateMachine.ChangeState(OnGalleryState);
-    public void GoToMap() => StateMachine.ChangeState(OnPauseState);
-    public void OnScan() => StateMachine.ChangeState(OnScanState);
+    public void PauseState()
+    {
+        SoundManager.OnPlayMusicButtom?.Invoke();
+        StateMachine.ChangeState(OnPauseState);
+    }
+    public void GoToGallery()
+    {
+        SoundManager.OnPlayMusicButtom?.Invoke();
+        StateMachine.ChangeState(OnGalleryState);
+    } 
+    public void GoToMap()
+    {
+        SoundManager.OnPlayMusicButtom?.Invoke();
+        StateMachine.ChangeState(OnPauseState);
+    }
+    public void OnScan()
+    {
+        StateMachine.ChangeState(OnScanState);
+        SoundManager.OnPlayMusicButtom?.Invoke();
+    }
 
     public void OnNavigation()
     {
         UIManager.PauseButton.gameObject.SetActive(true);
         UIManager.PanelPause.gameObject.SetActive(false);
         StateMachine.ChangeState(OnNavigationState);
+        SoundManager.OnPlayMusicButtom?.Invoke();
     }
 
-    public void GoToAccount() => StateMachine.ChangeState(OnAccountState);
+    public void GoToAccount() 
+    {
+        SoundManager.OnPlayMusicButtom?.Invoke();
+        StateMachine.ChangeState(OnAccountState); 
+    }
 
-    public void GoToLogin() => StateMachine.ChangeState(OnLoginState);
+    public void GoToLogin()
+    {
+        SoundManager.OnPlayMusicButtom?.Invoke();
+        StateMachine.ChangeState(OnLoginState);
+    }
+        
 
 
 }

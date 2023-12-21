@@ -33,7 +33,9 @@ public class OperaInteractable : MonoBehaviour
     {
         operaData.isAdditionalTaken = true;
         GameManager.Instance.inventory.Pickup(operaData);
+        SoundManager.OnPlayMusicPickUpPiece?.Invoke();
         Refresh();
+        
     }
 
     public void MissButton()
@@ -44,9 +46,10 @@ public class OperaInteractable : MonoBehaviour
             {
                 operaData.isComplete = true;
                 GameManager.Instance.inventory.RemoveFromInventory(GameManager.Instance.inventory.ObjectSelected);
+                SoundManager.OnPlayMusicPlacedPiece?.Invoke();
                 Refresh();
             }
-            else Debug.Log("Non corretto");
+            else /*Debug.Log("Non corretto");*/ SoundManager.OnPlayMusicWrongPiece?.Invoke();
         }
         else return;
     }
@@ -57,6 +60,7 @@ public class OperaInteractable : MonoBehaviour
         operaData.CloseOpera();
         if (GameManager.Instance.operaSelected.isComplete && !GameManager.Instance.operaSelected.IsCompletedAtStart)
         {
+            
             GameManager.Instance.flowGame.StateMachine.ChangeState(GameManager.Instance.flowGame.OnDialogueOperaState);
             GameManager.Instance.operaSelected.IsCompletedAtStart = true;
             operaData.SaveOperaData();
