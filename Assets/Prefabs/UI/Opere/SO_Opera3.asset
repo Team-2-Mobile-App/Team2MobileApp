@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ed2f5e90ad764685474f89b7abcaf, type: 3}
   m_Name: SO_Opera3
   m_EditorClassIdentifier: 
-  OperaName: A
-  Description1: ciaogdios odskfnkldsnf gfdsilbfdskjg
-  Description2: fdsfdsaf asetf ggfds agfa
+  OperaName: Lamentation over the Dead Christ
+  Description1: Lamento antico
+  Description2: Lamento completato
   OperaSpriteGrey: {fileID: 0}
   OperaSpriteScanned: {fileID: 21300000, guid: 12eaf7b9a9de4a3479ddb0d233a1f8be, type: 3}
-  DialogueName: Lollo
+  DialogueName: Opera_Complete
   dialogues:
-  - ciao questa
-  - "\xE8 st\xF2 cazzo"
-  - dio
+  - This painting goes against the canon
