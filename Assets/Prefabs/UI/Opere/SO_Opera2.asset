@@ -15,8 +15,8 @@ MonoBehaviour:
   OperaName: The Marriage of the Virgin
   Description1: Sposalizio della vergine
   Description2: Sposalizio completato
-  OperaSpriteGrey: {fileID: 0}
+  OperaSpriteGrey: {fileID: 21300000, guid: 8147562e5686a824faa1817b90debc38, type: 3}
   OperaSpriteScanned: {fileID: 21300000, guid: fc26bd60944387b46948b085d2ce9e01, type: 3}
-  DialogueName: Opera_Complete
+  DialogueName: 
   dialogues:
   - 'This painting has a innovative prospective focus '

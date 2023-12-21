@@ -15,8 +15,8 @@ MonoBehaviour:
   OperaName: Christ at the column
   Description1: Cristo alla colonna
   Description2: Cristo alla colonna completa
-  OperaSpriteGrey: {fileID: 0}
+  OperaSpriteGrey: {fileID: 21300000, guid: fce3f6a4c5c2c1945b7fd5c1153f76c9, type: 3}
   OperaSpriteScanned: {fileID: 21300000, guid: 604d073e7c2f80a44b8fee5d0b96a8a9, type: 3}
-  DialogueName: Opera_Complete
+  DialogueName: 
   dialogues:
   - A expressive Christ
