@@ -162,7 +162,6 @@ public class GameManager : Singleton<GameManager>
         if (operaNumber == operaViewOpened.OperaNumber)
         {
             operaViewOpened.isScanned = true;
-            flowGame.OnNavigation();
         }
 
     }

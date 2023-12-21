@@ -11087,6 +11087,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681706328}
   m_CullTransparentMesh: 1
+--- !u!114 &688578993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2117134520410438673, guid: 1f60d06ac1c7d1c46b2ee4e9b8e8aed2, type: 3}
+  m_PrefabInstance: {fileID: 6925627768572486808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a62bed8d1c997499a7a0650ccd7ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &690124037
 GameObject:
   m_ObjectHideFlags: 0
@@ -16785,6 +16796,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1482643497181467862, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 1482643497181467862, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377136177581318185, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 3377136177581318185, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
+      objectReference: {fileID: 0}
     - target: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_Name
       value: Vuforia
@@ -16792,6 +16819,30 @@ PrefabInstance:
     - target: {fileID: 3559162803629150706, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964347440686477353, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 5964347440686477353, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528210746578347229, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 6528210746578347229, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824720408539836330, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 6824720408539836330, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
       objectReference: {fileID: 0}
     - target: {fileID: 7339922604244775432, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16840,6 +16891,14 @@ PrefabInstance:
     - target: {fileID: 7974354245480682297, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnNavigation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774797495774278229, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688578993}
+    - target: {fileID: 8774797495774278229, guid: aafad9b7b19341b46931ef127e66156a, type: 3}
+      propertyPath: OnTargetFound.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VuforiaCheckOperaNumber
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
