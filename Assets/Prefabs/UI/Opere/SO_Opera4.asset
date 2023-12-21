@@ -15,8 +15,8 @@ MonoBehaviour:
   OperaName: Supper at Emmaus
   Description1: "Cena di Emmaus\t"
   Description2: Cena di Emmaus Completa
-  OperaSpriteGrey: {fileID: 0}
+  OperaSpriteGrey: {fileID: 21300000, guid: 58fa11532aeb54b4381f1e2eb1ccfbbe, type: 3}
   OperaSpriteScanned: {fileID: 21300000, guid: bfcedaa4469403948a21b706bccf924b, type: 3}
-  DialogueName: Opera_Complete
+  DialogueName: 
   dialogues:
   - A new Opera is working

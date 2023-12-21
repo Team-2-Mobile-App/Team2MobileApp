@@ -15,8 +15,8 @@ MonoBehaviour:
   OperaName: The Kiss
   Description1: Il bacio
   Description2: Il bacio completo
-  OperaSpriteGrey: {fileID: 0}
+  OperaSpriteGrey: {fileID: 21300000, guid: bcfdb43571de23f4e8dd39858cbbbd57, type: 3}
   OperaSpriteScanned: {fileID: 21300000, guid: c26773294787dc642bff797183c030c1, type: 3}
-  DialogueName: Opera_Complete
+  DialogueName: 
   dialogues:
   - My magnum opes

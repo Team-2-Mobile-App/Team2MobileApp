@@ -15,7 +15,7 @@ MonoBehaviour:
   OperaName: Pala di Brera
   Description1: Pala di Brera nuova
   Description2: Pala di Brera completo
-  OperaSpriteGrey: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  OperaSpriteGrey: {fileID: 21300000, guid: 0cdbf35471458dc4e9399735eac2d6e0, type: 3}
   OperaSpriteScanned: {fileID: 21300000, guid: 0388fc6d32e155a429cf825ce141475d, type: 3}
   DialogueName: 
   dialogues:
