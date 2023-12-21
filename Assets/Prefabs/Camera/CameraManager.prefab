@@ -538,6 +538,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4725907403025099825, guid: b414b1afea4093f489731fecd6d57ead, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725907403025099825, guid: b414b1afea4093f489731fecd6d57ead, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5204814597536220560, guid: b414b1afea4093f489731fecd6d57ead, type: 3}
       propertyPath: m_Pivot.x
       value: 0
